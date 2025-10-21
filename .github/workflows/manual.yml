@@ -15,8 +15,8 @@ jobs:
       - name: Promote to Preprod
         run: |
           git config --global user.email "carterchris571@gmail.com"
-          git config --global user.name "Project11_fabric_CI"
+          git config --global user.name "Fabric CI"
           git fetch origin
           git checkout preprod
-          git merge origin/dev --no-ff -m "Auto promotion from dev to preprod"
+          git merge origin/dev --no-ff -m "Auto promotion from dev to preprod" --allow-unrelated-histories
           git push origin preprod
