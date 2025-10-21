@@ -1,0 +1,22 @@
+name: Promote Dev to Preprod
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Promote to Preprod
+        run: |
+          git config --global user.email "carterchris571@gmail.com"
+          git config --global user.name "Fabric CI"
+          git fetch origin
+          git checkout preprod
+          git merge origin/dev --no-ff -m "Auto promotion from dev to preprod" --allow-unrelated-histories
+          git push origin preprod
