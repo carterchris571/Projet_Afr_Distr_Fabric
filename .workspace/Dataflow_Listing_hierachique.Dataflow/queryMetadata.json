@@ -1,0 +1,42 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_Listing_hierachique",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "Listing_hierachie": {
+      "queryId": "898cf744-78e1-4b69-830a-5a7bfe266604",
+      "queryName": "Listing_hierachie",
+      "loadEnabled": false
+    },
+    "Listing_hierachie_DataDestination": {
+      "queryId": "5586e515-46e2-4d1f-9b37-204d34e271bb",
+      "queryName": "Listing_hierachie_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Listing classique": {
+      "queryId": "e6cb6270-e988-4d69-98bb-b9de82a48439",
+      "queryName": "Listing classique",
+      "loadEnabled": false
+    },
+    "DerniereDateImport": {
+      "queryId": "db993869-8330-4dcf-a790-b7ac05685f2c",
+      "queryName": "DerniereDateImport",
+      "loadEnabled": false
+    },
+    "Listing_derniere_date": {
+      "queryId": "da6a312f-4317-4153-b4d6-5f2bf93d5f76",
+      "queryName": "Listing_derniere_date",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
+    }
+  ]
+}

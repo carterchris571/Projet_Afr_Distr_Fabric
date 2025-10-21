@@ -1,0 +1,27 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_Listing_classique",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "Listing classique": {
+      "queryId": "17a83004-6d9a-44cc-9076-ae3be724569b",
+      "queryName": "Listing classique",
+      "loadEnabled": false
+    },
+    "Listing classique_DataDestination": {
+      "queryId": "21a04751-2634-447d-8f6f-8a2fc518b884",
+      "queryName": "Listing classique_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
+    }
+  ]
+}

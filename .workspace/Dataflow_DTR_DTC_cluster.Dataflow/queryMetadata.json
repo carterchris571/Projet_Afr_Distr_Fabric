@@ -1,0 +1,33 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_DTR_DTC_cluster",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "DTR_DTC_cluster_nettoyé": {
+      "queryId": "25f1de79-892c-48df-944a-68e00139a4f1",
+      "queryName": "DTR_DTC_cluster_nettoyé",
+      "loadEnabled": false
+    },
+    "NavigationQuery": {
+      "queryId": "0d673d99-8ee1-4faa-ad8d-fa96eab81fe1",
+      "queryName": "NavigationQuery",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "DTR_DTC_cluster_nettoyé_DataDestination": {
+      "queryId": "d463c0b5-21e7-495f-ac28-db88e888e294",
+      "queryName": "DTR_DTC_cluster_nettoyé_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "DEV_pipeline_cluster_segmentation"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8d118b85-d107-81b3-4e1d-a288c0f0f994"
+  }
+}

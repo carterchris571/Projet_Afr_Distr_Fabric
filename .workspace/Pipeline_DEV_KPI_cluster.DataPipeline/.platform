@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Pipeline_DEV_KPI_cluster"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "96d40f97-98be-bab7-4f4f-1ad59e405e38"
+  }
+}

@@ -1,0 +1,116 @@
+table Listing_union_nettoye
+	lineageTag: b639f0b6-5f71-4d2c-bd97-74a41b303fbf
+	sourceLineageTag: [dbo].[Listing_union_nettoye]
+
+	column Id
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ed41a1d2-da98-4d06-aff1-9337b541b9c1
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 82c5c303-4abe-4e26-95e3-b1e6adfd37ab
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 62bf3c47-d194-4faa-af7b-f8e9f13222a3
+		sourceLineageTag: Status
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b3c4dad9-aeb2-49b2-a8a6-a95c9d1219f6
+		sourceLineageTag: Type
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_num
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6bcb832a-3633-49d0-8ade-6a74defb56a0
+		sourceLineageTag: From_num
+		summarizeBy: none
+		sourceColumn: From_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e610142d-4865-482f-ba4e-90a8571c9b3f
+		sourceLineageTag: From_name
+		summarizeBy: none
+		sourceColumn: From_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_num
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ea1d632f-abcd-4212-92d1-f17af8568ebb
+		sourceLineageTag: To_num
+		summarizeBy: none
+		sourceColumn: To_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f0866948-8640-4d6c-ac89-0627a2e189a4
+		sourceLineageTag: To_name
+		summarizeBy: none
+		sourceColumn: To_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 485aa493-d40d-4922-9ebb-835c179d215d
+		sourceLineageTag: Amount
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Balance
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 59684867-81ed-4709-8d09-3c90703ab72d
+		sourceLineageTag: Balance
+		summarizeBy: sum
+		sourceColumn: Balance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Listing_union_nettoye = entity
+		mode: directLake
+		source
+			entityName: Listing_union_nettoye
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

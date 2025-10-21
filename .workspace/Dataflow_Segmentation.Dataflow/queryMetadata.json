@@ -1,0 +1,27 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_Segmentation",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "Segmentation centre 2 et 3 xlsx": {
+      "queryId": "3b2ba848-5727-45f4-8a8b-87d013685696",
+      "queryName": "Segmentation centre 2 et 3 xlsx",
+      "loadEnabled": false
+    },
+    "Segmentation centre 2 et 3 xlsx_DataDestination": {
+      "queryId": "d5bed438-4816-4930-b82b-578a28c34d20",
+      "queryName": "Segmentation centre 2 et 3 xlsx_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
+    }
+  ]
+}

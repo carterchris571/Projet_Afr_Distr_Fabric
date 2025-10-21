@@ -1,0 +1,1312 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Cluster",
+        "sourceLineageTag": "[dbo].[Cluster]",
+        "columns": [
+          {
+            "name": "Centre_",
+            "dataType": "string",
+            "sourceColumn": "Centre_",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Centre_",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SA_incharge",
+            "dataType": "string",
+            "sourceColumn": "SA_incharge",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SA_incharge",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cluster",
+            "dataType": "string",
+            "sourceColumn": "Cluster",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cluster",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Cluster",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "DTR_DTC_cluster",
+        "sourceLineageTag": "[dbo].[DTR_DTC_cluster]",
+        "columns": [
+          {
+            "name": "DTC MTD",
+            "dataType": "double",
+            "sourceColumn": "DTC MTD",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTC MTD",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTC MTD Perf",
+            "dataType": "double",
+            "sourceColumn": "DTC MTD Perf",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTC MTD Perf",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTC MoM",
+            "dataType": "double",
+            "sourceColumn": "DTC MoM",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTC MoM",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTC Gap vs LM",
+            "dataType": "double",
+            "sourceColumn": "DTC Gap vs LM",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTC Gap vs LM",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Target DTR day",
+            "dataType": "double",
+            "sourceColumn": "Target DTR day",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Target DTR day",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Target DTC day",
+            "dataType": "double",
+            "sourceColumn": "Target DTC day",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Target DTC day",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTC Day",
+            "dataType": "double",
+            "sourceColumn": "DTC Day",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTC Day",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTC Day Perf",
+            "dataType": "double",
+            "sourceColumn": "DTC Day Perf",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTC Day Perf",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Lo MTD Perf",
+            "dataType": "double",
+            "sourceColumn": "Lo MTD Perf",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Lo MTD Perf",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTR MTD",
+            "dataType": "double",
+            "sourceColumn": "DTR MTD",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTR MTD",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTR MoM",
+            "dataType": "double",
+            "sourceColumn": "DTR MoM",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTR MoM",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTR Gap vs LM",
+            "dataType": "double",
+            "sourceColumn": "DTR Gap vs LM",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTR Gap vs LM",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Zone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Territory",
+            "dataType": "string",
+            "sourceColumn": "Territory",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Territory",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cluster",
+            "dataType": "string",
+            "sourceColumn": "Cluster",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cluster",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DTR Day Perf",
+            "dataType": "double",
+            "sourceColumn": "DTR Day Perf",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTR Day Perf",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "DTR Day",
+            "dataType": "double",
+            "sourceColumn": "DTR Day",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "DTR Day",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "DTR_DTC_cluster",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Date_table",
+        "sourceLineageTag": "[dbo].[Date_table]",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Année",
+            "dataType": "string",
+            "sourceColumn": "Année",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Année",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Trimestre",
+            "dataType": "int64",
+            "sourceColumn": "Trimestre",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Trimestre",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MoisNombre",
+            "dataType": "int64",
+            "sourceColumn": "MoisNombre",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "MoisNombre",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Jour",
+            "dataType": "int64",
+            "sourceColumn": "Jour",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Jour",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DateNombre",
+            "dataType": "string",
+            "sourceColumn": "DateNombre",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DateNombre",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MoisNom",
+            "dataType": "string",
+            "sourceColumn": "MoisNom",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MoisNom",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "MoisCalendrier",
+            "dataType": "string",
+            "sourceColumn": "MoisCalendrier",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "MoisCalendrier",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TrimestreCalendrier",
+            "dataType": "string",
+            "sourceColumn": "TrimestreCalendrier",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "TrimestreCalendrier",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "JourSemaine",
+            "dataType": "int64",
+            "sourceColumn": "JourSemaine",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "JourSemaine",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "NomJourSemaine",
+            "dataType": "string",
+            "sourceColumn": "NomJourSemaine",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "NomJourSemaine",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "FinSemaine",
+            "dataType": "dateTime",
+            "sourceColumn": "FinSemaine",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "FinSemaine",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Date_table",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Listing_union_nettoye",
+        "sourceLineageTag": "[dbo].[Listing_union_nettoye]",
+        "columns": [
+          {
+            "name": "Id",
+            "dataType": "string",
+            "sourceColumn": "Id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Status",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Type",
+            "dataType": "string",
+            "sourceColumn": "Type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "From_num",
+            "dataType": "string",
+            "sourceColumn": "From_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "From_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "From_name",
+            "dataType": "string",
+            "sourceColumn": "From_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "From_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "To_num",
+            "dataType": "string",
+            "sourceColumn": "To_num",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "To_num",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "To_name",
+            "dataType": "string",
+            "sourceColumn": "To_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "To_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Amount",
+            "dataType": "int64",
+            "sourceColumn": "Amount",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Amount",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Balance",
+            "dataType": "int64",
+            "sourceColumn": "Balance",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Balance",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Listing_union_nettoye",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Net_adds_cluster",
+        "sourceLineageTag": "[dbo].[Net_adds_cluster]",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Zone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Territory",
+            "dataType": "string",
+            "sourceColumn": "Territory",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Territory",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cluster",
+            "dataType": "string",
+            "sourceColumn": "Cluster",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cluster",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GA_day",
+            "dataType": "int64",
+            "sourceColumn": "GA_day",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "GA_day",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GA_day_perf",
+            "dataType": "double",
+            "sourceColumn": "GA_day_perf",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "GA_day_perf",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "GA_MTD",
+            "dataType": "int64",
+            "sourceColumn": "GA_MTD",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "GA_MTD",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "GA_MTD_gap",
+            "dataType": "double",
+            "sourceColumn": "GA_MTD_gap",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "GA_MTD_gap",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "GA_MTD_perf",
+            "dataType": "double",
+            "sourceColumn": "GA_MTD_perf",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "GA_MTD_perf",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Net_adds",
+            "dataType": "int64",
+            "sourceColumn": "Net_adds",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Net_adds",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Target_GA_day",
+            "dataType": "double",
+            "sourceColumn": "Target_GA_day",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Target_GA_day",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Net_adds_cluster",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Out_stock_cluster",
+        "sourceLineageTag": "[dbo].[Out_stock_cluster]",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Zone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SA_name",
+            "dataType": "string",
+            "sourceColumn": "SA_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SA_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Territory",
+            "dataType": "string",
+            "sourceColumn": "Territory",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Territory",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cluster",
+            "dataType": "string",
+            "sourceColumn": "Cluster",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cluster",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "#Distinct_HVC",
+            "dataType": "int64",
+            "sourceColumn": "#Distinct_HVC",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "#Distinct_HVC",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "#Avg_HVC_OOS",
+            "dataType": "int64",
+            "sourceColumn": "#Avg_HVC_OOS",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "#Avg_HVC_OOS",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "#day_HVC",
+            "dataType": "double",
+            "sourceColumn": "#day_HVC",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "#day_HVC",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "%OOS_HVC",
+            "dataType": "double",
+            "sourceColumn": "%OOS_HVC",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "%OOS_HVC",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "P_OOS",
+            "dataType": "double",
+            "sourceColumn": "P_OOS",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "P_OOS",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Out_stock_cluster",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Segmentation",
+        "sourceLineageTag": "[dbo].[Segmentation]",
+        "columns": [
+          {
+            "name": "Num_POS",
+            "dataType": "string",
+            "sourceColumn": "Num_POS",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Num_POS",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Zone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SA_incharge",
+            "dataType": "string",
+            "sourceColumn": "SA_incharge",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SA_incharge",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Cluster",
+            "dataType": "string",
+            "sourceColumn": "Cluster",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Cluster",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Site_name",
+            "dataType": "string",
+            "sourceColumn": "Site_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Site_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "site_id",
+            "dataType": "int64",
+            "sourceColumn": "site_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "site_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Segment_group",
+            "dataType": "string",
+            "sourceColumn": "Segment_group",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Segment_group",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Seg_gpre",
+            "dataType": "string",
+            "sourceColumn": "Seg_gpre",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Seg_gpre",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Segmentation",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

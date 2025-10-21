@@ -1,0 +1,27 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_Out_stock_cluster",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "OOS et Day stock par cluster": {
+      "queryId": "4260d7b5-6a5c-4706-91f1-3da1b6ad6ca7",
+      "queryName": "OOS et Day stock par cluster",
+      "loadEnabled": false
+    },
+    "OOS et Day stock par cluster_DataDestination": {
+      "queryId": "7b5c1ac1-2d97-4421-8c6b-f0a74f5909b6",
+      "queryName": "OOS et Day stock par cluster_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
+    }
+  ]
+}
