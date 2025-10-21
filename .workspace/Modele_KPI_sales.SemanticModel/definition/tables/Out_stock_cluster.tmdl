@@ -1,0 +1,122 @@
+table Out_stock_cluster
+	lineageTag: 0bfb7afe-a761-4978-9378-80af432aa24e
+	sourceLineageTag: [dbo].[Out_stock_cluster]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 6c859709-f865-481d-8235-381ccea916aa
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 66297a61-4929-4d5a-bcee-37dbe94c77a4
+		sourceLineageTag: Zone
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column SA_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: aa3848df-0aaa-49b9-9e6b-f0c8420fea9b
+		sourceLineageTag: SA_name
+		summarizeBy: none
+		sourceColumn: SA_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 15b36333-b4e1-4918-9a1f-21939f46f2ac
+		sourceLineageTag: Territory
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 74595370-ba3f-4726-947b-f7ceed80955f
+		sourceLineageTag: Cluster
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column #Distinct_HVC
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a7d497cc-3d52-42ff-84ac-76ebcfb97760
+		sourceLineageTag: #Distinct_HVC
+		summarizeBy: sum
+		sourceColumn: #Distinct_HVC
+
+		annotation SummarizationSetBy = Automatic
+
+	column #Avg_HVC_OOS
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f2566578-2562-43db-a0d2-9e2e2e898ab9
+		sourceLineageTag: #Avg_HVC_OOS
+		summarizeBy: sum
+		sourceColumn: #Avg_HVC_OOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column #day_HVC
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 47ae1e98-4011-49b1-90dd-920ec1a595b1
+		sourceLineageTag: #day_HVC
+		summarizeBy: sum
+		sourceColumn: #day_HVC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column %OOS_HVC
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 84552ffd-5a56-4043-9595-42900f533bab
+		sourceLineageTag: %OOS_HVC
+		summarizeBy: sum
+		sourceColumn: %OOS_HVC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column P_OOS
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 57e752d6-08ce-4784-b75a-ed1107da2eb5
+		sourceLineageTag: P_OOS
+		summarizeBy: sum
+		sourceColumn: P_OOS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Out_stock_cluster = entity
+		mode: directLake
+		source
+			entityName: Out_stock_cluster
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

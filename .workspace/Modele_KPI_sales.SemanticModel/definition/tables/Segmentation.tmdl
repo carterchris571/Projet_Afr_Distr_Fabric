@@ -1,0 +1,84 @@
+table Segmentation
+	lineageTag: b2855f3b-d403-41bc-b207-ecef7ff91903
+	sourceLineageTag: [dbo].[Segmentation]
+
+	column Num_POS
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bd25bc1c-421d-4bc3-92c3-37467b564cf9
+		sourceLineageTag: Num_POS
+		summarizeBy: none
+		sourceColumn: Num_POS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 234ef3d1-83ff-4449-8f72-bab537f0a0ab
+		sourceLineageTag: Zone
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column SA_incharge
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: bee95303-f2bf-44e6-9841-0a9e5dd73f11
+		sourceLineageTag: SA_incharge
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1d636a6f-1476-45aa-a877-4b4c0172b115
+		sourceLineageTag: Cluster
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e0a073af-790d-4c06-883f-9885fb54db5a
+		sourceLineageTag: Site_name
+		summarizeBy: none
+		sourceColumn: Site_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: f0ec606d-bf44-49b8-901e-cce7e5863e9d
+		sourceLineageTag: site_id
+		summarizeBy: sum
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment_group
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 320c04a2-137e-44ba-8302-0d86a7fb4977
+		sourceLineageTag: Segment_group
+		summarizeBy: none
+		sourceColumn: Segment_group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Segmentation = entity
+		mode: directLake
+		source
+			entityName: Segmentation
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

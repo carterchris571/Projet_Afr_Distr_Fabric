@@ -1,0 +1,160 @@
+table Date_table
+	lineageTag: 75c50cb8-91e1-4411-b9ff-875ad2811244
+	sourceLineageTag: [dbo].[Date_table]
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 6776b415-2ee7-43af-9661-e5b1e6b72bdb
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Année
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 71a22f5b-2208-40d9-8db4-6796016c9324
+		sourceLineageTag: Année
+		summarizeBy: none
+		sourceColumn: Année
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 09c306d7-65f9-45d7-91a3-8a3d3e0f99c0
+		sourceLineageTag: Trimestre
+		summarizeBy: sum
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisNombre
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4bc35469-2a07-496f-ad8f-b06ed84adacc
+		sourceLineageTag: MoisNombre
+		summarizeBy: sum
+		sourceColumn: MoisNombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Jour
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 38deb02d-7669-44e3-99b2-165669f763d7
+		sourceLineageTag: Jour
+		summarizeBy: sum
+		sourceColumn: Jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateNombre
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f683e8f4-8ea5-4a8b-bfbf-d5234745e5df
+		sourceLineageTag: DateNombre
+		summarizeBy: none
+		sourceColumn: DateNombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisNom
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e80fbc71-aacc-4d00-a868-b967d3f982df
+		sourceLineageTag: MoisNom
+		summarizeBy: none
+		sourceColumn: MoisNom
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisCalendrier
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e9183ac6-76b4-4ede-99f4-9c1ba97d67a4
+		sourceLineageTag: MoisCalendrier
+		summarizeBy: none
+		sourceColumn: MoisCalendrier
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrimestreCalendrier
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ed7df63d-510d-4926-becf-26de59b764ca
+		sourceLineageTag: TrimestreCalendrier
+		summarizeBy: none
+		sourceColumn: TrimestreCalendrier
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourSemaine
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 8488b129-c31f-408b-94ae-88f0cefc88da
+		sourceLineageTag: JourSemaine
+		summarizeBy: sum
+		sourceColumn: JourSemaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column NomJourSemaine
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2e8e247d-417a-4678-b8e0-7d685d343ca5
+		sourceLineageTag: NomJourSemaine
+		summarizeBy: none
+		sourceColumn: NomJourSemaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinSemaine
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: bf59095f-d2f9-4f48-a0d3-c48aff333cc1
+		sourceLineageTag: FinSemaine
+		summarizeBy: none
+		sourceColumn: FinSemaine
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: f1194a6f-1d43-4684-a00b-a0925eb66fbd
+
+		level Année
+			lineageTag: 4ede916e-d6e2-4606-8319-ae1c0aa70c87
+			column: Année
+
+		level TrimestreCalendrier
+			lineageTag: 59f96759-b4be-443b-89dd-61ad8a3e3601
+			column: TrimestreCalendrier
+
+		level MoisNom
+			lineageTag: d49d6b25-2922-4f9c-9053-05ce2816e90c
+			column: MoisNom
+
+		level Date
+			lineageTag: 4a0fcd66-587c-47ac-8621-63476f57512b
+			column: Date
+
+	partition Date_table = entity
+		mode: directLake
+		source
+			entityName: Date_table
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

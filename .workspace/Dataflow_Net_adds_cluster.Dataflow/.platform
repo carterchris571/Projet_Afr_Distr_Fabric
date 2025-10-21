@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Dataflow",
+    "displayName": "Dataflow_Net_adds_cluster"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f9ac3ba7-fdac-b953-406a-b59494018c52"
+  }
+}

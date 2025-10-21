@@ -1,0 +1,31 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_Date_table",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "Requête": {
+      "queryId": "f2d89f05-1b56-4f3a-a908-49b37bb81803",
+      "queryName": "Requête",
+      "loadEnabled": false
+    },
+    "Date_table": {
+      "queryId": "1a7d3938-a8dd-41cc-a827-5f5bf3e7c233",
+      "queryName": "Date_table"
+    },
+    "Date_table_DataDestination": {
+      "queryId": "edb55f8d-d62d-461a-8c14-ce02f4545008",
+      "queryName": "Date_table_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"4748d170-aefc-4384-a126-def32992e530\"}"
+    }
+  ]
+}

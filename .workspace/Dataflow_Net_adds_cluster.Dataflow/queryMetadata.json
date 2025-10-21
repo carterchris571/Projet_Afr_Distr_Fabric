@@ -1,0 +1,27 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_Net_adds_cluster",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "Net add par cluster": {
+      "queryId": "655b1afc-a14b-48c9-905a-3cb840e79b37",
+      "queryName": "Net add par cluster",
+      "loadEnabled": false
+    },
+    "Net add par cluster_DataDestination": {
+      "queryId": "87fd421d-01dd-4056-9656-981be0e9c6ff",
+      "queryName": "Net add par cluster_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
+    }
+  ]
+}

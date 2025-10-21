@@ -1,0 +1,233 @@
+table Mesure
+	lineageTag: 1ea5365d-98ff-4d30-8670-aa01446c63c0
+
+	measure '#Day HVC T' = ```
+			
+			VAR CurrentCluster = SELECTEDVALUE(Segmentation[Cluster])
+			
+			RETURN
+			IF(
+			    ISINSCOPE(Segmentation[Cluster]),
+			    CALCULATE(
+			        MAX(Out_stock_cluster[#day_HVC]),
+			        TREATAS( { CurrentCluster }, Out_stock_cluster[Cluster] )
+			    ),
+			    AVERAGEX(
+			        VALUES(Segmentation[Cluster]),
+			        CALCULATE(
+			            MAX(Out_stock_cluster[#day_HVC]),
+			            TREATAS( { Segmentation[Cluster] }, Out_stock_cluster[Cluster] )
+			        )
+			    )
+			)
+			
+			```
+		lineageTag: 5cb9fce1-f86a-42fc-93ab-91ce202d42e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DTC perf MTD' = ```
+			
+			VAR DerniereDateVisible =
+			    CALCULATE(
+			        MAX(DTR_DTC_cluster[Date]),
+			        ALLSELECTED(DTR_DTC_cluster)
+			    )
+			
+			VAR JourDuMois =
+			    DAY(DerniereDateVisible)
+			
+			VAR DTC_MTD_Value =
+			    CALCULATE(
+			        SUM(DTR_DTC_cluster[DTC MTD]),
+			        DTR_DTC_cluster[Date] = DerniereDateVisible
+			    )
+			
+			VAR Target_DTC_Day =
+			    CALCULATE(
+			        SUM(DTR_DTC_cluster[Target DTC day]),
+			        DTR_DTC_cluster[Date] = DerniereDateVisible
+			    )
+			
+			VAR Target_MTD = Target_DTC_Day * JourDuMois
+			
+			RETURN
+			DIVIDE(DTC_MTD_Value, Target_MTD, 0)
+			
+			```
+		lineageTag: 32921e36-13c2-46aa-877d-e30027119fd3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'DTR perf MTD' = ```
+			
+			VAR DerniereDateVisible =
+			    CALCULATE(
+			        MAX(DTR_DTC_cluster[Date]),
+			        ALLSELECTED(DTR_DTC_cluster)
+			    )
+			
+			VAR JourDuMois =
+			    DAY(DerniereDateVisible)
+			
+			VAR DTR_MTD_Value =
+			    CALCULATE(
+			        SUM(DTR_DTC_cluster[DTR MTD]),
+			        DTR_DTC_cluster[Date] = DerniereDateVisible
+			    )
+			
+			VAR Target_DTR_Day =
+			    CALCULATE(
+			        SUM(DTR_DTC_cluster[Target DTR day]),
+			        DTR_DTC_cluster[Date] = DerniereDateVisible
+			    )
+			
+			VAR Target_MTD = Target_DTR_Day * JourDuMois
+			
+			RETURN
+			DIVIDE(DTR_MTD_Value, Target_MTD, 0)
+			
+			```
+		lineageTag: 53cfc3e3-9a40-4408-b4b9-1277501d44b9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GA Perf MTD' = ```
+			
+			VAR DerniereDateVisible =
+			    CALCULATE(
+			        MAX(Net_adds_cluster[Date]),
+			        ALLSELECTED(Net_adds_cluster)
+			    )
+			
+			VAR JourDuMois =
+			    DAY(DerniereDateVisible)
+			
+			VAR GA_MTD_Value =
+			    CALCULATE(
+			        SUM(Net_adds_cluster[GA_MTD]),
+			        Net_adds_cluster[Date] = DerniereDateVisible
+			    )
+			
+			VAR Target_GA_Day =
+			    CALCULATE(
+			        SUM(Net_adds_cluster[Target_GA_day]),
+			        Net_adds_cluster[Date] = DerniereDateVisible
+			    )
+			
+			VAR Target_MTD = Target_GA_Day * JourDuMois
+			
+			RETURN
+			DIVIDE(GA_MTD_Value, Target_MTD, 0)
+			
+			```
+		lineageTag: 72c205e3-8cd5-495d-be9d-d6563366b78e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nbre HVC' =
+			CALCULATE(
+			                    COUNT(Segmentation[Num_POS]),
+			                    Segmentation[Segment_group] = "HVC")
+		formatString: 0
+		lineageTag: f9ab918f-c7c1-4667-9512-78591746a007
+
+	measure 'Nett adds' =
+			
+			VAR DerniereDateDisponible =
+			    CALCULATE(
+			        MAX(Net_adds_cluster[Date]),
+			        ALLSELECTED(Net_adds_cluster)
+			    )
+			RETURN
+			CALCULATE(
+			    SUM(Net_adds_cluster[Net_adds]),
+			    FILTER(
+			        ALL(Net_adds_cluster[Date]),
+			        Net_adds_cluster[Date] = DerniereDateDisponible
+			    )
+			)
+		formatString: 0
+		lineageTag: 2ecea213-3e4b-45dc-8545-ea46b09c694c
+
+	measure Taux_couv = ```
+			
+			VAR Points_Touches = 
+			    CALCULATE(
+			        DISTINCTCOUNT(Segmentation[Num_POS]),
+			        FILTER(
+			             Segmentation,
+			            CALCULATE(
+			                COUNTROWS(Listing_union_nettoye),
+			                Listing_union_nettoye[Amount] < 0, 
+			                Listing_union_nettoye[Type] = "Transfer",
+			                ABS(Listing_union_nettoye[Amount]) >= 1000,
+			                FILTER(
+			                    Listing_union_nettoye,
+			                    Listing_union_nettoye[To_num] = Segmentation[Num_POS]
+			                 )
+			            ) > 0
+			        )
+			    )
+			
+			VAR Total_POS = DISTINCTCOUNT(Segmentation[Num_POS])
+			
+			RETURN 
+			DIVIDE(Points_Touches,Total_POS,0)
+			```
+		lineageTag: e78cc259-cdbc-4706-baf2-20c27c42849a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure %OOS = ```
+			
+			
+			VAR DerniereDateVisible =
+			    CALCULATE(
+			        MAX(Out_stock_cluster[Date]),
+			        ALLSELECTED(Out_stock_cluster)
+			    )
+			
+			
+			VAR avg_hvc_value =
+			    CALCULATE(
+			        SUM(Out_stock_cluster[#Avg_HVC_OOS]),
+			        Out_stock_cluster[Date] = DerniereDateVisible
+			    )
+			
+			VAR distinct_hvc =
+			    CALCULATE(
+			        SUM(Out_stock_cluster[#Distinct_HVC]),
+			        Out_stock_cluster[Date] = DerniereDateVisible
+			    )
+			
+			
+			RETURN
+			DIVIDE(avg_hvc_value, distinct_hvc, 0)
+			
+			```
+		lineageTag: 2ef28db0-dec4-4a1c-a54e-798a535c35fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Nbre_HVC_T1 = CALCULATE(COUNT(Segmentation[Num_POS]))
+		formatString: 0
+		lineageTag: 4ce5fe39-e339-4996-89d9-ed2dfbae9bab
+
+	column Column
+		formatString: 0
+		lineageTag: 87fb4386-241b-4d3e-80df-2e9c4734f81b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Mesure = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 8b3cc42f2812479a95c4cba909048002
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

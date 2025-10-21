@@ -1,0 +1,36 @@
+relationship d581d517-fc0f-ff0b-a661-fb2c4e32eafc
+	fromColumn: Segmentation.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 233e11b2-f319-d8b7-9baf-9ed551d94f31
+	fromColumn: DTR_DTC_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 969e3174-a3f9-995b-df21-30e3830d8850
+	fromColumn: Net_adds_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 85081776-fd1e-c1b3-00ee-7f528a4fc687
+	fromColumn: Out_stock_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship f710829f-e2a6-bd5c-7b6e-3b6462837545
+	fromColumn: Listing_union_nettoye.To_num
+	toColumn: Segmentation.Num_POS
+
+relationship 0dbfe05b-f101-d2da-95e2-60bc3370a671
+	fromColumn: Listing_union_nettoye.Date
+	toColumn: Date_table.Date
+
+relationship 009887ba-aa1a-d0cf-df70-32040eddf5d0
+	fromColumn: DTR_DTC_cluster.Date
+	toColumn: Date_table.Date
+
+relationship d7cf193a-6a31-ac15-3c57-bd4af1641469
+	fromColumn: Net_adds_cluster.Date
+	toColumn: Date_table.Date
+
+relationship 0d004322-f2d4-3649-145b-69cfab2e91d9
+	fromColumn: Out_stock_cluster.Date
+	toColumn: Date_table.Date
+

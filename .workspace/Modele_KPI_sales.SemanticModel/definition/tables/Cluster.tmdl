@@ -1,0 +1,60 @@
+table Cluster
+	lineageTag: e5d445e2-6cab-45b9-8a0c-1baf7e87cf5b
+	sourceLineageTag: [dbo].[Cluster]
+
+	column Centre
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 913d6997-f0f6-4375-9e89-5addf53903af
+		sourceLineageTag: Centre_
+		summarizeBy: none
+		sourceColumn: Centre_
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column SA_incharge
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3c363899-2a0e-48a8-8d58-dc906d01cf04
+		sourceLineageTag: SA_incharge
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d30e1100-0b81-4705-b5c9-c3057e7a59e6
+		sourceLineageTag: Cluster
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Centre Hierarchy'
+		lineageTag: 88d9ac92-7b34-43f8-a9a0-cb3d46ff34e1
+
+		level Centre
+			lineageTag: 8c255b2b-2d9c-4f09-9913-a4dd4ca0ea3f
+			column: Centre
+
+		level SA_incharge
+			lineageTag: b8263b33-38e7-4d01-a451-13d9f09e860a
+			column: SA_incharge
+
+		level Cluster
+			lineageTag: b7529b7a-d58e-4be5-b19e-302def2a6254
+			column: Cluster
+
+	partition Cluster = entity
+		mode: directLake
+		source
+			entityName: Cluster
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

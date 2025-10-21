@@ -1,0 +1,135 @@
+table Net_adds_cluster
+	lineageTag: 57cf3c56-d060-4ee4-91a6-0cade866609a
+	sourceLineageTag: [dbo].[Net_adds_cluster]
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 01357f4c-d527-498c-9ae0-5d32eb0f3656
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e24726d6-692c-4d3a-80c9-c3266ef0c2ed
+		sourceLineageTag: Zone
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d5955478-2d8b-4260-b6b2-62b52db26e3d
+		sourceLineageTag: Territory
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 11449dcd-cb3e-4192-9cdf-eba7aef38279
+		sourceLineageTag: Cluster
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column GA_day
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 51cd2d11-8fb6-491a-beca-3dfb411b75fc
+		sourceLineageTag: GA_day
+		summarizeBy: sum
+		sourceColumn: GA_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column GA_day_perf
+		dataType: double
+		sourceProviderType: float
+		lineageTag: c38a2b84-be7b-4922-af07-2de84b84d718
+		sourceLineageTag: GA_day_perf
+		summarizeBy: sum
+		sourceColumn: GA_day_perf
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GA_MTD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2e4b9ef0-a283-49a9-9c7c-f9870b446113
+		sourceLineageTag: GA_MTD
+		summarizeBy: sum
+		sourceColumn: GA_MTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column GA_MTD_gap
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 85cf30c6-bd0e-4d7a-b95f-e14bf6ded6e0
+		sourceLineageTag: GA_MTD_gap
+		summarizeBy: sum
+		sourceColumn: GA_MTD_gap
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GA_MTD_perf
+		dataType: double
+		sourceProviderType: float
+		lineageTag: a8aaabaf-213a-4ed6-a2a0-4b55216896ed
+		sourceLineageTag: GA_MTD_perf
+		summarizeBy: sum
+		sourceColumn: GA_MTD_perf
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Net_adds
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 08d248bf-f647-46c3-9add-30a760ced53c
+		sourceLineageTag: Net_adds
+		summarizeBy: sum
+		sourceColumn: Net_adds
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target_GA_day
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 5df53b34-9c13-426b-8b1d-8cb0f548b178
+		sourceLineageTag: Target_GA_day
+		summarizeBy: sum
+		sourceColumn: Target_GA_day
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Net_adds_cluster = entity
+		mode: directLake
+		source
+			entityName: Net_adds_cluster
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
