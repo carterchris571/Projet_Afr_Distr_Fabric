@@ -11,11 +11,9 @@ shared Cluster_nettoyé = let
   #"Classeur Excel importé" = Excel.Workbook(#"Navigation 5", null, true),
   Navigation = #"Classeur Excel importé"{[Item = "Cluster", Kind = "Sheet"]}[Data],
   #"Type de colonne changé" = Table.TransformColumnTypes(Navigation, {{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}, "fr"),
-  #"En-têtes promus" = Table.PromoteHeaders(#"Type de colonne changé", [PromoteAllScalars = true]),
-  #"Colonnes renommées" = Table.RenameColumns(#"En-têtes promus", {{"quartier", "Cluster"}, {"sa_incharge", "SA_incharge"}}),
-  #"Premières lignes supprimées" = Table.Skip(#"Colonnes renommées", 1)
+  #"En-têtes promus" = Table.PromoteHeaders(#"Type de colonne changé", [PromoteAllScalars = true])
 in
-  #"Premières lignes supprimées";
+  #"En-têtes promus";
 shared Cluster_nettoyé_DataDestination = let
   Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
