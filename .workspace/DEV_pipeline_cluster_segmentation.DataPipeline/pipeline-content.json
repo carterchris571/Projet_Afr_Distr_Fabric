@@ -47,7 +47,6 @@
           },
           "sink": {
             "type": "DataWarehouseSink",
-            "tableOption": "autoCreate",
             "allowCopyCommand": true,
             "copyCommandSettings": {},
             "datasetSettings": {
@@ -74,6 +73,44 @@
           },
           "translator": {
             "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Centre_",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "Centre_",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "sa_incharge",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "SA_incharge",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "quartier",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "Cluster",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              }
+            ],
             "typeConversion": true,
             "typeConversionSettings": {
               "allowDataTruncation": true,
