@@ -125,10 +125,7 @@ table Mesure
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Nbre HVC' =
-			CALCULATE(
-			                    COUNT(Segmentation[Num_POS]),
-			                    Segmentation[Segment_group] = "HVC")
+	measure 'Nbre HVC' = CALCULATE(COUNT('Segmentation'[Num_POS]),Segmentation[Seg_gpre] = "HVC")
 		formatString: 0
 		lineageTag: f9ab918f-c7c1-4667-9512-78591746a007
 
@@ -158,13 +155,13 @@ table Mesure
 			        FILTER(
 			             Segmentation,
 			            CALCULATE(
-			                COUNTROWS(Listing_union_nettoye),
-			                Listing_union_nettoye[Amount] < 0, 
-			                Listing_union_nettoye[Type] = "Transfer",
-			                ABS(Listing_union_nettoye[Amount]) >= 1000,
+			                COUNTROWS(Listing_hierachique3),
+			                Listing_hierachique3[Amount] < 0, 
+			                Listing_hierachique3[Type] = "Transfer",
+			                ABS(Listing_hierachique3[Amount]) >= 1000,
 			                FILTER(
-			                    Listing_union_nettoye,
-			                    Listing_union_nettoye[To_num] = Segmentation[Num_POS]
+			                    Listing_hierachique3,
+			                    Listing_hierachique3[To_num] = Segmentation[Num_POS]
 			                 )
 			            ) > 0
 			        )

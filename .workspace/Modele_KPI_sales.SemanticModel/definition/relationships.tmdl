@@ -30,3 +30,7 @@ relationship 7a6c92d2-9105-8e0f-95a8-092984624c44
 	fromColumn: Listing_hierachique3.From_num
 	toColumn: Segmentation.Num_POS
 
+relationship 12ad6813-8f67-ae91-a2de-f4951fbfe061
+	fromColumn: Listing_hierachique3.Date
+	toColumn: Date_table.Date
+

@@ -1,0 +1,84 @@
+table Segmentation
+	lineageTag: c3944436-c4a6-4587-b79a-d1e3ec330697
+	sourceLineageTag: [dbo].[Segmentation]
+
+	column Num_POS
+		dataType: string
+		lineageTag: bd82737e-6d04-4d2b-828e-5e16e035af6f
+		sourceLineageTag: Num_POS
+		summarizeBy: none
+		sourceColumn: Num_POS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		lineageTag: f76c8205-d2f1-4f9e-b114-5afe5aecad36
+		sourceLineageTag: Zone
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column SA_incharge
+		dataType: string
+		lineageTag: 08684780-149e-4a15-bf4f-1558c49d48d8
+		sourceLineageTag: SA_incharge
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: 49501419-3bbb-43c8-af16-1276108c0c74
+		sourceLineageTag: Cluster
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Site_name
+		dataType: string
+		lineageTag: 0c729954-ae84-4884-aa79-2a5b44828d24
+		sourceLineageTag: Site_name
+		summarizeBy: none
+		sourceColumn: Site_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column site_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 93e9d0fc-7abc-4b15-a2b6-40e8d7b4654c
+		sourceLineageTag: site_id
+		summarizeBy: sum
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment_group
+		dataType: string
+		lineageTag: 0277350a-1490-4e6a-9657-c577405babaa
+		sourceLineageTag: Segment_group
+		summarizeBy: none
+		sourceColumn: Segment_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seg_gpre
+		dataType: string
+		lineageTag: 7489d676-d356-4f08-973c-fe947e723cbe
+		sourceLineageTag: Seg_gpre
+		summarizeBy: none
+		sourceColumn: Seg_gpre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Segmentation = entity
+		mode: directLake
+		source
+			entityName: Segmentation
+			schemaName: dbo
+			expressionSource: 'DirectLake – Warehouse_DEV_Sales_data'
+

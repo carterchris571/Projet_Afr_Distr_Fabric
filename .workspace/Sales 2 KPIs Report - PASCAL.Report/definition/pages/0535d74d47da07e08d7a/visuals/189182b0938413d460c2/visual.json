@@ -1,0 +1,483 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "189182b0938413d460c2",
+  "position": {
+    "x": 192.39610963748896,
+    "y": 156.18037135278516,
+    "z": 2004,
+    "height": 548.894783377542,
+    "width": 1076.2864721485412,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cluster"
+                    }
+                  },
+                  "Property": "Cluster"
+                }
+              },
+              "queryRef": "Cluster.Cluster",
+              "nativeQueryRef": "Cluster"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cluster"
+                    }
+                  },
+                  "Property": "SA_incharge"
+                }
+              },
+              "queryRef": "Cluster.SA_incharge",
+              "nativeQueryRef": "SA_incharge"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Segmentation"
+                        }
+                      },
+                      "Property": "Num_POS"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Segmentation.Num_POS",
+              "nativeQueryRef": "#POS",
+              "displayName": "#POS"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "Nbre HVC"
+                }
+              },
+              "queryRef": "Mesure.Nbre HVC",
+              "nativeQueryRef": "Nbre HVC"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "Taux_couv"
+                }
+              },
+              "queryRef": "Mesure.Taux_couv",
+              "nativeQueryRef": "Taux couv",
+              "displayName": "Taux couv"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "#Day HVC T"
+                }
+              },
+              "queryRef": "Mesure.#Day HVC T",
+              "nativeQueryRef": "#Day HVC",
+              "displayName": "#Day HVC"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "%OOS"
+                }
+              },
+              "queryRef": "Mesure.%OOS",
+              "nativeQueryRef": "%OOS"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "GA Perf MTD"
+                }
+              },
+              "queryRef": "Mesure.GA Perf MTD",
+              "nativeQueryRef": "GA Perf MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "Nett adds"
+                }
+              },
+              "queryRef": "Mesure.Nett adds",
+              "nativeQueryRef": "Nett adds"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "DTC perf MTD"
+                }
+              },
+              "queryRef": "Mesure.DTC perf MTD",
+              "nativeQueryRef": "DTC perf MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "DTR perf MTD"
+                }
+              },
+              "queryRef": "Mesure.DTR perf MTD",
+              "nativeQueryRef": "DTR perf MTD"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Mesure"
+                  }
+                },
+                "Property": "GA Perf MTD"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "96.4797290864301D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesure.DTC perf MTD"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.33077443021048D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesure.DTR perf MTD"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "69.83889687165757D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesure.Nett adds"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "84.90368087383237D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesure.GA Perf MTD"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "71.13765492612856D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesure.%OOS"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.21680618232342D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesure.#Day HVC T"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.38865390629498D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesure.Taux_couv"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "73.87379657941067D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesure.Nbre HVC"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "70.42908159855646D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Segmentation.Num_POS"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "168.89825404228165D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Cluster.SA_incharge"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "187.30260758468094D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Cluster.Cluster"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.1
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'AlternatingRowsNew'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

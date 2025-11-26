@@ -1,0 +1,114 @@
+table Listing_hierachique3
+	lineageTag: 315f29bf-3036-4d68-8570-3fda3335408e
+	sourceLineageTag: [dbo].[Listing_hierachique3]
+
+	column Date_modifie
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e88db25c-9eba-4b7a-ab90-9c0b10d127b0
+		sourceLineageTag: Date_modifie
+		summarizeBy: none
+		sourceColumn: Date_modifie
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: b596168b-e38a-41bf-8a54-e03a915366df
+		sourceLineageTag: Id
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9a961906-576a-40c0-a2a0-73027a63db0f
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 34b85b19-6488-4404-9070-3ce2052e8232
+		sourceLineageTag: Status
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 3cd5c829-c494-40cf-9f39-28c9e6ead1cf
+		sourceLineageTag: Type
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_num
+		dataType: string
+		lineageTag: 1b852762-fd19-4378-a2ab-f7463805cec4
+		sourceLineageTag: From_num
+		summarizeBy: none
+		sourceColumn: From_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_name
+		dataType: string
+		lineageTag: e3cd7417-8fcb-4999-bdca-7c2f3a9cd315
+		sourceLineageTag: From_name
+		summarizeBy: none
+		sourceColumn: From_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_num
+		dataType: string
+		lineageTag: d9984bb3-2f15-4743-92a1-f2bb0a7e73b3
+		sourceLineageTag: To_num
+		summarizeBy: none
+		sourceColumn: To_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_name
+		dataType: string
+		lineageTag: f676ac77-1e58-465b-a9b2-cf3f71deb673
+		sourceLineageTag: To_name
+		summarizeBy: none
+		sourceColumn: To_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: f512788e-5776-462d-9660-b6a3bb15a6da
+		sourceLineageTag: Amount
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Balance
+		dataType: int64
+		formatString: 0
+		lineageTag: b58e734a-2254-422a-8e0d-83bad986895a
+		sourceLineageTag: Balance
+		summarizeBy: sum
+		sourceColumn: Balance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Listing_hierachique3 = entity
+		mode: directLake
+		source
+			entityName: Listing_hierachique3
+			schemaName: dbo
+			expressionSource: 'DirectLake – Warehouse_DEV_Sales_data'
+

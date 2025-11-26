@@ -1,0 +1,38 @@
+table Cluster
+	lineageTag: b832906c-e652-412e-a1cd-677d83aed978
+	sourceLineageTag: [dbo].[Cluster]
+
+	column Centre_
+		dataType: string
+		lineageTag: 37913d03-0dc1-4f0d-9857-8961ca14c757
+		sourceLineageTag: Centre_
+		summarizeBy: none
+		sourceColumn: Centre_
+
+		annotation SummarizationSetBy = Automatic
+
+	column SA_incharge
+		dataType: string
+		lineageTag: 5de23f0e-2975-434e-96ac-dfe9312abbd2
+		sourceLineageTag: SA_incharge
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: 000a7096-4eab-439f-9777-70ffa6ccf8ae
+		sourceLineageTag: Cluster
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cluster = entity
+		mode: directLake
+		source
+			entityName: Cluster
+			schemaName: dbo
+			expressionSource: 'DirectLake – Warehouse_DEV_Sales_data'
+

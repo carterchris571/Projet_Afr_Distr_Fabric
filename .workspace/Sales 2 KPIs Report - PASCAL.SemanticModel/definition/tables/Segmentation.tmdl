@@ -1,0 +1,94 @@
+table Segmentation
+	lineageTag: 2c7f7510-1fc3-465f-ad68-f3e674a17684
+	sourceLineageTag: b2855f3b-d403-41bc-b207-ecef7ff91903
+
+	column Num_POS
+		dataType: string
+		isNullable: false
+		lineageTag: c1f8f21b-2cdd-4734-a579-5f822fb2e486
+		sourceLineageTag: bd25bc1c-421d-4bc3-92c3-37467b564cf9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Num_POS
+
+		annotation SummarizationSetBy = User
+
+	column Zone
+		dataType: string
+		lineageTag: 84cf4e2f-db85-4793-9376-827c44e349da
+		sourceLineageTag: 234ef3d1-83ff-4449-8f72-bab537f0a0ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = User
+
+	column SA_incharge
+		dataType: string
+		lineageTag: 706d5e04-76be-4b6a-ad40-6d42931943df
+		sourceLineageTag: bee95303-f2bf-44e6-9841-0a9e5dd73f11
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		lineageTag: a6310475-c28b-4d1e-83cd-ca5e5bd1d18e
+		sourceLineageTag: 1d636a6f-1476-45aa-a877-4b4c0172b115
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	column Site_name
+		dataType: string
+		lineageTag: bb9bf5be-a602-43ef-9e99-c31d768b86ea
+		sourceLineageTag: e0a073af-790d-4c06-883f-9885fb54db5a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Site_name
+
+		annotation SummarizationSetBy = User
+
+	column site_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 938ababf-dbf1-42d0-a020-94bf8bac3c1a
+		sourceLineageTag: f0ec606d-bf44-49b8-901e-cce7e5863e9d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: site_id
+
+		annotation SummarizationSetBy = User
+
+	column Segment_group
+		dataType: string
+		lineageTag: 928551a6-9671-402b-9f02-4fcf4f9943ec
+		sourceLineageTag: 320c04a2-137e-44ba-8302-0d86a7fb4977
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Segment_group
+
+		annotation SummarizationSetBy = User
+
+	column Seg_gpre
+		dataType: string
+		lineageTag: 7db2e62a-6376-40a1-a746-9178f185dc7c
+		sourceLineageTag: ef71c38e-9068-445e-a431-cd11003d1eb2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Seg_gpre
+
+		annotation SummarizationSetBy = User
+
+	partition Segmentation = entity
+		mode: directQuery
+		source
+			entityName: Segmentation
+			expressionSource: 'DirectQuery à AS – Modele_KPI_sales'
+
+	annotation PBI_ResultType = Exception
+

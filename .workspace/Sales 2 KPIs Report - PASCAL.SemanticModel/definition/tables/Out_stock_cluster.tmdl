@@ -1,0 +1,115 @@
+table Out_stock_cluster
+	lineageTag: 02245e21-ef07-4b42-b993-5c42ffac197c
+	sourceLineageTag: 0bfb7afe-a761-4978-9378-80af432aa24e
+
+	column Date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: d6374947-d405-443e-831d-5d8e08d8a983
+		sourceLineageTag: 6c859709-f865-481d-8235-381ccea916aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Zone
+		dataType: string
+		lineageTag: 8b96cfe3-f152-4e04-9909-e4565609a1f8
+		sourceLineageTag: 66297a61-4929-4d5a-bcee-37dbe94c77a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = User
+
+	column SA_name
+		dataType: string
+		lineageTag: 463cb05f-fc1c-4b39-8330-a1a8d2c49140
+		sourceLineageTag: aa3848df-0aaa-49b9-9e6b-f0c8420fea9b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SA_name
+
+		annotation SummarizationSetBy = User
+
+	column Territory
+		dataType: string
+		lineageTag: 1352a472-dda4-479b-9b29-2d1cae573156
+		sourceLineageTag: 15b36333-b4e1-4918-9a1f-21939f46f2ac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		lineageTag: 0677e378-44be-4119-82ba-cbb39dc613a7
+		sourceLineageTag: 74595370-ba3f-4726-947b-f7ceed80955f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	column #Distinct_HVC
+		dataType: int64
+		formatString: 0
+		lineageTag: 26358089-277a-4d34-b96e-70ec4f9efc2b
+		sourceLineageTag: a7d497cc-3d52-42ff-84ac-76ebcfb97760
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: #Distinct_HVC
+
+		annotation SummarizationSetBy = User
+
+	column #Avg_HVC_OOS
+		dataType: int64
+		formatString: 0
+		lineageTag: 01d110bf-8d9c-41fd-bd8d-03cc48b35e74
+		sourceLineageTag: f2566578-2562-43db-a0d2-9e2e2e898ab9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: #Avg_HVC_OOS
+
+		annotation SummarizationSetBy = User
+
+	column #day_HVC
+		dataType: double
+		lineageTag: aec6a906-fcc5-42c2-8602-5ca32566de4b
+		sourceLineageTag: 47ae1e98-4011-49b1-90dd-920ec1a595b1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: #day_HVC
+
+		annotation SummarizationSetBy = User
+
+	column %OOS_HVC
+		dataType: double
+		lineageTag: 0d1ae8f2-9c59-476a-9c78-5a3bd0f301e3
+		sourceLineageTag: 84552ffd-5a56-4043-9595-42900f533bab
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: %OOS_HVC
+
+		annotation SummarizationSetBy = User
+
+	column P_OOS
+		dataType: double
+		lineageTag: 4e33ed12-c239-4497-bc2c-a2ba28916c2c
+		sourceLineageTag: 57e752d6-08ce-4784-b75a-ed1107da2eb5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: P_OOS
+
+		annotation SummarizationSetBy = User
+
+	partition Out_stock_cluster = entity
+		mode: directQuery
+		source
+			entityName: Out_stock_cluster
+			expressionSource: 'DirectQuery à AS – Modele_KPI_sales'
+
+	annotation PBI_ResultType = Exception
+
