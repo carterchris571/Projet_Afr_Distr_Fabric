@@ -13,7 +13,6 @@ annotation PBI_QueryOrder = ["DatabaseQuery"]
 
 annotation PBI_ProTooling = ["WebModelingEdit","DaxQueryView_Desktop"]
 
-ref table Listing_union_nettoye
 ref table Segmentation
 ref table Cluster
 ref table Net_adds_cluster
@@ -21,4 +20,5 @@ ref table Out_stock_cluster
 ref table DTR_DTC_cluster
 ref table Date_table
 ref table Mesure
+ref table Listing_hierachique3
 

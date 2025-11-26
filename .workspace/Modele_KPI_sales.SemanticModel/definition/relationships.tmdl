@@ -14,14 +14,6 @@ relationship 85081776-fd1e-c1b3-00ee-7f528a4fc687
 	fromColumn: Out_stock_cluster.Cluster
 	toColumn: Cluster.Cluster
 
-relationship f710829f-e2a6-bd5c-7b6e-3b6462837545
-	fromColumn: Listing_union_nettoye.To_num
-	toColumn: Segmentation.Num_POS
-
-relationship 0dbfe05b-f101-d2da-95e2-60bc3370a671
-	fromColumn: Listing_union_nettoye.Date
-	toColumn: Date_table.Date
-
 relationship 009887ba-aa1a-d0cf-df70-32040eddf5d0
 	fromColumn: DTR_DTC_cluster.Date
 	toColumn: Date_table.Date
@@ -33,4 +25,8 @@ relationship d7cf193a-6a31-ac15-3c57-bd4af1641469
 relationship 0d004322-f2d4-3649-145b-69cfab2e91d9
 	fromColumn: Out_stock_cluster.Date
 	toColumn: Date_table.Date
+
+relationship 7a6c92d2-9105-8e0f-95a8-092984624c44
+	fromColumn: Listing_hierachique3.From_num
+	toColumn: Segmentation.Num_POS
 

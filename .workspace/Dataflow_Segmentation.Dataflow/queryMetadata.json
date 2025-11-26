@@ -5,14 +5,20 @@
   "queryGroups": [],
   "documentLocale": "fr-FR",
   "queriesMetadata": {
-    "Segmentation centre 2 et 3 xlsx": {
-      "queryId": "3b2ba848-5727-45f4-8a8b-87d013685696",
-      "queryName": "Segmentation centre 2 et 3 xlsx",
+    "segmentation q4 xlsx": {
+      "queryId": "0621cb55-cbdc-452b-8440-451ec7f8c375",
+      "queryName": "segmentation q4 xlsx",
       "loadEnabled": false
     },
-    "Segmentation centre 2 et 3 xlsx_DataDestination": {
-      "queryId": "d5bed438-4816-4930-b82b-578a28c34d20",
-      "queryName": "Segmentation centre 2 et 3 xlsx_DataDestination",
+    "NavigationQuery": {
+      "queryId": "eb926e68-84c9-4211-8724-c1889216835e",
+      "queryName": "NavigationQuery",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "segmentation q4 xlsx_DataDestination": {
+      "queryId": "1d8eafd4-cc1b-40d8-afaf-1b12e9cc509e",
+      "queryName": "segmentation q4 xlsx_DataDestination",
       "isHidden": true,
       "loadEnabled": false
     }

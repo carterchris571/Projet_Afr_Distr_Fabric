@@ -16,7 +16,7 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Dataflow_df_Listing",
+        "name": "Dataflow_df_listing3",
         "dependsOn": []
       },
       {
@@ -27,10 +27,10 @@
             "datasetSettings": {
               "type": "LakehouseTable",
               "typeProperties": {
-                "table": "Listing_hierachie_nettoye"
+                "table": "Listing_hierachie_nettoye3"
               },
               "schema": [],
-              "linkedService": {
+              "connectionSettings": {
                 "name": "LakeH_AfriDistr_DEV",
                 "properties": {
                   "type": "Lakehouse",
@@ -38,6 +38,9 @@
                     "artifactId": "29fedf56-61fd-ab94-4106-77990229fa72",
                     "workspaceId": "00000000-0000-0000-0000-000000000000",
                     "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "cc5be692-afd3-4cf0-a0e1-848892f62ca1"
                   },
                   "annotations": []
                 }
@@ -54,10 +57,10 @@
               "type": "DataWarehouseTable",
               "typeProperties": {
                 "schema": "dbo",
-                "table": "Listing_union_nettoye"
+                "table": "Listing_hierachique3"
               },
               "schema": [],
-              "linkedService": {
+              "connectionSettings": {
                 "name": "Warehouse_DEV_Sales_data",
                 "properties": {
                   "type": "DataWarehouse",
@@ -65,6 +68,9 @@
                     "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
                     "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
                     "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
+                  },
+                  "externalReferences": {
+                    "connection": "4748d170-aefc-4384-a126-def32992e530"
                   },
                   "annotations": []
                 }
@@ -89,10 +95,10 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Copy_data_Listing",
+        "name": "Copy_data",
         "dependsOn": [
           {
-            "activity": "Dataflow_df_Listing",
+            "activity": "Dataflow_df_listing3",
             "dependencyConditions": [
               "Succeeded"
             ]

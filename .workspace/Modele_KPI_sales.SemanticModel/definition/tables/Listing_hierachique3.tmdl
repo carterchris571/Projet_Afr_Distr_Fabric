@@ -1,11 +1,22 @@
-table Listing_union_nettoye
-	lineageTag: b639f0b6-5f71-4d2c-bd97-74a41b303fbf
-	sourceLineageTag: [dbo].[Listing_union_nettoye]
+table Listing_hierachique3
+	lineageTag: 86b31681-2ab9-4de6-8bd4-0e0578ee8816
+	sourceLineageTag: [dbo].[Listing_hierachique3]
+
+	column Date_modifie
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: ef629f7d-8a00-4a1e-a40e-7c2a13536215
+		sourceLineageTag: Date_modifie
+		summarizeBy: none
+		sourceColumn: Date_modifie
+
+		annotation SummarizationSetBy = Automatic
 
 	column Id
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: ed41a1d2-da98-4d06-aff1-9337b541b9c1
+		lineageTag: 9bbdba1e-b5ea-46de-ae3d-2d6fa1c8ab3f
 		sourceLineageTag: Id
 		summarizeBy: none
 		sourceColumn: Id
@@ -16,7 +27,7 @@ table Listing_union_nettoye
 		dataType: dateTime
 		formatString: General Date
 		sourceProviderType: date
-		lineageTag: 82c5c303-4abe-4e26-95e3-b1e6adfd37ab
+		lineageTag: 780cf95c-7759-458f-9ae0-fca3b2669652
 		sourceLineageTag: Date
 		summarizeBy: none
 		sourceColumn: Date
@@ -26,7 +37,7 @@ table Listing_union_nettoye
 	column Status
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: 62bf3c47-d194-4faa-af7b-f8e9f13222a3
+		lineageTag: 6a13074e-284d-4f80-ae56-8fa660295491
 		sourceLineageTag: Status
 		summarizeBy: none
 		sourceColumn: Status
@@ -36,7 +47,7 @@ table Listing_union_nettoye
 	column Type
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: b3c4dad9-aeb2-49b2-a8a6-a95c9d1219f6
+		lineageTag: db895095-b2ca-40b6-8ddc-ca672db61702
 		sourceLineageTag: Type
 		summarizeBy: none
 		sourceColumn: Type
@@ -46,7 +57,7 @@ table Listing_union_nettoye
 	column From_num
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: 6bcb832a-3633-49d0-8ade-6a74defb56a0
+		lineageTag: 4995b125-3bee-4adf-abf8-066af763a9fa
 		sourceLineageTag: From_num
 		summarizeBy: none
 		sourceColumn: From_num
@@ -56,7 +67,7 @@ table Listing_union_nettoye
 	column From_name
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: e610142d-4865-482f-ba4e-90a8571c9b3f
+		lineageTag: 43585810-0d1a-4616-bacb-23eedae17254
 		sourceLineageTag: From_name
 		summarizeBy: none
 		sourceColumn: From_name
@@ -66,7 +77,7 @@ table Listing_union_nettoye
 	column To_num
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: ea1d632f-abcd-4212-92d1-f17af8568ebb
+		lineageTag: a0fbc895-9afa-4f19-8347-b21e110f4ce3
 		sourceLineageTag: To_num
 		summarizeBy: none
 		sourceColumn: To_num
@@ -76,7 +87,7 @@ table Listing_union_nettoye
 	column To_name
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: f0866948-8640-4d6c-ac89-0627a2e189a4
+		lineageTag: 75d4ac29-b449-49de-accd-a58d2ac2d7f0
 		sourceLineageTag: To_name
 		summarizeBy: none
 		sourceColumn: To_name
@@ -87,7 +98,7 @@ table Listing_union_nettoye
 		dataType: int64
 		formatString: 0
 		sourceProviderType: bigint
-		lineageTag: 485aa493-d40d-4922-9ebb-835c179d215d
+		lineageTag: 3dc2b8fc-b364-4c38-83b8-c743b92ffee9
 		sourceLineageTag: Amount
 		summarizeBy: sum
 		sourceColumn: Amount
@@ -98,17 +109,17 @@ table Listing_union_nettoye
 		dataType: int64
 		formatString: 0
 		sourceProviderType: bigint
-		lineageTag: 59684867-81ed-4709-8d09-3c90703ab72d
+		lineageTag: 40751290-c93c-448a-b0a4-eebd292d928c
 		sourceLineageTag: Balance
 		summarizeBy: sum
 		sourceColumn: Balance
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Listing_union_nettoye = entity
+	partition Listing_hierachique3 = entity
 		mode: directLake
 		source
-			entityName: Listing_union_nettoye
+			entityName: Listing_hierachique3
 			schemaName: dbo
 			expressionSource: DatabaseQuery
 

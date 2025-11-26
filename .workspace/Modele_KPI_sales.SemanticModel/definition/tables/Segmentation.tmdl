@@ -73,6 +73,16 @@ table Segmentation
 
 		annotation SummarizationSetBy = Automatic
 
+	column Seg_gpre
+		dataType: string
+		sourceProviderType: varchar(255)
+		lineageTag: ef71c38e-9068-445e-a431-cd11003d1eb2
+		sourceLineageTag: Seg_gpre
+		summarizeBy: none
+		sourceColumn: Seg_gpre
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Segmentation = entity
 		mode: directLake
 		source
