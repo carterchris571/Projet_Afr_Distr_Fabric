@@ -23,6 +23,6 @@ shared #"segmentation q4 xlsx_DataDestination" = let
   Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
   Navigation_2 = Navigation_1{[lakehouseId = "0229fa72-7799-4106-ab94-61fd29fedf56"]}[Data],
-  TableNavigation = Navigation_2{[Id = "Segmentation_N1_DEV_nettoye", ItemKind = "Table"]}?[Data]?
+  TableNavigation = Navigation_2{[Id = "Segmentation_nettoye2", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;

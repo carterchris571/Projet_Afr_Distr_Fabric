@@ -1,6 +1,6 @@
 [StagingDefinition = [Kind = "FastCopy"]]
 section Section1;
-[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Net add par cluster_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
+[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Net add par cluster_DataDestination", IsNewTarget = false], Settings = [Kind = "Manual", AllowCreation = false, ColumnSettings = [Mappings = {[SourceColumnName = "Date", DestinationColumnName = "Date"], [SourceColumnName = "Zone", DestinationColumnName = "Zone"], [SourceColumnName = "Territory", DestinationColumnName = "Territory"], [SourceColumnName = "Cluster", DestinationColumnName = "Cluster"], [SourceColumnName = "GA_day", DestinationColumnName = "GA_day"], [SourceColumnName = "GA_day_perf", DestinationColumnName = "GA_day_perf"], [SourceColumnName = "GA_MTD", DestinationColumnName = "GA_MTD"], [SourceColumnName = "GA_MTD_gap", DestinationColumnName = "GA_MTD_gap"], [SourceColumnName = "GA_MTD_perf", DestinationColumnName = "GA_MTD_perf"], [SourceColumnName = "Net_adds", DestinationColumnName = "Net_adds"], [SourceColumnName = "Target_GA_day", DestinationColumnName = "Target_GA_day"]}], DynamicSchema = false, UpdateMethod = [Kind = "Replace"], TypeSettings = [Kind = "Table"]]]}]
 shared #"Net add par cluster" = let
   Source = Lakehouse.Contents([]),
   #"Navigation 1" = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
@@ -20,13 +20,15 @@ shared #"Net add par cluster" = let
   #"Type de colonne changé 1" = Table.TransformColumnTypes(#"Colonnes renommées", {{"GA_day", Int64.Type}, {"GA_day_perf", type number}, {"GA_MTD", Int64.Type}, {"GA_MTD_gap", type number}, {"GA_MTD_perf", type number}, {"Net_adds", Int64.Type}}),
   #"Colonne personnalisée ajoutée 1" = Table.TransformColumnTypes(Table.AddColumn(#"Type de colonne changé 1", "Target GA day", each [GA_day] / [GA_day_perf]), {{"Target GA day", type number}}),
   #"Type de colonne changé 2" = Table.TransformColumnTypes(#"Colonne personnalisée ajoutée 1", {{"Date", type date}}),
-  #"Colonnes renommées 1" = Table.RenameColumns(#"Type de colonne changé 2", {{"Target GA day", "Target_GA_day"}})
+  #"Colonnes renommées 1" = Table.RenameColumns(#"Type de colonne changé 2", {{"Target GA day", "Target_GA_day"}}),
+  #"Valeur remplacée" = Table.ReplaceValue(#"Colonnes renommées 1", #nan, 0, (value, old, new) => if Number.IsNaN(value) then new else value, {"Target_GA_day"}),
+  #"Type de colonne changé 3" = Table.TransformColumnTypes(#"Valeur remplacée", {{"Target_GA_day", type number}})
 in
-  #"Colonnes renommées 1";
+  #"Type de colonne changé 3";
 shared #"Net add par cluster_DataDestination" = let
-  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
+  Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
   Navigation_2 = Navigation_1{[lakehouseId = "0229fa72-7799-4106-ab94-61fd29fedf56"]}[Data],
-  TableNavigation = Navigation_2{[Id = "Net_add_cluster_nettoyé", ItemKind = "Table"]}?[Data]?
+  TableNavigation = Navigation_2{[Id = "Net_add_cluster_nettoye", ItemKind = "Table"]}[Data]
 in
   TableNavigation;

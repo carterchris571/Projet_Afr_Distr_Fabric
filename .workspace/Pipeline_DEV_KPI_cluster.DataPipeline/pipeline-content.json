@@ -74,6 +74,209 @@
           },
           "translator": {
             "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "Date",
+                  "type": "Date",
+                  "physicalType": "date"
+                },
+                "sink": {
+                  "name": "Date",
+                  "physicalType": "date"
+                }
+              },
+              {
+                "source": {
+                  "name": "Zone",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "Zone",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "Territory",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "Territory",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "Cluster",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "Cluster",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTR Day Perf",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTR Day Perf",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTR Day",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTR Day",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTC Day",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTC Day",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTC Day Perf",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTC Day Perf",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "Lo MTD Perf",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "Lo MTD Perf",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTR MTD",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTR MTD",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTR MoM",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTR MoM",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTR Gap vs LM",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTR Gap vs LM",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTC MTD",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTC MTD",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTC MTD Perf",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTC MTD Perf",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTC MoM",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTC MoM",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "DTC Gap vs LM",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "DTC Gap vs LM",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "Target DTR day",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "Target DTR day",
+                  "physicalType": "float"
+                }
+              },
+              {
+                "source": {
+                  "name": "Target DTC day",
+                  "type": "Double",
+                  "physicalType": "double"
+                },
+                "sink": {
+                  "name": "Target DTC day",
+                  "physicalType": "float"
+                }
+              }
+            ],
             "typeConversion": true,
             "typeConversionSettings": {
               "allowDataTruncation": true,
@@ -92,7 +295,7 @@
         "name": "Copy_data_DTR_DTC_cluster",
         "dependsOn": [
           {
-            "activity": "Dataflow_df_DTR_DTC_cluster",
+            "activity": "Script1 truncate DTR DTC cluster",
             "dependencyConditions": [
               "Succeeded"
             ]
@@ -116,86 +319,6 @@
         },
         "name": "Dataflow_df_Net_adds_cluster",
         "dependsOn": []
-      },
-      {
-        "type": "Copy",
-        "typeProperties": {
-          "source": {
-            "type": "LakehouseTableSource",
-            "datasetSettings": {
-              "type": "LakehouseTable",
-              "typeProperties": {
-                "table": "Net_add_cluster_nettoyé"
-              },
-              "schema": [],
-              "linkedService": {
-                "name": "LakeH_AfriDistr_DEV",
-                "properties": {
-                  "type": "Lakehouse",
-                  "typeProperties": {
-                    "artifactId": "29fedf56-61fd-ab94-4106-77990229fa72",
-                    "workspaceId": "00000000-0000-0000-0000-000000000000",
-                    "rootFolder": "Tables"
-                  },
-                  "annotations": []
-                }
-              },
-              "annotations": []
-            }
-          },
-          "sink": {
-            "type": "DataWarehouseSink",
-            "tableOption": "autoCreate",
-            "allowCopyCommand": true,
-            "copyCommandSettings": {},
-            "datasetSettings": {
-              "type": "DataWarehouseTable",
-              "typeProperties": {
-                "schema": "dbo",
-                "table": "Net_adds_cluster"
-              },
-              "schema": [],
-              "linkedService": {
-                "name": "Warehouse_DEV_Sales_data",
-                "properties": {
-                  "type": "DataWarehouse",
-                  "typeProperties": {
-                    "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
-                    "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
-                    "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
-                  },
-                  "annotations": []
-                }
-              },
-              "annotations": []
-            }
-          },
-          "translator": {
-            "type": "TabularTranslator",
-            "typeConversion": true,
-            "typeConversionSettings": {
-              "allowDataTruncation": true,
-              "treatBooleanAsNumber": false
-            }
-          },
-          "enableStaging": true
-        },
-        "policy": {
-          "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
-          "secureInput": false,
-          "secureOutput": false
-        },
-        "name": "Copy_data_Net_adds_cluster",
-        "dependsOn": [
-          {
-            "activity": "Dataflow_df_Net_adds_cluster",
-            "dependencyConditions": [
-              "Succeeded"
-            ]
-          }
-        ]
       },
       {
         "type": "RefreshDataflow",
@@ -226,7 +349,7 @@
                 "table": "Out_stock_cluster_nettoye"
               },
               "schema": [],
-              "linkedService": {
+              "connectionSettings": {
                 "name": "LakeH_AfriDistr_DEV",
                 "properties": {
                   "type": "Lakehouse",
@@ -234,6 +357,9 @@
                     "artifactId": "29fedf56-61fd-ab94-4106-77990229fa72",
                     "workspaceId": "00000000-0000-0000-0000-000000000000",
                     "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "cc5be692-afd3-4cf0-a0e1-848892f62ca1"
                   },
                   "annotations": []
                 }
@@ -253,7 +379,7 @@
                 "table": "Out_stock_cluster"
               },
               "schema": [],
-              "linkedService": {
+              "connectionSettings": {
                 "name": "Warehouse_DEV_Sales_data",
                 "properties": {
                   "type": "DataWarehouse",
@@ -261,6 +387,9 @@
                     "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
                     "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
                     "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
+                  },
+                  "externalReferences": {
+                    "connection": "4748d170-aefc-4384-a126-def32992e530"
                   },
                   "annotations": []
                 }
@@ -285,7 +414,231 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Copy_data_Out_stock_cluster",
+        "name": "Copy data out of stock",
+        "dependsOn": [
+          {
+            "activity": "Script1 truncate oout of stock",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "Net_add_cluster_nettoye"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "LakeH_AfriDistr_DEV",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "29fedf56-61fd-ab94-4106-77990229fa72",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "cc5be692-afd3-4cf0-a0e1-848892f62ca1"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "tableOption": "autoCreate",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "datasetSettings": {
+              "type": "DataWarehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Net_adds_cluster"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Warehouse_DEV_Sales_data",
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
+                    "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
+                  },
+                  "externalReferences": {
+                    "connection": "4748d170-aefc-4384-a126-def32992e530"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy datanet add",
+        "dependsOn": [
+          {
+            "activity": "Script1 truncate Net adds cluster",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "scripts": [
+            {
+              "text": {
+                "value": "TRUNCATE TABLE dbo.Net_adds_cluster;",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "connectionSettings": {
+          "name": "Warehouse_DEV_Sales_data",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
+              "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
+            },
+            "externalReferences": {
+              "connection": "4748d170-aefc-4384-a126-def32992e530"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Script1 truncate Net adds cluster",
+        "dependsOn": [
+          {
+            "activity": "Dataflow_df_Net_adds_cluster",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "scripts": [
+            {
+              "text": {
+                "value": "TRUNCATE TABLE dbo.DTR_DTC_cluster;",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "connectionSettings": {
+          "name": "Warehouse_DEV_Sales_data",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
+              "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
+            },
+            "externalReferences": {
+              "connection": "4748d170-aefc-4384-a126-def32992e530"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Script1 truncate DTR DTC cluster",
+        "dependsOn": [
+          {
+            "activity": "Dataflow_df_DTR_DTC_cluster",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "scripts": [
+            {
+              "text": {
+                "value": "TRUNCATE TABLE dbo.Out_stock_cluster;",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "connectionSettings": {
+          "name": "Warehouse_DEV_Sales_data",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
+              "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
+            },
+            "externalReferences": {
+              "connection": "4748d170-aefc-4384-a126-def32992e530"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Script1 truncate oout of stock",
         "dependsOn": [
           {
             "activity": "Dataflow_df_Out_stock_cluster",

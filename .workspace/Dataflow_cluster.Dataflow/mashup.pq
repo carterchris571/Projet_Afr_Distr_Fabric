@@ -1,6 +1,6 @@
 [StagingDefinition = [Kind = "FastCopy"]]
 section Section1;
-[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Cluster_nettoyé_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
+[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Cluster_nettoyé_DataDestination", IsNewTarget = false], Settings = [Kind = "Manual", AllowCreation = false, ColumnSettings = [Mappings = {[SourceColumnName = "Centre ", DestinationColumnName = "Centre_"], [SourceColumnName = "sa_incharge", DestinationColumnName = "SA_incharge"], [SourceColumnName = "quartier", DestinationColumnName = "Cluster"]}], DynamicSchema = false, UpdateMethod = [Kind = "Replace"], TypeSettings = [Kind = "Table"]]]}]
 shared Cluster_nettoyé = let
   Source = Lakehouse.Contents([]),
   #"Navigation 1" = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
@@ -15,9 +15,9 @@ shared Cluster_nettoyé = let
 in
   #"En-têtes promus";
 shared Cluster_nettoyé_DataDestination = let
-  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
+  Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
   Navigation_2 = Navigation_1{[lakehouseId = "0229fa72-7799-4106-ab94-61fd29fedf56"]}[Data],
-  TableNavigation = Navigation_2{[Id = "Cluster_nettoyé", ItemKind = "Table"]}?[Data]?
+  TableNavigation = Navigation_2{[Id = "Cluster_nettoye", ItemKind = "Table"]}[Data]
 in
   TableNavigation;
