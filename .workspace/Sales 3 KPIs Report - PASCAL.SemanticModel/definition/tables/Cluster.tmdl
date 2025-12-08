@@ -1,0 +1,61 @@
+table Cluster
+	lineageTag: 5b9fee50-d1f3-4405-8bb2-72d6527245d6
+	sourceLineageTag: e5d445e2-6cab-45b9-8a0c-1baf7e87cf5b
+
+	column Centre
+		dataType: string
+		lineageTag: 75588f72-856f-470b-b53e-3d9f5b7b0121
+		sourceLineageTag: 913d6997-f0f6-4375-9e89-5addf53903af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Centre
+
+		annotation SummarizationSetBy = User
+
+	column SA_incharge
+		dataType: string
+		lineageTag: f5d167d7-b12e-4f8f-8c7b-92537db683d5
+		sourceLineageTag: 3c363899-2a0e-48a8-8d58-dc906d01cf04
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		isKey
+		isNullable: false
+		lineageTag: 1f2fcf9b-4c0b-470d-a64d-199ba93e52f0
+		sourceLineageTag: d30e1100-0b81-4705-b5c9-c3057e7a59e6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	hierarchy 'Centre Hierarchy'
+		lineageTag: 732d2bba-18c3-40af-afbc-b5f522ad2463
+		sourceLineageTag: 88d9ac92-7b34-43f8-a9a0-cb3d46ff34e1
+
+		level Centre
+			lineageTag: f6d16c86-235e-49dc-8f9a-cb4703d4ef1e
+			sourceLineageTag: 8c255b2b-2d9c-4f09-9913-a4dd4ca0ea3f
+			column: Centre
+
+		level SA_incharge
+			lineageTag: dd402843-a617-4d51-8599-1183fe309fd9
+			sourceLineageTag: b8263b33-38e7-4d01-a451-13d9f09e860a
+			column: SA_incharge
+
+		level Cluster
+			lineageTag: 30e46b8c-123e-4cbb-a1c9-cfc0f9a6f484
+			sourceLineageTag: b7529b7a-d58e-4be5-b19e-302def2a6254
+			column: Cluster
+
+	partition Cluster = entity
+		mode: directQuery
+		source
+			entityName: Cluster
+			expressionSource: 'DirectQuery à AS – Modele_KPI_sales'
+
