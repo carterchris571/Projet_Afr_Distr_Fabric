@@ -12,9 +12,13 @@ shared #"segmentation q4 xlsx" = let
   Navigation = #"Classeur Excel importé"{[Item = "Feuil1", Kind = "Sheet"]}[Data],
   #"En-têtes promus" = Table.PromoteHeaders(Navigation, [PromoteAllScalars = true]),
   #"Type de colonne changé" = Table.TransformColumnTypes(#"En-têtes promus", {{"MSISDN", Int64.Type}, {"Locality", type text}, {"Cluster", type text}, {"Territory", type text}, {"Zone", type text}, {"Segment Group", type text}, {"SA incharge", type text}}, "fr"),
-  #"Type de colonne changé 1" = Table.TransformColumnTypes(#"Type de colonne changé", {{"MSISDN", type text}})
+  #"Type de colonne changé 1" = Table.TransformColumnTypes(#"Type de colonne changé", {{"MSISDN", type text}}),
+  #"Lignes filtrées" = Table.SelectRows(#"Type de colonne changé 1", each [Cluster] <> null),
+  #"Colonne dupliquée" = Table.DuplicateColumn(#"Lignes filtrées", "Segment Group", "Segment Group - Copier"),
+  #"Texte extrait après le délimiteur" = Table.TransformColumns(#"Colonne dupliquée", {{"Segment Group - Copier", each Text.AfterDelimiter(_, "-", 0), type text}}),
+  #"Colonnes renommées" = Table.RenameColumns(#"Texte extrait après le délimiteur", {{"Segment Group - Copier", "Seg_gpre"}})
 in
-  #"Type de colonne changé 1";
+  #"Colonnes renommées";
 shared NavigationQuery = let
   Source = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false])
 in
@@ -23,6 +27,6 @@ shared #"segmentation q4 xlsx_DataDestination" = let
   Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
   Navigation_2 = Navigation_1{[lakehouseId = "0229fa72-7799-4106-ab94-61fd29fedf56"]}[Data],
-  TableNavigation = Navigation_2{[Id = "Segmentation_nettoye2", ItemKind = "Table"]}?[Data]?
+  TableNavigation = Navigation_2{[Id = "Segmentation_nettoye3", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;

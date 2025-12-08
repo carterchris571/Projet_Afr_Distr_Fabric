@@ -1,10 +1,10 @@
 table DTR_DTC_cluster
-	lineageTag: ca0897cb-7a9f-4801-9cb7-afa7c1b0e09c
+	lineageTag: 9e348f30-4e55-4745-8132-e5648eb59520
 	sourceLineageTag: 538be9cb-3ceb-44d5-9e06-f66e8c3b6aba
 
 	column 'DTC MTD'
 		dataType: double
-		lineageTag: fccd04ad-7889-4ac2-9cd2-278fd13fb700
+		lineageTag: 4a495233-d60a-4d89-8ec3-50383dab3f22
 		sourceLineageTag: 9c0426d3-bce1-4760-a8bf-3a3c16f096a3
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -14,7 +14,7 @@ table DTR_DTC_cluster
 
 	column 'DTC MTD Perf'
 		dataType: double
-		lineageTag: 95562f57-c409-4570-9533-6cdad0528222
+		lineageTag: 1c3a4704-a818-4b6b-ad04-269d17c97327
 		sourceLineageTag: ba5d6ad0-feaa-481d-8ae8-e1dbf723e92c
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -24,7 +24,7 @@ table DTR_DTC_cluster
 
 	column 'DTC MoM'
 		dataType: double
-		lineageTag: ad5f6249-3920-434d-a58e-b3c2638987fe
+		lineageTag: fd920b67-ef21-4a0a-91b5-b93342440eac
 		sourceLineageTag: e55c10a1-b009-4a18-9be1-b18df9e15ddf
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -34,7 +34,7 @@ table DTR_DTC_cluster
 
 	column 'DTC Gap vs LM'
 		dataType: double
-		lineageTag: fe475ace-28d3-4d6a-a70f-12336ff2faad
+		lineageTag: 2e012bd5-561b-48fc-afa8-18ebc8e509ea
 		sourceLineageTag: 432c4bd1-4054-4827-9953-dd38b08cfd35
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -44,7 +44,7 @@ table DTR_DTC_cluster
 
 	column 'Target DTR day'
 		dataType: double
-		lineageTag: b90f4e14-93b4-48d8-8e00-cea739a81447
+		lineageTag: 2aeeaf2c-9fd9-4f2a-8bb4-b73c173a4aa8
 		sourceLineageTag: 90ce23f9-86fe-470f-adac-0fe8751d9567
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -54,7 +54,7 @@ table DTR_DTC_cluster
 
 	column 'Target DTC day'
 		dataType: double
-		lineageTag: 53430a37-5479-4298-8cc2-726612354569
+		lineageTag: a04fe52f-1108-40da-b618-119884e3909a
 		sourceLineageTag: 94ba4652-3a66-4e07-b4e7-bd99405db5b3
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -64,7 +64,8 @@ table DTR_DTC_cluster
 
 	column 'DTC Day'
 		dataType: double
-		lineageTag: 1eddd340-5f4e-403f-867d-df40de1ee41b
+		isHidden
+		lineageTag: fd9d2527-2328-4ced-8f02-fa58e7e09d6f
 		sourceLineageTag: 01c79708-22b9-43c2-9b75-23ecab55c3dd
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -74,7 +75,7 @@ table DTR_DTC_cluster
 
 	column 'DTC Day Perf'
 		dataType: double
-		lineageTag: 32bfd6cd-08f3-4efd-b7bb-f827158c6806
+		lineageTag: c58342c9-4058-4ac5-96a2-038989192c84
 		sourceLineageTag: 3675d6ba-6a00-4853-9881-fb070a466dd5
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -84,7 +85,7 @@ table DTR_DTC_cluster
 
 	column 'Lo MTD Perf'
 		dataType: double
-		lineageTag: f4e96080-0824-4b08-b240-de86c339ece3
+		lineageTag: 614e3923-6b3b-483f-88c6-e078b3ddda47
 		sourceLineageTag: 95495a58-ca95-4319-9f93-b7efb5a9f163
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -94,7 +95,7 @@ table DTR_DTC_cluster
 
 	column 'DTR MTD'
 		dataType: double
-		lineageTag: e3ba8dbe-ebff-4cb8-80b7-22afa9de657d
+		lineageTag: fe3e4af1-f472-4a39-93a3-00166047c848
 		sourceLineageTag: 7e2da075-a632-4d42-98d2-6c594e27b200
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -104,7 +105,7 @@ table DTR_DTC_cluster
 
 	column 'DTR MoM'
 		dataType: double
-		lineageTag: 486a51da-4a3c-4ba6-bbc7-2806aa1e1c19
+		lineageTag: 33f602bb-e8d0-4400-8b52-ad73007b048b
 		sourceLineageTag: 1b93acee-1a93-4abf-b0da-b1aed62ff0e7
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -114,7 +115,7 @@ table DTR_DTC_cluster
 
 	column 'DTR Gap vs LM'
 		dataType: double
-		lineageTag: 0c5ed40a-010e-4a32-b906-fd79ee754e51
+		lineageTag: 19746533-fa4c-4b9b-8f7b-42ec2bd3bd81
 		sourceLineageTag: 747ae348-7372-4422-bec0-ed824f0c18f8
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -125,7 +126,7 @@ table DTR_DTC_cluster
 	column Date
 		dataType: dateTime
 		formatString: General Number
-		lineageTag: c946f9eb-c8b6-4e19-88a1-960a63b6ff1a
+		lineageTag: b4a18d26-fbec-4b93-8329-69978b22b2b9
 		sourceLineageTag: e3e75b03-f797-4c83-8c29-f753d7220c8d
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -135,7 +136,7 @@ table DTR_DTC_cluster
 
 	column Zone
 		dataType: string
-		lineageTag: 7bde45f4-cad6-4f8a-b0e0-eb50716542b7
+		lineageTag: 4db9ba32-3243-4b35-b35b-80ad6241f493
 		sourceLineageTag: 47aaaa0d-fef1-4d1b-aa5c-262263b6505b
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -145,7 +146,7 @@ table DTR_DTC_cluster
 
 	column Territory
 		dataType: string
-		lineageTag: 4d9b1195-3052-4bdf-84e3-71cf212cee54
+		lineageTag: ca7d64d4-eded-4419-8aab-a45e637790f3
 		sourceLineageTag: f9ef08ec-85c2-41ab-aee3-886478aededf
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -155,7 +156,7 @@ table DTR_DTC_cluster
 
 	column Cluster
 		dataType: string
-		lineageTag: c3891994-6650-4020-8dad-79f75562f698
+		lineageTag: 9418f00b-e68a-4198-b5f8-0a0e8e04573a
 		sourceLineageTag: 95a16986-0c70-4047-81cd-d8011855f868
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -165,7 +166,7 @@ table DTR_DTC_cluster
 
 	column 'DTR Day Perf'
 		dataType: double
-		lineageTag: 67ce38f1-3d8e-454a-b561-7db0e98d1648
+		lineageTag: e0f7cb46-ebd9-4b34-b5a1-fc84867aca90
 		sourceLineageTag: ec7c3c77-e61d-4647-a8f1-4c7df6f4b9c4
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -175,7 +176,7 @@ table DTR_DTC_cluster
 
 	column 'DTR Day'
 		dataType: double
-		lineageTag: 74947974-cab1-428a-8da3-ae6f8e39eff7
+		lineageTag: 619cbe19-8722-44c5-b6ee-5376f942f409
 		sourceLineageTag: 0fe94f98-d5ac-48f8-8f9c-3c0f4dd0ecc8
 		dataCategory: Uncategorized
 		summarizeBy: sum
@@ -188,6 +189,4 @@ table DTR_DTC_cluster
 		source
 			entityName: DTR_DTC_cluster
 			expressionSource: 'DirectQuery à AS – Modele_KPI_sales'
-
-	annotation PBI_ResultType = Exception
 

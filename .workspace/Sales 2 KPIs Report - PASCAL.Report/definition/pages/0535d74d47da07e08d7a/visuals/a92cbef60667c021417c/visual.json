@@ -239,7 +239,7 @@
                             },
                             {
                               "Literal": {
-                                "Value": "'November'"
+                                "Value": "'December'"
                               }
                             }
                           ]
@@ -308,7 +308,7 @@
                                 "1": [
                                   {
                                     "Literal": {
-                                      "Value": "'November'"
+                                      "Value": "'December'"
                                     }
                                   }
                                 ]
@@ -345,7 +345,7 @@
                         "valueMap": [
                           {
                             "0": "2025",
-                            "1": "November"
+                            "1": "December"
                           }
                         ]
                       }

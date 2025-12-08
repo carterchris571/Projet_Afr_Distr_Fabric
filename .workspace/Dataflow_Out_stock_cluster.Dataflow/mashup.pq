@@ -21,13 +21,13 @@ shared #"OOS et Day stock par cluster" = let
   #"Type de colonne changé 4" = Table.TransformColumnTypes(#"Colonnes renommées", {{"#Distinct_HVC", type number}}),
   #"Colonne personnalisée ajoutée 1" = Table.AddColumn(#"Type de colonne changé 4", "P_OOS", each [#"#_Avg_HVC_OOS"] / [#"#Distinct_HVC"]),
   #"Colonnes renommées 1" = Table.RenameColumns(#"Colonne personnalisée ajoutée 1", {{"#_Avg_HVC_OOS", "#Avg_HVC_OOS"}}),
-  #"Type de colonne changé 2" = Table.TransformColumnTypes(#"Colonnes renommées 1", {{"P_OOS", type number}, {"%OOS_HVC", type number}, {"Date", type date}, {"Avg Float HV POS", type number}, {"Avg OOS HV POS rate MoM", type number}, {"#day_HVC", type number}, {"Avg Active POS", type number}})
+  #"Type de colonne changé 2" = Table.TransformColumnTypes(#"Colonnes renommées 1", {{"P_OOS", type number}, {"%OOS_HVC", type number}, {"Date", type date}, {"Avg Float HV POS", type number}, {"Avg OOS HV POS rate MoM", type number}, {"#day_HVC", type number}, {"Avg Active POS", type number}, {"#Avg_HVC_OOS", type number}})
 in
   #"Type de colonne changé 2";
 shared #"OOS et Day stock par cluster_DataDestination" = let
-  Pattern = Lakehouse.Contents([CreateNavigationProperties = false, EnableFolding = false]),
+  Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
   Navigation_2 = Navigation_1{[lakehouseId = "0229fa72-7799-4106-ab94-61fd29fedf56"]}[Data],
-  TableNavigation = Navigation_2{[Id = "Out_stock_cluster_nettoye", ItemKind = "Table"]}?[Data]?
+  TableNavigation = Navigation_2{[Id = "Out_stock_cluster_nettoye2", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;

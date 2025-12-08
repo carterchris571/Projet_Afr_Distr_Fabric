@@ -1196,8 +1196,8 @@
         ]
       },
       {
-        "name": "Out_stock_cluster",
-        "sourceLineageTag": "[dbo].[Out_stock_cluster]",
+        "name": "Out_stock_cluster2",
+        "sourceLineageTag": "[dbo].[Out_stock_cluster2]",
         "columns": [
           {
             "name": "Date",
@@ -1286,21 +1286,6 @@
             ]
           },
           {
-            "name": "#Avg_HVC_OOS",
-            "dataType": "int64",
-            "sourceColumn": "#Avg_HVC_OOS",
-            "formatString": "0",
-            "sourceProviderType": "bigint",
-            "sourceLineageTag": "#Avg_HVC_OOS",
-            "summarizeBy": "sum",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ]
-          },
-          {
             "name": "#day_HVC",
             "dataType": "double",
             "sourceColumn": "#day_HVC",
@@ -1361,7 +1346,7 @@
             "mode": "directLake",
             "source": {
               "type": "entity",
-              "entityName": "Out_stock_cluster",
+              "entityName": "Out_stock_cluster2",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dbo"
             }
@@ -1375,15 +1360,16 @@
         ]
       },
       {
-        "name": "Segmentation",
-        "sourceLineageTag": "[dbo].[Segmentation]",
+        "name": "Out_stock_cluster",
+        "sourceLineageTag": "[dbo].[Out_stock_cluster]",
         "columns": [
           {
-            "name": "Num_POS",
-            "dataType": "string",
-            "sourceColumn": "Num_POS",
-            "sourceProviderType": "varchar",
-            "sourceLineageTag": "Num_POS",
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "Date",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -1407,11 +1393,25 @@
             ]
           },
           {
-            "name": "SA_incharge",
+            "name": "SA_name",
             "dataType": "string",
-            "sourceColumn": "SA_incharge",
+            "sourceColumn": "SA_name",
             "sourceProviderType": "varchar",
-            "sourceLineageTag": "SA_incharge",
+            "sourceLineageTag": "SA_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Territory",
+            "dataType": "string",
+            "sourceColumn": "Territory",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Territory",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -1435,11 +1435,179 @@
             ]
           },
           {
-            "name": "Site_name",
+            "name": "#Distinct_HVC",
+            "dataType": "double",
+            "sourceColumn": "#Distinct_HVC",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "#Distinct_HVC",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Avg Float HV POS",
+            "dataType": "double",
+            "sourceColumn": "Avg Float HV POS",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Avg Float HV POS",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "#Avg_HVC_OOS",
+            "dataType": "double",
+            "sourceColumn": "#Avg_HVC_OOS",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "#Avg_HVC_OOS",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "%OOS_HVC",
+            "dataType": "double",
+            "sourceColumn": "%OOS_HVC",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "%OOS_HVC",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Avg OOS HV POS rate MoM",
+            "dataType": "double",
+            "sourceColumn": "Avg OOS HV POS rate MoM",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Avg OOS HV POS rate MoM",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "#day_HVC",
+            "dataType": "double",
+            "sourceColumn": "#day_HVC",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "#day_HVC",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Avg Active POS",
+            "dataType": "double",
+            "sourceColumn": "Avg Active POS",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "Avg Active POS",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "P_OOS",
+            "dataType": "double",
+            "sourceColumn": "P_OOS",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "P_OOS",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Out_stock_cluster",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "Segmentation",
+        "sourceLineageTag": "[dbo].[Segmentation]",
+        "columns": [
+          {
+            "name": "MSISDN",
             "dataType": "string",
-            "sourceColumn": "Site_name",
+            "sourceColumn": "MSISDN",
             "sourceProviderType": "varchar",
-            "sourceLineageTag": "Site_name",
+            "sourceLineageTag": "MSISDN",
             "summarizeBy": "none",
             "annotations": [
               {
@@ -1449,13 +1617,12 @@
             ]
           },
           {
-            "name": "site_id",
-            "dataType": "int64",
-            "sourceColumn": "site_id",
-            "formatString": "0",
-            "sourceProviderType": "bigint",
-            "sourceLineageTag": "site_id",
-            "summarizeBy": "sum",
+            "name": "Locality",
+            "dataType": "string",
+            "sourceColumn": "Locality",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Locality",
+            "summarizeBy": "none",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -1464,11 +1631,67 @@
             ]
           },
           {
-            "name": "Segment_group",
+            "name": "Cluster",
             "dataType": "string",
-            "sourceColumn": "Segment_group",
+            "sourceColumn": "Cluster",
             "sourceProviderType": "varchar",
-            "sourceLineageTag": "Segment_group",
+            "sourceLineageTag": "Cluster",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Territory",
+            "dataType": "string",
+            "sourceColumn": "Territory",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Territory",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Zone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Segment Group",
+            "dataType": "string",
+            "sourceColumn": "Segment Group",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Segment Group",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "SA incharge",
+            "dataType": "string",
+            "sourceColumn": "SA incharge",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "SA incharge",
             "summarizeBy": "none",
             "annotations": [
               {

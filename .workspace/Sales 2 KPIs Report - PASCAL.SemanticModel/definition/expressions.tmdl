@@ -7,7 +7,5 @@ expression 'DirectQuery à AS – Modele_KPI_sales' =
 		    Cube
 	lineageTag: 8e298af5-275b-4cd4-b949-394052cbad37
 
-	annotation PBI_IncludeFutureArtifacts = True
-
-	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"75c50cb8-91e1-4411-b9ff-875ad2811244"}},"objectType":"Table"}]
+	annotation PBI_IncludeFutureArtifacts = False
 

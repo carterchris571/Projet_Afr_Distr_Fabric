@@ -20,123 +20,6 @@
         "dependsOn": []
       },
       {
-        "type": "Copy",
-        "typeProperties": {
-          "source": {
-            "type": "LakehouseTableSource",
-            "datasetSettings": {
-              "type": "LakehouseTable",
-              "typeProperties": {
-                "table": "Cluster_nettoyé"
-              },
-              "schema": [],
-              "linkedService": {
-                "name": "LakeH_AfriDistr_DEV",
-                "properties": {
-                  "type": "Lakehouse",
-                  "typeProperties": {
-                    "artifactId": "29fedf56-61fd-ab94-4106-77990229fa72",
-                    "workspaceId": "00000000-0000-0000-0000-000000000000",
-                    "rootFolder": "Tables"
-                  },
-                  "annotations": []
-                }
-              },
-              "annotations": []
-            }
-          },
-          "sink": {
-            "type": "DataWarehouseSink",
-            "allowCopyCommand": true,
-            "copyCommandSettings": {},
-            "datasetSettings": {
-              "type": "DataWarehouseTable",
-              "typeProperties": {
-                "schema": "dbo",
-                "table": "Cluster"
-              },
-              "schema": [],
-              "linkedService": {
-                "name": "Warehouse_DEV_Sales_data",
-                "properties": {
-                  "type": "DataWarehouse",
-                  "typeProperties": {
-                    "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
-                    "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
-                    "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
-                  },
-                  "annotations": []
-                }
-              },
-              "annotations": []
-            }
-          },
-          "translator": {
-            "type": "TabularTranslator",
-            "mappings": [
-              {
-                "source": {
-                  "name": "Centre_",
-                  "type": "String",
-                  "physicalType": "string"
-                },
-                "sink": {
-                  "name": "Centre_",
-                  "physicalType": "varchar",
-                  "length": "8000"
-                }
-              },
-              {
-                "source": {
-                  "name": "sa_incharge",
-                  "type": "String",
-                  "physicalType": "string"
-                },
-                "sink": {
-                  "name": "SA_incharge",
-                  "physicalType": "varchar",
-                  "length": "8000"
-                }
-              },
-              {
-                "source": {
-                  "name": "quartier",
-                  "type": "String",
-                  "physicalType": "string"
-                },
-                "sink": {
-                  "name": "Cluster",
-                  "physicalType": "varchar",
-                  "length": "8000"
-                }
-              }
-            ],
-            "typeConversion": true,
-            "typeConversionSettings": {
-              "allowDataTruncation": true,
-              "treatBooleanAsNumber": false
-            }
-          },
-          "enableStaging": true
-        },
-        "policy": {
-          "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
-          "secureInput": false,
-          "secureOutput": false
-        },
-        "name": "Copy_data_cluster",
-        "dependsOn": [
-          {
-            "activity": "Script truncate cluster",
-            "dependencyConditions": [
-              "Succeeded"
-            ]
-          }
-        ]
-      },
-      {
         "type": "RefreshDataflow",
         "typeProperties": {
           "dataflowId": "3907a854-d4ab-bb56-45e1-3d913f6605f0",
@@ -155,52 +38,6 @@
         "dependsOn": []
       },
       {
-        "type": "Script",
-        "typeProperties": {
-          "scripts": [
-            {
-              "text": {
-                "value": "Truncate table Cluster;",
-                "type": "Expression"
-              },
-              "type": "Query"
-            }
-          ],
-          "scriptBlockExecutionTimeout": "02:00:00"
-        },
-        "connectionSettings": {
-          "name": "Warehouse_DEV_Sales_data",
-          "properties": {
-            "type": "DataWarehouse",
-            "typeProperties": {
-              "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
-              "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
-              "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
-            },
-            "externalReferences": {
-              "connection": "4748d170-aefc-4384-a126-def32992e530"
-            },
-            "annotations": []
-          }
-        },
-        "policy": {
-          "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
-          "secureInput": false,
-          "secureOutput": false
-        },
-        "name": "Script truncate cluster",
-        "dependsOn": [
-          {
-            "activity": "Dataflow_df_cluster",
-            "dependencyConditions": [
-              "Succeeded"
-            ]
-          }
-        ]
-      },
-      {
         "type": "Copy",
         "typeProperties": {
           "source": {
@@ -208,7 +45,7 @@
             "datasetSettings": {
               "type": "LakehouseTable",
               "typeProperties": {
-                "table": "Segmentation_nettoye2"
+                "table": "Segmentation_nettoye3"
               },
               "schema": [],
               "connectionSettings": {
@@ -326,6 +163,138 @@
         "dependsOn": [
           {
             "activity": "Dataflow_df_segmentation",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "Cluster_nettoye"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "LakeH_AfriDistr_DEV",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "29fedf56-61fd-ab94-4106-77990229fa72",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "cc5be692-afd3-4cf0-a0e1-848892f62ca1"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "tableOption": "autoCreate",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "datasetSettings": {
+              "type": "DataWarehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Cluster"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "Warehouse_DEV_Sales_data",
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
+                    "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
+                  },
+                  "externalReferences": {
+                    "connection": "4748d170-aefc-4384-a126-def32992e530"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data cluster",
+        "dependsOn": [
+          {
+            "activity": "Script truncate cluster",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "scripts": [
+            {
+              "text": {
+                "value": "Truncate table Cluster;",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "connectionSettings": {
+          "name": "Warehouse_DEV_Sales_data",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
+              "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
+            },
+            "externalReferences": {
+              "connection": "4748d170-aefc-4384-a126-def32992e530"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Script truncate cluster",
+        "dependsOn": [
+          {
+            "activity": "Dataflow_df_cluster",
             "dependencyConditions": [
               "Succeeded"
             ]

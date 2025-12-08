@@ -54,24 +54,13 @@ table Out_stock_cluster
 		annotation SummarizationSetBy = Automatic
 
 	column #Distinct_HVC
-		dataType: int64
+		dataType: double
 		formatString: 0
-		sourceProviderType: bigint
+		sourceProviderType: float
 		lineageTag: a7d497cc-3d52-42ff-84ac-76ebcfb97760
 		sourceLineageTag: #Distinct_HVC
 		summarizeBy: sum
 		sourceColumn: #Distinct_HVC
-
-		annotation SummarizationSetBy = Automatic
-
-	column #Avg_HVC_OOS
-		dataType: int64
-		formatString: 0
-		sourceProviderType: bigint
-		lineageTag: f2566578-2562-43db-a0d2-9e2e2e898ab9
-		sourceLineageTag: #Avg_HVC_OOS
-		summarizeBy: sum
-		sourceColumn: #Avg_HVC_OOS
 
 		annotation SummarizationSetBy = Automatic
 
@@ -106,6 +95,54 @@ table Out_stock_cluster
 		sourceLineageTag: P_OOS
 		summarizeBy: sum
 		sourceColumn: P_OOS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Avg Float HV POS'
+		dataType: double
+		sourceProviderType: float
+		lineageTag: ebd76f9d-8885-4f89-977f-a5c33db48bfb
+		sourceLineageTag: Avg Float HV POS
+		summarizeBy: sum
+		sourceColumn: Avg Float HV POS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Avg OOS HV POS rate MoM'
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 1580d1b5-b074-41f1-9db1-46e1b1bb6172
+		sourceLineageTag: Avg OOS HV POS rate MoM
+		summarizeBy: sum
+		sourceColumn: Avg OOS HV POS rate MoM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Avg Active POS'
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 207f503b-f8d3-460b-90f4-3fa7148b59ca
+		sourceLineageTag: Avg Active POS
+		summarizeBy: sum
+		sourceColumn: Avg Active POS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column #Avg_HVC_OOS
+		dataType: double
+		sourceProviderType: float
+		lineageTag: b858c40f-addd-4995-8f50-a6049b0dce3d
+		sourceLineageTag: #Avg_HVC_OOS
+		summarizeBy: sum
+		sourceColumn: #Avg_HVC_OOS
 
 		annotation SummarizationSetBy = Automatic
 

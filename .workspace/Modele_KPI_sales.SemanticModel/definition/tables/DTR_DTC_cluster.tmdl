@@ -76,11 +76,14 @@ table DTR_DTC_cluster
 
 	column 'DTC Day'
 		dataType: double
+		isHidden
 		sourceProviderType: float
 		lineageTag: 01c79708-22b9-43c2-9b75-23ecab55c3dd
 		sourceLineageTag: DTC Day
 		summarizeBy: sum
 		sourceColumn: DTC Day
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

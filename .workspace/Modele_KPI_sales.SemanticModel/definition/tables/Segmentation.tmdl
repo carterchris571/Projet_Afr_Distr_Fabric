@@ -2,16 +2,6 @@ table Segmentation
 	lineageTag: b2855f3b-d403-41bc-b207-ecef7ff91903
 	sourceLineageTag: [dbo].[Segmentation]
 
-	column Num_POS
-		dataType: string
-		sourceProviderType: varchar(8000)
-		lineageTag: bd25bc1c-421d-4bc3-92c3-37467b564cf9
-		sourceLineageTag: Num_POS
-		summarizeBy: none
-		sourceColumn: Num_POS
-
-		annotation SummarizationSetBy = Automatic
-
 	column Zone
 		dataType: string
 		sourceProviderType: varchar(8000)
@@ -19,16 +9,6 @@ table Segmentation
 		sourceLineageTag: Zone
 		summarizeBy: none
 		sourceColumn: Zone
-
-		annotation SummarizationSetBy = Automatic
-
-	column SA_incharge
-		dataType: string
-		sourceProviderType: varchar(8000)
-		lineageTag: bee95303-f2bf-44e6-9841-0a9e5dd73f11
-		sourceLineageTag: SA_incharge
-		summarizeBy: none
-		sourceColumn: SA_incharge
 
 		annotation SummarizationSetBy = Automatic
 
@@ -42,41 +22,62 @@ table Segmentation
 
 		annotation SummarizationSetBy = Automatic
 
-	column Site_name
+	column Num_POS
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: e0a073af-790d-4c06-883f-9885fb54db5a
-		sourceLineageTag: Site_name
+		lineageTag: 5baf1e55-d06a-43b0-9071-3f23bff0213b
+		sourceLineageTag: MSISDN
 		summarizeBy: none
-		sourceColumn: Site_name
+		sourceColumn: MSISDN
+
+		changedProperty = Name
 
 		annotation SummarizationSetBy = Automatic
 
-	column site_id
-		dataType: int64
-		formatString: 0
-		sourceProviderType: bigint
-		lineageTag: f0ec606d-bf44-49b8-901e-cce7e5863e9d
-		sourceLineageTag: site_id
-		summarizeBy: sum
-		sourceColumn: site_id
+	column Locality
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3e884479-ddb2-455a-a410-fabd7d8990e5
+		sourceLineageTag: Locality
+		summarizeBy: none
+		sourceColumn: Locality
 
 		annotation SummarizationSetBy = Automatic
 
-	column Segment_group
+	column Territory
 		dataType: string
 		sourceProviderType: varchar(8000)
-		lineageTag: 320c04a2-137e-44ba-8302-0d86a7fb4977
-		sourceLineageTag: Segment_group
+		lineageTag: 34e0a58a-4559-4386-a5d6-87ac6de83c20
+		sourceLineageTag: Territory
 		summarizeBy: none
-		sourceColumn: Segment_group
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segment Group'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4fb75153-5976-47eb-900a-248408c6e765
+		sourceLineageTag: Segment Group
+		summarizeBy: none
+		sourceColumn: Segment Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SA incharge'
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e4899ef7-0405-4528-b4e1-e35ddd023b84
+		sourceLineageTag: SA incharge
+		summarizeBy: none
+		sourceColumn: SA incharge
 
 		annotation SummarizationSetBy = Automatic
 
 	column Seg_gpre
 		dataType: string
-		sourceProviderType: varchar(255)
-		lineageTag: ef71c38e-9068-445e-a431-cd11003d1eb2
+		sourceProviderType: varchar(8000)
+		lineageTag: c086743a-ea12-4208-bed2-070b3f8fee79
 		sourceLineageTag: Seg_gpre
 		summarizeBy: none
 		sourceColumn: Seg_gpre

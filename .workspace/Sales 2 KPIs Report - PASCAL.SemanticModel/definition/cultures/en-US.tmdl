@@ -2,73 +2,8 @@ cultureInfo en-US
 
 	linguisticMetadata =
 			{
-			  "Version": "2.0.0",
-			  "Language": "en-US",
-			  "Entities": {
-			    "cluster.centre": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Cluster",
-			          "ConceptualProperty": "Centre"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Zone": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "mesure.day_hvc_t": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Mesure",
-			          "ConceptualProperty": "#Day HVC T"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "#Day HVC": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "mesure.taux_couv": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Mesure",
-			          "ConceptualProperty": "Taux_couv"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Taux couv": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    }
-			  }
+			  "Version": "1.0.0",
+			  "Language": "en-US"
 			}
 		contentType: json
 
