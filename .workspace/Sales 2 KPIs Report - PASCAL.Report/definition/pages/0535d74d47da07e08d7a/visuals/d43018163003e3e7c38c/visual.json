@@ -3,10 +3,10 @@
   "name": "d43018163003e3e7c38c",
   "position": {
     "x": 0,
-    "y": 45.269672855879755,
+    "y": 41.874447391688776,
     "z": 1000,
-    "height": 79.221927497789565,
-    "width": 279.5402298850575,
+    "height": 100.72502210433245,
+    "width": 239.92926613616271,
     "tabOrder": 0
   },
   "visual": {
@@ -31,7 +31,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Georgia",
-                      "fontSize": "18pt",
+                      "fontSize": "20pt",
                       "color": "#000000"
                     }
                   }
@@ -75,7 +75,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "15D"
+                  "Value": "0D"
                 }
               }
             }

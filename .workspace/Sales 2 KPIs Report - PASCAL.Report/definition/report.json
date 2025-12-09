@@ -57,6 +57,22 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "pascal_analytics_home_image18001607658703367.jpg",
+          "path": "pascal_analytics_home_image18001607658703367.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "menu_bouton_menu_27533654961203361.png",
+          "path": "menu_bouton_menu_27533654961203361.png",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {

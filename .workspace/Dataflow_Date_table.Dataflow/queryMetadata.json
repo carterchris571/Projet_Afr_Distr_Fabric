@@ -12,10 +12,11 @@
     },
     "Date_table": {
       "queryId": "1a7d3938-a8dd-41cc-a827-5f5bf3e7c233",
-      "queryName": "Date_table"
+      "queryName": "Date_table",
+      "loadEnabled": false
     },
     "Date_table_DataDestination": {
-      "queryId": "edb55f8d-d62d-461a-8c14-ce02f4545008",
+      "queryId": "c620e0e1-4db6-4de3-a211-4266bdbf0d6f",
       "queryName": "Date_table_DataDestination",
       "isHidden": true,
       "loadEnabled": false
@@ -26,6 +27,11 @@
       "path": "Warehouse",
       "kind": "Warehouse",
       "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"4748d170-aefc-4384-a126-def32992e530\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
     }
   ]
 }

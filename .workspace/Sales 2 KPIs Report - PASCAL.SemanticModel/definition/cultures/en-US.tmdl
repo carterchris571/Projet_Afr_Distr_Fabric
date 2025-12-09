@@ -2,8 +2,94 @@ cultureInfo en-US
 
 	linguisticMetadata =
 			{
-			  "Version": "1.0.0",
-			  "Language": "en-US"
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "mesure.taux_couv": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesure",
+			          "ConceptualProperty": "Taux_couv"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Taux couv": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.day_hvc_t": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesure",
+			          "ConceptualProperty": "#Day HVC T"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#Day HVC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "cluster.centre": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Cluster",
+			          "ConceptualProperty": "Centre"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Zone": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.nbre_hvc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesure",
+			          "ConceptualProperty": "Nbre HVC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#HVC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
 			}
 		contentType: json
 

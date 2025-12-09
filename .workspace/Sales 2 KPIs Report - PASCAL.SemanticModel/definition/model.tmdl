@@ -8,12 +8,8 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Date_table","DirectQuery à AS – Modele_KPI_sales"]
+annotation PBI_QueryOrder = ["DirectQuery à AS – Modele_KPI_sales","Date_table"]
 
-ref table Date_table
-ref table DateTableTemplate_89809c12-a5f8-4285-8bdd-89716af40069
-ref table LocalDateTable_ee9d585d-b7e7-49c4-91fe-13eb2ab4e397
-ref table LocalDateTable_7a16b59f-0d11-4b9f-a275-5f1861ac119d
 ref table Segmentation
 ref table Cluster
 ref table Net_adds_cluster
@@ -21,6 +17,7 @@ ref table Out_stock_cluster
 ref table DTR_DTC_cluster
 ref table Mesure
 ref table Listing_hierachique3
+ref table Date_table
 
 ref cultureInfo en-US
 
