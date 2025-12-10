@@ -1,0 +1,132 @@
+table Date_table_nettoye
+	lineageTag: 822f329b-227c-4c3c-a12d-48c7acaaecd5
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: be49e548-afb9-4645-9b3d-9f23a84606c0
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 9f541d66-e4c5-49d5-a4be-7d784dcef8e9
+			defaultHierarchy: LocalDateTable_86b342fe-99ee-4a01-95c7-4b48f37f138b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Année
+		dataType: string
+		lineageTag: fcd22747-2539-4715-abeb-a9ab1c67191e
+		summarizeBy: none
+		sourceColumn: Année
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 6938a4e4-c8ab-4068-a0a6-4fc62f528c83
+		summarizeBy: sum
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisNombre
+		dataType: int64
+		formatString: 0
+		lineageTag: be701044-9ee4-4ac8-90db-ea18355b141d
+		summarizeBy: sum
+		sourceColumn: MoisNombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Jour
+		dataType: int64
+		formatString: 0
+		lineageTag: cf4e0480-f329-4bf9-a57d-8b2bcaf46d13
+		summarizeBy: sum
+		sourceColumn: Jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateNombre
+		dataType: string
+		lineageTag: 05a2045a-c4c5-4561-95bc-81e3735116a0
+		summarizeBy: none
+		sourceColumn: DateNombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisNom
+		dataType: string
+		lineageTag: fcd13208-239c-4aed-8463-3fd6070da28d
+		summarizeBy: none
+		sourceColumn: MoisNom
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisCalendrier
+		dataType: string
+		lineageTag: cbbca030-be71-49db-a670-27117463a7ba
+		summarizeBy: none
+		sourceColumn: MoisCalendrier
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrimestreCalendrier
+		dataType: string
+		lineageTag: c1f43827-c55d-4b5b-b409-184926de4ca0
+		summarizeBy: none
+		sourceColumn: TrimestreCalendrier
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourSemaine
+		dataType: int64
+		formatString: 0
+		lineageTag: b8e8121b-06ce-42c0-8271-81199941d86e
+		summarizeBy: sum
+		sourceColumn: JourSemaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column NomJourSemaine
+		dataType: string
+		lineageTag: e7a943a7-410c-4aca-a4f5-0b9d9fb61313
+		summarizeBy: none
+		sourceColumn: NomJourSemaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinSemaine
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 71f4ded6-a876-41be-86b5-83a6f5f89da7
+		summarizeBy: none
+		sourceColumn: FinSemaine
+
+		variation Variation
+			isDefault
+			relationship: 41d9b8f1-23b1-492e-81c3-a7a86adafd47
+			defaultHierarchy: LocalDateTable_4f6372d0-65d0-49d0-8e7d-bcab9a5c663c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Date_table_nettoye = m
+		mode: import
+		source =
+				let
+				  Source = Lakehouse.Contents([]),
+				  #"Navigation 1" = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[lakehouseId = "0229fa72-7799-4106-ab94-61fd29fedf56"]}[Data],
+				  #"Navigation 3" = #"Navigation 2"{[Id = "Date_table_nettoye", ItemKind = "Table"]}[Data]
+				in
+				  #"Navigation 3"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,80 @@
+table Segmentation
+	lineageTag: f7d82822-0f5f-4ffc-b4ba-ea8f15d0543f
+
+	column MSISDN
+		dataType: string
+		lineageTag: 30a68eb1-9221-489b-b0b6-a1a56b0d551b
+		summarizeBy: none
+		sourceColumn: MSISDN
+
+		annotation SummarizationSetBy = Automatic
+
+	column Locality
+		dataType: string
+		lineageTag: 3d8fe4c8-7efe-4ec0-9b37-d189c4d9251a
+		summarizeBy: none
+		sourceColumn: Locality
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: af8691b1-20b5-4e0b-883a-86c3f44a9e42
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		lineageTag: 4bee351b-c1f9-427a-910f-d1532114b9ba
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		lineageTag: 7207a298-cec1-4f90-a4b4-79022dec25e3
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segment Group'
+		dataType: string
+		lineageTag: a6471547-7888-4b38-b9f3-bdc17d4b9738
+		summarizeBy: none
+		sourceColumn: Segment Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SA incharge'
+		dataType: string
+		lineageTag: 1ab99aae-675b-465b-8292-54460e49b684
+		summarizeBy: none
+		sourceColumn: SA incharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seg_gpre
+		dataType: string
+		lineageTag: 031dfe04-6d52-4c49-a854-e65724b236a6
+		summarizeBy: none
+		sourceColumn: Seg_gpre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Segmentation = m
+		mode: import
+		source =
+				let
+				  Source = Fabric.Warehouse(null),
+				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Segmentation"]}[Data]
+				in
+				  #"Navigation 2"
+
+	annotation PBI_ResultType = Table
+

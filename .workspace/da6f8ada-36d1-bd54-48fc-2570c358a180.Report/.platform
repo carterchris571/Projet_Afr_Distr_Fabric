@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sales 3 KPIs Report - PASCAL"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "da6f8ada-36d1-bd54-48fc-2570c358a180"
+  }
+}
