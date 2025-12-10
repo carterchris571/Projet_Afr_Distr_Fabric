@@ -30,13 +30,11 @@ relationship 2181a0fa-5d1a-df74-0884-b854992e1329
 	fromColumn: Out_stock_cluster.Date
 	toColumn: Date_table.Date
 
-relationship 742e2ecf-0a7f-4d69-a07b-e022f61befc5
-	isActive: false
+relationship 4ecca642-f4af-4bdd-bc83-1355fb892d92
 	fromColumn: Segmentation.Cluster
 	toColumn: Cluster.Cluster
 
-relationship 3a633a12-46c3-4ba0-a923-3c264c03c148
-	isActive: false
+relationship e70d0fa2-7283-46f6-85ec-f95d01978c0d
 	fromColumn: Listing_hierachique3.From_num
 	toColumn: Segmentation.Num_POS
 

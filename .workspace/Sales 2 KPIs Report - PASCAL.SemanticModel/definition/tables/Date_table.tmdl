@@ -67,6 +67,9 @@ table Date_table
 		lineageTag: 42ef9713-04f3-44e8-9a89-63b3a8f6c8e5
 		summarizeBy: none
 		sourceColumn: MoisNom
+		sortByColumn: MoisNombre
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -118,6 +121,29 @@ table Date_table
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+	hierarchy 'Date Hiérarchie'
+		lineageTag: d52710d8-1f03-4fb2-9fb9-738a580efe5b
+
+		level Année
+			lineageTag: 917b5d0f-cac4-452a-8624-518c7edb1ef3
+			column: Année
+
+		level TrimestreCalendrier
+			lineageTag: d5eaca13-e5d3-4644-a67f-4410adf6c664
+			column: TrimestreCalendrier
+
+		level MoisNom
+			lineageTag: 4f6b8d82-82a9-4856-ac93-ef3a55b95dc7
+			column: MoisNom
+
+		level Jour
+			lineageTag: c2ec2e0d-a0a0-41b0-aee6-40e1269e110c
+			column: Jour
+
+		level Date
+			lineageTag: 7331e991-1ca7-40d5-9764-18923074d6b4
+			column: Date
 
 	partition Date_table = m
 		mode: directQuery

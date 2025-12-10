@@ -60,7 +60,7 @@
                 }
               },
               "queryRef": "Segmentation.Num_POS",
-              "nativeQueryRef": "#POS",
+              "nativeQueryRef": "Nombre de Num_POS",
               "displayName": "#POS"
             },
             {
