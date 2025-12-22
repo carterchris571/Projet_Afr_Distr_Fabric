@@ -57,18 +57,20 @@ shared Listing_hierachie = let
     // Sélection des colonnes finales
     #"Choisir des colonnes" = Table.SelectColumns(#"Type de colonne changé", {"Column1", "Id", "Date", "Status", "Type", "From", "From Name", "To", "To Name", "Amount", "Balance"}),
   #"Type de colonne changé 1" = Table.TransformColumnTypes(#"Choisir des colonnes", {{"Id", type text}, {"Column1", type date}}),
-  #"Diviser la colonne par délimiteur" = Table.SplitColumn(Table.TransformColumnTypes(#"Type de colonne changé 1", {{"Date", type text}}), "Date", Splitter.SplitTextByDelimiter(" "), {"Date.1", "Date.2"}),
-  #"Type de colonne changé 2" = Table.TransformColumnTypes(#"Diviser la colonne par délimiteur", {{"Date.1", type date}, {"Date.2", type time}}, "fr"),
-  #"Texte extrait entre les délimiteurs" = Table.TransformColumns(#"Type de colonne changé 2", {{"From", each Text.BetweenDelimiters(_, ":", "/", 0, 0), type text}}),
+  #"Type de colonne changé 5" = Table.TransformColumnTypes(#"Type de colonne changé 1", {{"Date", type datetime}}),
+  #"Texte extrait entre les délimiteurs" = Table.TransformColumns(#"Type de colonne changé 5", {{"From", each Text.BetweenDelimiters(_, ":", "/", 0, 0), type text}}),
   #"Texte extrait entre les délimiteurs 1" = Table.TransformColumns(#"Texte extrait entre les délimiteurs", {{"To", each Text.BetweenDelimiters(_, ":", "/", 0, 0), type text}}),
-  #"Colonnes renommées" = Table.RenameColumns(#"Texte extrait entre les délimiteurs 1", {{"Date.1", "Date"}, {"Date.2", "Hour"}, {"From", "From_num"}, {"From Name", "From_name"}, {"To", "To_num"}, {"To Name", "To_name"}}),
+  #"Colonnes renommées" = Table.RenameColumns(#"Texte extrait entre les délimiteurs 1", {{"Date", "Date"}, {"From", "From_num"}, {"From Name", "From_name"}, {"To", "To_num"}, {"To Name", "To_name"}}),
   #"Type de colonne changé 3" = Table.TransformColumnTypes(#"Colonnes renommées", {{"Balance", Int64.Type}, {"Amount", Int64.Type}}),
   #"Colonnes renommées 1" = Table.RenameColumns(#"Type de colonne changé 3", {{"Column1", "Date_modifie"}}),
   #"Type de colonne changé 4" = Table.TransformColumnTypes(#"Colonnes renommées 1", {{"Date_modifie", type datetime}}),
   #"Requête ajoutée" = Table.Combine({#"Type de colonne changé 4", #"Listing classique"}),
-  #"Lignes filtrées" = Table.SelectRows(#"Requête ajoutée", each ([Date] <> null))
+  #"Lignes filtrées" = Table.SelectRows(#"Requête ajoutée", each ([Date] <> null) and ([Type] = "Cash out")),
+  #"Type de colonne changé 2" = Table.TransformColumnTypes(#"Lignes filtrées", {{"Date", type datetime}}),
+  #"Colonnes supprimées 1" = Table.RemoveColumns(#"Type de colonne changé 2", {"Hour"}),
+  #"Type de colonne changé 6" = Table.TransformColumnTypes(#"Colonnes supprimées 1", {{"Type", type text}, {"Id", type text}, {"Status", type text}, {"From_num", type text}, {"From_name", type text}, {"To_num", type text}, {"To_name", type text}, {"Amount", Int64.Type}, {"Balance", Int64.Type}, {"Date", type datetime}, {"Date_modifie", type datetime}})
 in
-    #"Lignes filtrées";
+    #"Type de colonne changé 6";
 shared #"Listing classique" = let
   Source = Lakehouse.Contents([]),
   #"Navigation 1" = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],

@@ -4,13 +4,15 @@ model Model
 	dataSourceDefaultMaxConnections: 50
 	sourceQueryCulture: fr-FR
 	dataAccessOptions
+		fastCombine
 		legacyRedirects
 		returnErrorValuesAsNull
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DirectQuery à AS – Modele_KPI_sales","Date_table"]
+annotation PBI_QueryOrder = ["Date_table","DirectQuery à AS – Modele_KPI_sales"]
 
+ref table Date_table
 ref table Segmentation
 ref table Cluster
 ref table Net_adds_cluster
@@ -18,7 +20,6 @@ ref table Out_stock_cluster
 ref table DTR_DTC_cluster
 ref table Mesure
 ref table Listing_hierachique3
-ref table Date_table
 
 ref cultureInfo en-US
 

@@ -1,0 +1,158 @@
+table Date_table
+	lineageTag: 3bcf0382-d9e6-40e8-990e-f61230b70d2c
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8387f404-03c0-46d1-9ff8-1a9f0e61f6de
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 6a3bbd5e-cbf5-46ba-91ea-f75db700f550
+			defaultHierarchy: LocalDateTable_5e514c32-2cac-467d-a7f8-7db308792590.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Année
+		dataType: string
+		lineageTag: e066fdca-4eee-43af-aac2-45bc298b7420
+		summarizeBy: none
+		sourceColumn: Année
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: dd3dcd7b-0db1-4319-8b42-e73c04a57452
+		summarizeBy: sum
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisNombre
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b060e0a-3e5f-4984-b567-8e8208e0873a
+		summarizeBy: sum
+		sourceColumn: MoisNombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Jour
+		dataType: int64
+		formatString: 0
+		lineageTag: 815116c2-bbc9-4500-9d42-7965c5d1b9ac
+		summarizeBy: sum
+		sourceColumn: Jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateNombre
+		dataType: string
+		lineageTag: 472fdc61-5c20-40bf-9d41-d43e932471c5
+		summarizeBy: none
+		sourceColumn: DateNombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisNom
+		dataType: string
+		lineageTag: 2aa3788d-eef9-44c6-b917-5291eaf7259b
+		summarizeBy: none
+		sourceColumn: MoisNom
+		sortByColumn: MoisNombre
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisCalendrier
+		dataType: string
+		lineageTag: c56fde0a-39a6-41e5-beca-90f5559fab04
+		summarizeBy: none
+		sourceColumn: MoisCalendrier
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrimestreCalendrier
+		dataType: string
+		lineageTag: 1d7c1be5-5d5e-437c-bd3c-e5be00460d59
+		summarizeBy: none
+		sourceColumn: TrimestreCalendrier
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourSemaine
+		dataType: int64
+		formatString: 0
+		lineageTag: cb2323a0-33bf-4c1b-a55d-d577a5fccbe5
+		summarizeBy: sum
+		sourceColumn: JourSemaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column NomJourSemaine
+		dataType: string
+		lineageTag: 280a0d93-2639-48fd-9252-c2bae3d5bea2
+		summarizeBy: none
+		sourceColumn: NomJourSemaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinSemaine
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9193557a-e5aa-4a44-8d6c-cfebb1fdb1ec
+		summarizeBy: none
+		sourceColumn: FinSemaine
+
+		variation Variation
+			isDefault
+			relationship: 303cd6f4-e868-43b2-b849-10abf95cc98f
+			defaultHierarchy: LocalDateTable_a2d5916a-f9bf-44ab-b057-1acf991d6ab2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	hierarchy 'Date Hiérarchie'
+		lineageTag: fd5be947-6506-433e-9b74-c71a87fb6897
+
+		level Année
+			lineageTag: eca31242-97eb-4186-ae6c-3118a503e547
+			column: Année
+
+		level TrimestreCalendrier
+			lineageTag: 04692441-cc36-4ce3-80b6-1be18c3aca0d
+			column: TrimestreCalendrier
+
+		level Jour
+			lineageTag: 016c7fa1-dbf2-49f7-bf89-758af76c253b
+			column: Jour
+
+		level MoisNom
+			lineageTag: 30dd0fa8-8f86-433c-905b-a9a97a9dad00
+			column: MoisNom
+
+		level Date
+			lineageTag: 7eabb843-1228-42a6-ad0c-72b88c519197
+			column: Date
+
+	partition Date_table = m
+		mode: import
+		source =
+				let
+				  Source = Lakehouse.Contents([]),
+				  #"Navigation 1" = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[lakehouseId = "0229fa72-7799-4106-ab94-61fd29fedf56"]}[Data],
+				  #"Navigation 3" = #"Navigation 2"{[Id = "Date_table_nettoye", ItemKind = "Table"]}[Data]
+				in
+				  #"Navigation 3"
+
+	annotation PBI_ResultType = Table
+

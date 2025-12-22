@@ -1,0 +1,27 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Date_table","Cluster","DTR_DTC_cluster","Listing_hierachique3","Net_adds_cluster","Out_stock_cluster","Segmentation","Mesure"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["WebModelingEdit"]
+
+ref table Date_table
+ref table DateTableTemplate_99b5c2fb-2abb-4756-acbf-e1dea846c16b
+ref table LocalDateTable_5e514c32-2cac-467d-a7f8-7db308792590
+ref table LocalDateTable_a2d5916a-f9bf-44ab-b057-1acf991d6ab2
+ref table Cluster
+ref table DTR_DTC_cluster
+ref table Listing_hierachique3
+ref table LocalDateTable_a3d56ac2-a08b-4e04-9c86-5b0bc9deca32
+ref table Net_adds_cluster
+ref table Out_stock_cluster
+ref table Segmentation
+ref table Mesure
+

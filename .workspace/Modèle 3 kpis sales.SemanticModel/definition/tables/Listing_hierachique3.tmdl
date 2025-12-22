@@ -1,0 +1,115 @@
+table Listing_hierachique3
+	lineageTag: 5689d6c2-b0a3-4875-80d7-6f8063cff516
+
+	column Date_modifie
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 43e6af6b-ceb4-48e0-8a41-5a519db7c99a
+		summarizeBy: none
+		sourceColumn: Date_modifie
+
+		variation Variation
+			isDefault
+			relationship: 07107142-2a4c-490b-9c49-cc729e5aff12
+			defaultHierarchy: LocalDateTable_a3d56ac2-a08b-4e04-9c86-5b0bc9deca32.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: string
+		lineageTag: 73ca9b90-59d1-4996-a9c5-9ac0e09a363c
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: da72ed90-1d08-485e-a033-d1d0c5bffb00
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Status
+		dataType: string
+		lineageTag: 62dba7fa-3ea0-413f-b1d6-d3ce18064e9f
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 629a07a6-3ce9-4df6-b3f6-ea8752f4f982
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_num
+		dataType: string
+		lineageTag: 53d12e96-2e5c-4aac-9f88-75b19d27be22
+		summarizeBy: none
+		sourceColumn: From_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column From_name
+		dataType: string
+		lineageTag: 1948cd0a-0815-4919-b00f-53699056e578
+		summarizeBy: none
+		sourceColumn: From_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_num
+		dataType: string
+		lineageTag: 882ef9d7-6796-46d4-8f3a-d0381e4f6033
+		summarizeBy: none
+		sourceColumn: To_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column To_name
+		dataType: string
+		lineageTag: 8e7c4982-3112-4a69-bbfc-92cebb6f9fde
+		summarizeBy: none
+		sourceColumn: To_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 17cba5bd-8fa0-470f-b265-3df4ba199cda
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Balance
+		dataType: int64
+		formatString: 0
+		lineageTag: ee757955-b02a-4b03-8667-a6a475f3289c
+		summarizeBy: sum
+		sourceColumn: Balance
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Listing_hierachique3 = m
+		mode: import
+		source =
+				let
+				  Source = Fabric.Warehouse(null),
+				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Listing_hierachique3"]}[Data]
+				in
+				  #"Navigation 2"
+
+	annotation PBI_ResultType = Table
+

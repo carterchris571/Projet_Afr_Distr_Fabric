@@ -5,6 +5,27 @@ cultureInfo en-US
 			  "Version": "2.0.0",
 			  "Language": "en-US",
 			  "Entities": {
+			    "mesure.nbre_hvc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesure",
+			          "ConceptualProperty": "Nbre HVC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#HVC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
 			    "mesure.taux_couv": {
 			      "Definition": {
 			        "Binding": {
@@ -58,27 +79,6 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "Zone": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "mesure.nbre_hvc": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Mesure",
-			          "ConceptualProperty": "Nbre HVC"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "#HVC": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

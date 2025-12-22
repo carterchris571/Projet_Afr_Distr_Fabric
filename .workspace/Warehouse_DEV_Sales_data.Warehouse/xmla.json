@@ -686,7 +686,7 @@
             "dataType": "dateTime",
             "sourceColumn": "Date",
             "formatString": "General Date",
-            "sourceProviderType": "date",
+            "sourceProviderType": "datetime2",
             "sourceLineageTag": "Date",
             "summarizeBy": "none",
             "annotations": [

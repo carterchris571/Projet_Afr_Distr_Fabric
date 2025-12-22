@@ -1,10 +1,10 @@
 table Segmentation
-	lineageTag: 6fce8d26-e436-48c5-b75d-6bc8df75631f
+	lineageTag: d704bc58-17f4-4e7e-8df7-d7352caa3cfd
 	sourceLineageTag: b2855f3b-d403-41bc-b207-ecef7ff91903
 
 	column Zone
 		dataType: string
-		lineageTag: 642537a7-d84d-4a78-b375-a11e57907b5d
+		lineageTag: 4e9acbd0-356f-45a2-aa99-1035fa2ea5c0
 		sourceLineageTag: 234ef3d1-83ff-4449-8f72-bab537f0a0ab
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -14,7 +14,7 @@ table Segmentation
 
 	column Cluster
 		dataType: string
-		lineageTag: 83e20017-e121-4c47-8d14-372e1cfc31e5
+		lineageTag: 0f89698b-e922-4576-95d9-aeaf90a263a2
 		sourceLineageTag: 1d636a6f-1476-45aa-a877-4b4c0172b115
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -25,7 +25,7 @@ table Segmentation
 	column Num_POS
 		dataType: string
 		isNullable: false
-		lineageTag: 8ceaa494-ebcd-4e13-a17d-b126280d5c7d
+		lineageTag: fb99e4bf-99bb-40ec-8239-1691592c7ba2
 		sourceLineageTag: 5baf1e55-d06a-43b0-9071-3f23bff0213b
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -35,7 +35,7 @@ table Segmentation
 
 	column Locality
 		dataType: string
-		lineageTag: b08fd619-bb13-45c7-928e-ed2ab979d547
+		lineageTag: 270e60fc-b198-4301-bd1c-56a5a5c8c3a4
 		sourceLineageTag: 3e884479-ddb2-455a-a410-fabd7d8990e5
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -45,7 +45,7 @@ table Segmentation
 
 	column Territory
 		dataType: string
-		lineageTag: 23d54e9b-8a5a-40c1-926f-a03fd2e640b1
+		lineageTag: 02180b0a-b70d-44ca-a138-6683d998299a
 		sourceLineageTag: 34e0a58a-4559-4386-a5d6-87ac6de83c20
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -55,7 +55,7 @@ table Segmentation
 
 	column 'Segment Group'
 		dataType: string
-		lineageTag: 188680e9-66b3-45fb-85a8-c5db91407457
+		lineageTag: ab343acb-27d6-4cf5-9c95-9d35b23bb47e
 		sourceLineageTag: 4fb75153-5976-47eb-900a-248408c6e765
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -65,7 +65,7 @@ table Segmentation
 
 	column 'SA incharge'
 		dataType: string
-		lineageTag: e0eb2a02-6cae-4e3f-857d-ef865047a50d
+		lineageTag: f7954118-8bd9-47f3-8eb7-32c0aaefe5c2
 		sourceLineageTag: e4899ef7-0405-4528-b4e1-e35ddd023b84
 		dataCategory: Uncategorized
 		summarizeBy: none
@@ -75,7 +75,7 @@ table Segmentation
 
 	column Seg_gpre
 		dataType: string
-		lineageTag: c148a358-b82e-453c-81c3-cc13e398c21c
+		lineageTag: 0f6efca1-e778-41f5-8ca6-a44d6b9fc93b
 		sourceLineageTag: c086743a-ea12-4208-bed2-070b3f8fee79
 		dataCategory: Uncategorized
 		summarizeBy: none

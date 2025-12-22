@@ -5,7 +5,7 @@ expression 'DirectQuery à AS – Modele_KPI_sales' =
 		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
 		in
 		    Cube
-	lineageTag: 8e298af5-275b-4cd4-b949-394052cbad37
+	lineageTag: f726f446-383e-4d54-911d-8fc5ace53c5e
 
 	annotation PBI_IncludeFutureArtifacts = False
 

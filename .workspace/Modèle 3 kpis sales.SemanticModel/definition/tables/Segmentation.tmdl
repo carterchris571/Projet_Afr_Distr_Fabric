@@ -1,0 +1,81 @@
+table Segmentation
+	lineageTag: 277efddb-2ea3-42fc-8d27-f557c019075c
+
+	column Num_POS
+		dataType: string
+		lineageTag: 263f73be-77d0-466f-9176-0acd3aea87cc
+		summarizeBy: none
+		sourceColumn: Num_POS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Locality
+		dataType: string
+		lineageTag: da4279b9-95bb-4022-acde-fdfbc42faf9e
+		summarizeBy: none
+		sourceColumn: Locality
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: b25f55df-6fde-4e2e-958d-e207080e440c
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		lineageTag: a8a895ac-061e-4ff7-a8e8-3ff2fbd565bb
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		lineageTag: 61589450-a4ab-4f3f-abc2-688c259f8861
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segment Group'
+		dataType: string
+		lineageTag: f032b643-9da6-4c54-90b5-106e9cee098c
+		summarizeBy: none
+		sourceColumn: Segment Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SA incharge'
+		dataType: string
+		lineageTag: fa1c5b17-015c-449e-929a-a88131ac4185
+		summarizeBy: none
+		sourceColumn: SA incharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seg_gpre
+		dataType: string
+		lineageTag: 7db3773a-6331-432f-ae21-79d136cada18
+		summarizeBy: none
+		sourceColumn: Seg_gpre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Segmentation = m
+		mode: import
+		source =
+				let
+				  Source = Fabric.Warehouse(null),
+				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Segmentation"]}[Data],
+				  #"Renamed Columns" = Table.RenameColumns(#"Navigation 2", {{"MSISDN", "Num_POS"}})
+				in
+				  #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

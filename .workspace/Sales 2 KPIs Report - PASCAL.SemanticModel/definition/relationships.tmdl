@@ -1,40 +1,20 @@
-relationship 6c8e882f-8841-415f-8a00-53f75e8f34ac
-	fromColumn: Net_adds_cluster.Cluster
-	toColumn: Cluster.Cluster
-
-relationship 554d05e2-5853-4a2f-82c6-830e11218493
-	fromColumn: Out_stock_cluster.Cluster
-	toColumn: Cluster.Cluster
-
-relationship b874acce-7cdc-43fd-bc3d-7778fae59c82
-	fromColumn: DTR_DTC_cluster.Cluster
-	toColumn: Cluster.Cluster
-
-relationship ab6a754f-ffc7-23b0-0da9-d902855ef48d
-	securityFilteringBehavior: none
-	fromColumn: Listing_hierachique3.Date
-	toColumn: Date_table.Date
-
-relationship aac26eb7-be6f-8fbe-200a-59e8d6b50c4c
-	securityFilteringBehavior: none
-	fromColumn: DTR_DTC_cluster.Date
-	toColumn: Date_table.Date
-
-relationship 586979d3-d7fe-b4fe-a714-25a8cb183edd
-	securityFilteringBehavior: none
-	fromColumn: Net_adds_cluster.Date
-	toColumn: Date_table.Date
-
-relationship 2181a0fa-5d1a-df74-0884-b854992e1329
-	securityFilteringBehavior: none
-	fromColumn: Out_stock_cluster.Date
-	toColumn: Date_table.Date
-
-relationship 4ecca642-f4af-4bdd-bc83-1355fb892d92
+relationship fb85cb9b-6afd-4340-9699-4b51af2932f6
 	fromColumn: Segmentation.Cluster
 	toColumn: Cluster.Cluster
 
-relationship e70d0fa2-7283-46f6-85ec-f95d01978c0d
+relationship a3edffd4-2351-4576-abae-3f7dbe06474a
+	fromColumn: Net_adds_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 5daec3ae-1df4-4b1c-8482-3296baf44c23
+	fromColumn: Out_stock_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 43b72c8c-b932-4338-98cf-13f9f24e4f09
+	fromColumn: DTR_DTC_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 37c1915b-cebc-483c-92cf-1238a4fcdc0c
 	fromColumn: Listing_hierachique3.From_num
 	toColumn: Segmentation.Num_POS
 

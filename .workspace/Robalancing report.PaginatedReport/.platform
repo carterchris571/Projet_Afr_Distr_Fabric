@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "PaginatedReport",
+    "displayName": "Robalancing report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8cf165c2-daf0-b3f7-4ab2-afa567344052"
+  }
+}

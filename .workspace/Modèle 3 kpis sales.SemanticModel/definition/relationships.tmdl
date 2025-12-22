@@ -1,0 +1,51 @@
+relationship 6a3bbd5e-cbf5-46ba-91ea-f75db700f550
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date_table.Date
+	toColumn: LocalDateTable_5e514c32-2cac-467d-a7f8-7db308792590.Date
+
+relationship 303cd6f4-e868-43b2-b849-10abf95cc98f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date_table.FinSemaine
+	toColumn: LocalDateTable_a2d5916a-f9bf-44ab-b057-1acf991d6ab2.Date
+
+relationship 07107142-2a4c-490b-9c49-cc729e5aff12
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Listing_hierachique3.Date_modifie
+	toColumn: LocalDateTable_a3d56ac2-a08b-4e04-9c86-5b0bc9deca32.Date
+
+relationship bb407547-f696-6d5b-36b0-92de73ead8b9
+	fromColumn: DTR_DTC_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 3e5b6a8f-a834-2410-fe0c-7c6fb7081c9e
+	fromColumn: Net_adds_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 0ef07f90-0d25-a4fd-5504-f8c7258733ff
+	fromColumn: Out_stock_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 248b0e2d-cdae-1c53-ab6d-e3bebf775024
+	fromColumn: Segmentation.Cluster
+	toColumn: Cluster.Cluster
+
+relationship b0d55ad2-dba1-fb02-ee77-d8e963090020
+	fromColumn: Listing_hierachique3.From_num
+	toColumn: Segmentation.Num_POS
+
+relationship 938ecb07-e73a-04cc-d2aa-ce5081890bd7
+	fromColumn: DTR_DTC_cluster.Date
+	toColumn: Date_table.Date
+
+relationship 819ca07b-7ad5-17d0-a10e-e86343818e36
+	fromColumn: Net_adds_cluster.Date
+	toColumn: Date_table.Date
+
+relationship 27f1425a-19d2-cd0c-7b0f-1edcaf5eccff
+	fromColumn: Out_stock_cluster.Date
+	toColumn: Date_table.Date
+
+relationship 5128c649-d1bb-3ea1-77ad-a795c3ec5cd7
+	fromColumn: Listing_hierachique3.Date
+	toColumn: Date_table.Date
+
