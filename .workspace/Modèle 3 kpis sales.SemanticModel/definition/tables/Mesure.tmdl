@@ -186,13 +186,13 @@ table Mesure
 			        FILTER(
 			             Segmentation,
 			            CALCULATE(
-			                COUNTROWS(Listing_hierachique3),
-			                Listing_hierachique3[Amount] < 0, 
-			                Listing_hierachique3[Type] = "Transfer",
-			                ABS(Listing_hierachique3[Amount]) >= 1000,
+			                COUNTROWS(Listing_hierachique2),
+			                Listing_hierachique2[Amount] < 0, 
+			                Listing_hierachique2[Type] = "Transfer",
+			                ABS(Listing_hierachique2[Amount]) >= 1000,
 			                FILTER(
-			                    Listing_hierachique3,
-			                    Listing_hierachique3[To_num] = Segmentation[Num_POS]
+			                    Listing_hierachique2,
+			                    Listing_hierachique2[To_num] = Segmentation[Num_POS]
 			                 )
 			            ) > 0
 			        )

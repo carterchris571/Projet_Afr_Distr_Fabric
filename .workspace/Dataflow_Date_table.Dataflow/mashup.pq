@@ -28,7 +28,7 @@ in
 CreateDateTable;
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Date_table_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared Date_table = let
-  Source = Requête(#date(2025, 1, 1), #date(2025, 12, 31), ""),
+  Source = Requête(#date(2025, 1, 1), #date(2026, 12, 31), ""),
   #"Type de colonne changé" = Table.TransformColumnTypes(Source, {{"Année", type text}, {"DateNombre", type text}, {"MoisCalendrier", type text}, {"MoisNombre", Int64.Type}, {"Trimestre", Int64.Type}, {"Jour", Int64.Type}, {"TrimestreCalendrier", type text}, {"JourSemaine", Int64.Type}})
 in
   #"Type de colonne changé";
@@ -39,3 +39,7 @@ shared Date_table_DataDestination = let
   TableNavigation = Navigation_2{[Id = "Date_table_nettoye", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;
+shared #"Fonction appelée" = let
+  Source = Requête(#date(2025, 1, 1), #date(2026, 12, 31), "")
+in
+  Source;

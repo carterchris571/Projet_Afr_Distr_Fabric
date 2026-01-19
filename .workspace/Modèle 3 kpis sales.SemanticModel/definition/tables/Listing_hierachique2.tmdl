@@ -1,42 +1,32 @@
-table Listing_hierachique3
-	lineageTag: 5689d6c2-b0a3-4875-80d7-6f8063cff516
+table Listing_hierachique2
+	lineageTag: 21bc71fe-ebf4-40ef-b9c3-7efb4596530b
 
-	column Date_modifie
+	column 'Date modified'
 		dataType: dateTime
 		formatString: General Date
-		lineageTag: 43e6af6b-ceb4-48e0-8a41-5a519db7c99a
+		lineageTag: 3cdf1fc0-4452-4c7e-8d71-f5ef8bcdbe00
 		summarizeBy: none
-		sourceColumn: Date_modifie
+		sourceColumn: Date modified
 
 		variation Variation
 			isDefault
-			relationship: 07107142-2a4c-490b-9c49-cc729e5aff12
-			defaultHierarchy: LocalDateTable_a3d56ac2-a08b-4e04-9c86-5b0bc9deca32.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
-
-	column Id
-		dataType: string
-		lineageTag: 73ca9b90-59d1-4996-a9c5-9ac0e09a363c
-		summarizeBy: none
-		sourceColumn: Id
+			relationship: ff0a6460-db36-4460-bd07-0826cf087343
+			defaultHierarchy: LocalDateTable_634325c4-1d83-4bcf-a83a-d35d2c324e39.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 	column Date
 		dataType: dateTime
-		formatString: Long Date
-		lineageTag: da72ed90-1d08-485e-a033-d1d0c5bffb00
+		formatString: General Date
+		lineageTag: af37a196-f88b-4c16-a091-3450201c386f
 		summarizeBy: none
 		sourceColumn: Date
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column Status
 		dataType: string
-		lineageTag: 62dba7fa-3ea0-413f-b1d6-d3ce18064e9f
+		lineageTag: 94a68e5a-a7e6-419a-a579-07a57af410d7
 		summarizeBy: none
 		sourceColumn: Status
 
@@ -44,7 +34,7 @@ table Listing_hierachique3
 
 	column Type
 		dataType: string
-		lineageTag: 629a07a6-3ce9-4df6-b3f6-ea8752f4f982
+		lineageTag: f4239b5b-b30c-49f9-acf8-742740e2e31b
 		summarizeBy: none
 		sourceColumn: Type
 
@@ -52,7 +42,7 @@ table Listing_hierachique3
 
 	column From_num
 		dataType: string
-		lineageTag: 53d12e96-2e5c-4aac-9f88-75b19d27be22
+		lineageTag: 2171f824-a97e-47ff-9bb8-bd5b805cd9b9
 		summarizeBy: none
 		sourceColumn: From_num
 
@@ -60,7 +50,7 @@ table Listing_hierachique3
 
 	column From_name
 		dataType: string
-		lineageTag: 1948cd0a-0815-4919-b00f-53699056e578
+		lineageTag: f1a2dfb1-83a2-4826-83a3-f3217861bf54
 		summarizeBy: none
 		sourceColumn: From_name
 
@@ -68,7 +58,7 @@ table Listing_hierachique3
 
 	column To_num
 		dataType: string
-		lineageTag: 882ef9d7-6796-46d4-8f3a-d0381e4f6033
+		lineageTag: 19ff0855-0f48-4230-811f-902b52948d74
 		summarizeBy: none
 		sourceColumn: To_num
 
@@ -76,7 +66,7 @@ table Listing_hierachique3
 
 	column To_name
 		dataType: string
-		lineageTag: 8e7c4982-3112-4a69-bbfc-92cebb6f9fde
+		lineageTag: 784e5412-8ce0-41b6-9ad4-94c2e22efc51
 		summarizeBy: none
 		sourceColumn: To_name
 
@@ -85,7 +75,7 @@ table Listing_hierachique3
 	column Amount
 		dataType: int64
 		formatString: 0
-		lineageTag: 17cba5bd-8fa0-470f-b265-3df4ba199cda
+		lineageTag: e850a70d-509c-4654-8185-8316e24076ba
 		summarizeBy: sum
 		sourceColumn: Amount
 
@@ -94,20 +84,20 @@ table Listing_hierachique3
 	column Balance
 		dataType: int64
 		formatString: 0
-		lineageTag: ee757955-b02a-4b03-8667-a6a475f3289c
+		lineageTag: c07af0ca-a42c-45ba-8f88-f86cfa67fec6
 		summarizeBy: sum
 		sourceColumn: Balance
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Listing_hierachique3 = m
+	partition Listing_hierachique2 = m
 		mode: import
 		source =
 				let
 				  Source = Fabric.Warehouse(null),
 				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
 				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
-				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Listing_hierachique3"]}[Data]
+				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Listing_hierachique2"]}[Data]
 				in
 				  #"Navigation 2"
 

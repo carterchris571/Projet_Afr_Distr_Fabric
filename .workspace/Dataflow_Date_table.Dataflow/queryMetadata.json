@@ -20,6 +20,10 @@
       "queryName": "Date_table_DataDestination",
       "isHidden": true,
       "loadEnabled": false
+    },
+    "Fonction appelée": {
+      "queryId": "0319b564-d1a6-4721-aa55-ca85f587781b",
+      "queryName": "Fonction appelée"
     }
   },
   "connections": [
