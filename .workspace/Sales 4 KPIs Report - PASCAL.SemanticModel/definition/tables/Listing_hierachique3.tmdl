@@ -1,0 +1,126 @@
+table Listing_hierachique3
+	lineageTag: 399179bd-4907-4969-a731-908949b1f337
+	sourceLineageTag: 9c96addd-44aa-4b15-a72e-b88ec2f29ea4
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f9ed1c7b-7a60-4658-89a5-4bcf7ce64669
+		sourceLineageTag: 71e45511-1534-4e2c-a253-80342d53d826
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column Status
+		dataType: string
+		lineageTag: b160d256-b173-4d8b-8f2b-90baa9dcfe65
+		sourceLineageTag: df507b34-1a06-49e2-999b-0e68e4b4a1b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = User
+
+	column Type
+		dataType: string
+		lineageTag: 583a3dcc-7702-475a-a06b-9c8bf5f83bc2
+		sourceLineageTag: fac48de7-d8a4-46a7-833a-1bfbe67bdbd4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = User
+
+	column From_num
+		dataType: string
+		lineageTag: fbbe1495-62f8-4426-bdea-13a39814cde9
+		sourceLineageTag: ad6e378b-d581-4194-9159-1c9699071c06
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From_num
+
+		annotation SummarizationSetBy = User
+
+	column From_name
+		dataType: string
+		lineageTag: de161a4a-7620-467c-bfcb-21cfdc36cc8b
+		sourceLineageTag: 5cb0b2a2-b807-4487-9e70-f5c6a1e7e4dc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From_name
+
+		annotation SummarizationSetBy = User
+
+	column To_num
+		dataType: string
+		lineageTag: 489068d8-86da-4029-bc09-ea30a76a62bc
+		sourceLineageTag: 230c36df-c8ff-4be3-a0c9-e85eb75ddcf8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To_num
+
+		annotation SummarizationSetBy = User
+
+	column To_name
+		dataType: string
+		lineageTag: 4541b6e4-bc9d-463b-80a7-d926dd9ba486
+		sourceLineageTag: 77be104b-2ab1-4931-9b8c-2e0439f8476f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To_name
+
+		annotation SummarizationSetBy = User
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 1818a591-9500-42e6-a8b9-ff00ff6c3713
+		sourceLineageTag: f62fa906-e7d4-4b3d-b87f-6aa82d1f1579
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = User
+
+	column Balance
+		dataType: int64
+		formatString: 0
+		lineageTag: 99c00cca-d528-40b3-b469-9e89c0a1db09
+		sourceLineageTag: c8ddc8b1-4820-43de-b65a-a85fe77a52a2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Balance
+
+		annotation SummarizationSetBy = User
+
+	column Id
+		dataType: string
+		lineageTag: 8eaf3694-46e1-40d8-8138-3ca6c2810de6
+		sourceLineageTag: 14bb1f7a-21db-4cc2-8a38-e010c9a17c66
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = User
+
+	column Date_modified
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 05b9a332-ba00-4c91-9bc0-4b548fb7bf4b
+		sourceLineageTag: 49c248f5-2873-47a5-8f22-e318c0efab9b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_modified
+
+		annotation SummarizationSetBy = User
+
+	partition Listing_hierachique3 = entity
+		mode: directQuery
+		source
+			entityName: Listing_hierachique3
+			expressionSource: 'DirectQuery à AS – Modèle 3 kpis sales'
+

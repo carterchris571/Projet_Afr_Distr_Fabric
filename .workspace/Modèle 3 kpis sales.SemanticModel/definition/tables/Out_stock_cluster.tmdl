@@ -1,20 +1,21 @@
 table Out_stock_cluster
-	lineageTag: fef98666-e919-40ff-bfe3-26325b4e0587
+	lineageTag: 8f032a39-3150-463e-bd3e-af01bd53b830
+	sourceLineageTag: [dbo].[Out_stock_cluster]
 
 	column Date
 		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 26fb2024-2329-4f05-98c3-64c85209f5cf
+		formatString: General Date
+		lineageTag: 28c5addb-1e80-4b4e-97fb-3f332707f0be
+		sourceLineageTag: Date
 		summarizeBy: none
 		sourceColumn: Date
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column Zone
 		dataType: string
-		lineageTag: b5b7de7c-ebff-4257-925f-2d40ba3406a2
+		lineageTag: b6474260-599e-420d-bb3d-bfe4cf2682db
+		sourceLineageTag: Zone
 		summarizeBy: none
 		sourceColumn: Zone
 
@@ -22,7 +23,8 @@ table Out_stock_cluster
 
 	column SA_name
 		dataType: string
-		lineageTag: c76c72e3-5a75-4395-bf28-d336478d5293
+		lineageTag: 3f702173-443e-482d-8642-e12158717e6f
+		sourceLineageTag: SA_name
 		summarizeBy: none
 		sourceColumn: SA_name
 
@@ -30,7 +32,8 @@ table Out_stock_cluster
 
 	column Territory
 		dataType: string
-		lineageTag: 14623fbe-8bbc-4e4f-b72f-ad356368a2e2
+		lineageTag: 1a163cab-d08c-4ada-b1d5-bd79e18211e4
+		sourceLineageTag: Territory
 		summarizeBy: none
 		sourceColumn: Territory
 
@@ -38,7 +41,8 @@ table Out_stock_cluster
 
 	column Cluster
 		dataType: string
-		lineageTag: 067a4afa-2c1a-4b4e-a358-e666531fbe5f
+		lineageTag: 439d8a86-7736-4f69-ad71-0be97b23b8fb
+		sourceLineageTag: Cluster
 		summarizeBy: none
 		sourceColumn: Cluster
 
@@ -46,7 +50,8 @@ table Out_stock_cluster
 
 	column #Distinct_HVC
 		dataType: double
-		lineageTag: edc7a11d-8f7f-4ba6-81a1-295f0825ec43
+		lineageTag: c6d4b00b-480f-4ceb-a752-63e1a249de41
+		sourceLineageTag: #Distinct_HVC
 		summarizeBy: sum
 		sourceColumn: #Distinct_HVC
 
@@ -56,7 +61,8 @@ table Out_stock_cluster
 
 	column 'Avg Float HV POS'
 		dataType: double
-		lineageTag: 7bd1e445-4e86-4c13-be7b-efa48fc67d90
+		lineageTag: 4a0a88af-827a-4674-b66e-2e32b83a56f3
+		sourceLineageTag: Avg Float HV POS
 		summarizeBy: sum
 		sourceColumn: Avg Float HV POS
 
@@ -66,7 +72,8 @@ table Out_stock_cluster
 
 	column #Avg_HVC_OOS
 		dataType: double
-		lineageTag: 081a31ef-a23b-43db-8488-4b3782f7457a
+		lineageTag: 2c727859-7e4d-49c3-83bd-1aab8ac10b9b
+		sourceLineageTag: #Avg_HVC_OOS
 		summarizeBy: sum
 		sourceColumn: #Avg_HVC_OOS
 
@@ -76,7 +83,8 @@ table Out_stock_cluster
 
 	column %OOS_HVC
 		dataType: double
-		lineageTag: 116e45d8-82f2-4163-ab7b-870b31db289b
+		lineageTag: 3a8fd486-3bd9-4a42-ae4c-5fde92fa1d26
+		sourceLineageTag: %OOS_HVC
 		summarizeBy: sum
 		sourceColumn: %OOS_HVC
 
@@ -86,7 +94,8 @@ table Out_stock_cluster
 
 	column 'Avg OOS HV POS rate MoM'
 		dataType: double
-		lineageTag: 887af81d-8ec2-4856-93d5-faed3ddd50ee
+		lineageTag: 5c7f11a1-a756-427d-90f5-084675fa9907
+		sourceLineageTag: Avg OOS HV POS rate MoM
 		summarizeBy: sum
 		sourceColumn: Avg OOS HV POS rate MoM
 
@@ -96,7 +105,8 @@ table Out_stock_cluster
 
 	column #day_HVC
 		dataType: double
-		lineageTag: 2b31540d-8749-4094-9718-eda7f1324d89
+		lineageTag: 01abbad6-fbd9-4219-9215-2d18cb7ae064
+		sourceLineageTag: #day_HVC
 		summarizeBy: sum
 		sourceColumn: #day_HVC
 
@@ -106,7 +116,8 @@ table Out_stock_cluster
 
 	column 'Avg Active POS'
 		dataType: double
-		lineageTag: 5507533f-21d6-4377-b8e0-9409f6c328e0
+		lineageTag: 08e798b0-4bed-4687-9e93-a9b9dd0d7ac0
+		sourceLineageTag: Avg Active POS
 		summarizeBy: sum
 		sourceColumn: Avg Active POS
 
@@ -116,7 +127,8 @@ table Out_stock_cluster
 
 	column P_OOS
 		dataType: double
-		lineageTag: 0e632438-92b4-4523-9ed9-f22a784d8528
+		lineageTag: 54096ee3-fe7f-4c35-bc4a-c46f5bc55a8d
+		sourceLineageTag: P_OOS
 		summarizeBy: sum
 		sourceColumn: P_OOS
 
@@ -124,16 +136,10 @@ table Out_stock_cluster
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition Out_stock_cluster = m
-		mode: import
-		source =
-				let
-				  Source = Fabric.Warehouse(null),
-				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
-				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
-				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Out_stock_cluster"]}[Data]
-				in
-				  #"Navigation 2"
-
-	annotation PBI_ResultType = Table
+	partition Out_stock_cluster = entity
+		mode: directLake
+		source
+			entityName: Out_stock_cluster
+			schemaName: dbo
+			expressionSource: 'DirectLake - Warehouse_DEV_Sales_data'
 

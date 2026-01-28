@@ -1,0 +1,27 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_DEV_transform_listing_hierachique",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "Combine_listing": {
+      "queryId": "1873191d-4e4c-4565-a6ef-d39b33864fd7",
+      "queryName": "Combine_listing",
+      "loadEnabled": false
+    },
+    "Combine_listing_DataDestination": {
+      "queryId": "bca07cbd-dc20-457e-a23a-def8ec2e74dd",
+      "queryName": "Combine_listing_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
+    }
+  ]
+}

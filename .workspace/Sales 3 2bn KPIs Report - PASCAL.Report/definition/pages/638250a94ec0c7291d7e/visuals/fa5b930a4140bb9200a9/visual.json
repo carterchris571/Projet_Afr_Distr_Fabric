@@ -1,0 +1,186 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "fa5b930a4140bb9200a9",
+  "position": {
+    "x": 230.87533156498674,
+    "y": 88.275862068965523,
+    "z": 0,
+    "height": 454.96021220159156,
+    "width": 966.50751547303275,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cluster"
+                    }
+                  },
+                  "Property": "Cluster"
+                }
+              },
+              "queryRef": "Cluster.Cluster",
+              "nativeQueryRef": "Cluster"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cluster"
+                    }
+                  },
+                  "Property": "SA_incharge"
+                }
+              },
+              "queryRef": "Cluster.SA_incharge",
+              "nativeQueryRef": "SA_incharge"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "Taux_couv"
+                }
+              },
+              "queryRef": "Mesure.Taux_couv",
+              "nativeQueryRef": "Taux_couv"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Listing_hierachique3"
+                    }
+                  },
+                  "Property": "Type"
+                }
+              },
+              "queryRef": "Listing_hierachique3.Type",
+              "nativeQueryRef": "Type"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "DTC perf MTD"
+                }
+              },
+              "queryRef": "Mesure.DTC perf MTD",
+              "nativeQueryRef": "DTC perf MTD"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "202.41687979539643D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Cluster.SA_incharge"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "16e54cb6aa7dcc304cc4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cluster"
+              }
+            },
+            "Property": "Cluster"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f0e5d88001b720d572a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Cluster"
+              }
+            },
+            "Property": "SA_incharge"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "614a1ac5ab502ae4e4ec",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mesure"
+              }
+            },
+            "Property": "Taux_couv"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "316b7adfab686e503a4c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Listing_hierachique3"
+              }
+            },
+            "Property": "Type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "09d76a62e20b1a671e96",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mesure"
+              }
+            },
+            "Property": "DTC perf MTD"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

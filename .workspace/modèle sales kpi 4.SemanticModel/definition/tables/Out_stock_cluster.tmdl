@@ -1,0 +1,137 @@
+table Out_stock_cluster
+	lineageTag: de2111d5-042c-4796-a03a-62c670b49bc5
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 97b240eb-15ee-47bd-8148-09c9757919cc
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Zone
+		dataType: string
+		lineageTag: 74164417-37c8-4417-8593-d31810826f40
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column SA_name
+		dataType: string
+		lineageTag: fadf311a-c92a-4436-b485-4b5c2db7bbcf
+		summarizeBy: none
+		sourceColumn: SA_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		lineageTag: 0af3bc26-c539-47f0-a65d-81e4984deda3
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: 7145afb5-5aab-411b-8e15-e4ccd295163a
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column #Distinct_HVC
+		dataType: double
+		lineageTag: 07103ddc-1152-4bcd-b349-e68583c0154b
+		summarizeBy: sum
+		sourceColumn: #Distinct_HVC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Avg Float HV POS'
+		dataType: double
+		lineageTag: 5b2d51df-2577-4fd8-9c85-4da43e167ce2
+		summarizeBy: sum
+		sourceColumn: Avg Float HV POS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column #Avg_HVC_OOS
+		dataType: double
+		lineageTag: 7fa4cce0-8816-4f44-a07f-1df46ec9f479
+		summarizeBy: sum
+		sourceColumn: #Avg_HVC_OOS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column %OOS_HVC
+		dataType: double
+		lineageTag: 6f35c067-d3d5-4df4-8349-9553dd7bf35f
+		summarizeBy: sum
+		sourceColumn: %OOS_HVC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Avg OOS HV POS rate MoM'
+		dataType: double
+		lineageTag: 907b99f4-c2fa-474a-ab86-b7c9e059a891
+		summarizeBy: sum
+		sourceColumn: Avg OOS HV POS rate MoM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column #day_HVC
+		dataType: double
+		lineageTag: 296964af-223e-438b-9b89-f110116e22e6
+		summarizeBy: sum
+		sourceColumn: #day_HVC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Avg Active POS'
+		dataType: double
+		lineageTag: fb229ca6-e890-4a5c-b09c-05c823802ccb
+		summarizeBy: sum
+		sourceColumn: Avg Active POS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column P_OOS
+		dataType: double
+		lineageTag: 9e5c0982-0ae8-42a7-960c-fd96cb848264
+		summarizeBy: sum
+		sourceColumn: P_OOS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Out_stock_cluster = m
+		mode: import
+		source =
+				let
+				  Source = Fabric.Warehouse(null),
+				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Out_stock_cluster"]}[Data]
+				in
+				  #"Navigation 2"
+

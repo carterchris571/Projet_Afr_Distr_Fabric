@@ -1,124 +1,11 @@
 table DTR_DTC_cluster
-	lineageTag: 3dff453f-8bfc-4755-9cb9-1e81c73a4fae
-
-	column Date
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 6521dfc6-1fbe-4401-80ad-45c8300dbe70
-		summarizeBy: none
-		sourceColumn: Date
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column Zone
-		dataType: string
-		lineageTag: bb36b33b-05ae-4221-b940-16ed9fc96e64
-		summarizeBy: none
-		sourceColumn: Zone
-
-		annotation SummarizationSetBy = Automatic
-
-	column Territory
-		dataType: string
-		lineageTag: 0e7bda84-791a-48e0-bb01-3a0c147c4b90
-		summarizeBy: none
-		sourceColumn: Territory
-
-		annotation SummarizationSetBy = Automatic
-
-	column Cluster
-		dataType: string
-		lineageTag: 9ef1ee3d-074e-4661-8da3-e625ae17b54d
-		summarizeBy: none
-		sourceColumn: Cluster
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'DTR Day Perf'
-		dataType: double
-		lineageTag: 97617bf0-f714-4bb8-996f-32309fae20a6
-		summarizeBy: sum
-		sourceColumn: DTR Day Perf
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'DTR Day'
-		dataType: double
-		lineageTag: b07741d3-7066-49fb-9bb3-8b9958c4a064
-		summarizeBy: sum
-		sourceColumn: DTR Day
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'DTC Day'
-		dataType: double
-		lineageTag: 93a90470-4123-4a81-84a9-8f7443578fba
-		summarizeBy: sum
-		sourceColumn: DTC Day
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'DTC Day Perf'
-		dataType: double
-		lineageTag: 5d12bfe3-4ecd-475d-b05e-f37b1ef47e67
-		summarizeBy: sum
-		sourceColumn: DTC Day Perf
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Lo MTD Perf'
-		dataType: double
-		lineageTag: 61866fb1-a4a8-427c-ba0a-39e46406ace9
-		summarizeBy: sum
-		sourceColumn: Lo MTD Perf
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'DTR MTD'
-		dataType: double
-		lineageTag: 2693cf28-e44e-43f5-a3d2-af24aab51085
-		summarizeBy: sum
-		sourceColumn: DTR MTD
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'DTR MoM'
-		dataType: double
-		lineageTag: 8dc93367-613a-4f65-9224-34d7bdb5f947
-		summarizeBy: sum
-		sourceColumn: DTR MoM
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'DTR Gap vs LM'
-		dataType: double
-		lineageTag: 88e9e3b6-5175-4fab-b2a2-32f4acf4a4b3
-		summarizeBy: sum
-		sourceColumn: DTR Gap vs LM
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+	lineageTag: 66d8dc58-0467-40e3-b51f-cfef9419caef
+	sourceLineageTag: [dbo].[DTR_DTC_cluster]
 
 	column 'DTC MTD'
 		dataType: double
-		lineageTag: 61933296-5069-4073-b6a3-fcecefcce586
+		lineageTag: 7591b5ab-cb66-41b1-8506-31e115e89c72
+		sourceLineageTag: DTC MTD
 		summarizeBy: sum
 		sourceColumn: DTC MTD
 
@@ -128,7 +15,8 @@ table DTR_DTC_cluster
 
 	column 'DTC MTD Perf'
 		dataType: double
-		lineageTag: 77293bf1-7dde-4216-ae8f-e1863fc0326e
+		lineageTag: 59c27c8e-2142-4d3b-9f39-645456961b88
+		sourceLineageTag: DTC MTD Perf
 		summarizeBy: sum
 		sourceColumn: DTC MTD Perf
 
@@ -138,7 +26,8 @@ table DTR_DTC_cluster
 
 	column 'DTC MoM'
 		dataType: double
-		lineageTag: e5979606-a68f-4187-b37a-5132aaaea2b8
+		lineageTag: 133fc528-0a2e-41ef-911e-44405aee7cbe
+		sourceLineageTag: DTC MoM
 		summarizeBy: sum
 		sourceColumn: DTC MoM
 
@@ -148,7 +37,8 @@ table DTR_DTC_cluster
 
 	column 'DTC Gap vs LM'
 		dataType: double
-		lineageTag: 617ff005-45f2-48b2-92fb-7b3db6eafc5d
+		lineageTag: 8d2719da-890a-44e0-871a-41f77d7d97f2
+		sourceLineageTag: DTC Gap vs LM
 		summarizeBy: sum
 		sourceColumn: DTC Gap vs LM
 
@@ -158,7 +48,8 @@ table DTR_DTC_cluster
 
 	column 'Target DTR day'
 		dataType: double
-		lineageTag: ce15f7b9-a563-489a-bb3c-c7e72475c21a
+		lineageTag: 516a1444-a5ff-4c41-bd4a-bb1547b35ed6
+		sourceLineageTag: Target DTR day
 		summarizeBy: sum
 		sourceColumn: Target DTR day
 
@@ -168,7 +59,8 @@ table DTR_DTC_cluster
 
 	column 'Target DTC day'
 		dataType: double
-		lineageTag: 72b6eb7e-a1c5-4536-8b8a-fba1f413f412
+		lineageTag: c11e4a65-9532-44f7-9047-628b102803a8
+		sourceLineageTag: Target DTC day
 		summarizeBy: sum
 		sourceColumn: Target DTC day
 
@@ -176,16 +68,135 @@ table DTR_DTC_cluster
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition DTR_DTC_cluster = m
-		mode: import
-		source =
-				let
-				  Source = Fabric.Warehouse(null),
-				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
-				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
-				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "DTR_DTC_cluster"]}[Data]
-				in
-				  #"Navigation 2"
+	column 'DTC Day'
+		dataType: double
+		lineageTag: a61b7f1e-e274-4ce2-b2ba-1327e53a9769
+		sourceLineageTag: DTC Day
+		summarizeBy: sum
+		sourceColumn: DTC Day
 
-	annotation PBI_ResultType = Table
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DTC Day Perf'
+		dataType: double
+		lineageTag: 276dfe32-f0be-4a94-82cc-fff1c49c265f
+		sourceLineageTag: DTC Day Perf
+		summarizeBy: sum
+		sourceColumn: DTC Day Perf
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Lo MTD Perf'
+		dataType: double
+		lineageTag: dcf9c569-35e2-4ad8-8311-96516e434043
+		sourceLineageTag: Lo MTD Perf
+		summarizeBy: sum
+		sourceColumn: Lo MTD Perf
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DTR MTD'
+		dataType: double
+		lineageTag: 5361ecf4-780b-4add-9647-673be2932b19
+		sourceLineageTag: DTR MTD
+		summarizeBy: sum
+		sourceColumn: DTR MTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DTR MoM'
+		dataType: double
+		lineageTag: 83130476-294f-4245-acb5-1da682d44d1d
+		sourceLineageTag: DTR MoM
+		summarizeBy: sum
+		sourceColumn: DTR MoM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DTR Gap vs LM'
+		dataType: double
+		lineageTag: fd84390b-c921-48e6-8e3f-fc120c2f1118
+		sourceLineageTag: DTR Gap vs LM
+		summarizeBy: sum
+		sourceColumn: DTR Gap vs LM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 71a5c7d7-121e-4840-9b2e-58677689da7f
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		lineageTag: ee5cbc87-df82-48f0-baeb-721f1df113ff
+		sourceLineageTag: Zone
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		lineageTag: 5e4c08d2-1725-40ff-8bbb-b4a59e4da502
+		sourceLineageTag: Territory
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: b57ee60f-4de1-46ef-a905-ea778b51a801
+		sourceLineageTag: Cluster
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DTR Day Perf'
+		dataType: double
+		lineageTag: 2f2c2e36-b53a-4175-a23e-c1a40860d2fd
+		sourceLineageTag: DTR Day Perf
+		summarizeBy: sum
+		sourceColumn: DTR Day Perf
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DTR Day'
+		dataType: double
+		lineageTag: 7367c9d9-af16-4b8c-92dc-ed154c2a0719
+		sourceLineageTag: DTR Day
+		summarizeBy: sum
+		sourceColumn: DTR Day
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DTR_DTC_cluster = entity
+		mode: directLake
+		source
+			entityName: DTR_DTC_cluster
+			schemaName: dbo
+			expressionSource: 'DirectLake - Warehouse_DEV_Sales_data'
 

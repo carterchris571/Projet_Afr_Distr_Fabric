@@ -1,6 +1,5 @@
 CREATE TABLE [dbo].[Listing_hierachique3] (
 
-	[Date_modifie] datetime2(6) NULL, 
 	[Id] varchar(8000) NULL, 
 	[Date] datetime2(6) NULL, 
 	[Status] varchar(8000) NULL, 
@@ -9,6 +8,7 @@ CREATE TABLE [dbo].[Listing_hierachique3] (
 	[From_name] varchar(8000) NULL, 
 	[To_num] varchar(8000) NULL, 
 	[To_name] varchar(8000) NULL, 
-	[Amount] bigint NULL, 
-	[Balance] bigint NULL
+	[Amount] varchar(8000) NULL, 
+	[Balance] varchar(8000) NULL, 
+	[Date_modified] date NULL
 );

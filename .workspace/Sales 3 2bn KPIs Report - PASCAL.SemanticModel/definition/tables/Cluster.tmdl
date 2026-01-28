@@ -1,0 +1,43 @@
+table Cluster
+	lineageTag: 3366768f-6bf4-4377-b4c8-c0cc235ca2a0
+	sourceLineageTag: 2919d6c9-3b70-482e-814b-65213ca3d31f
+
+	column Centre_
+		dataType: string
+		lineageTag: f57a3968-b689-46d4-9b94-466d0fd7a925
+		sourceLineageTag: d8bc42d8-79a6-4825-802a-04267baee1f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Centre_
+
+		annotation SummarizationSetBy = User
+
+	column SA_incharge
+		dataType: string
+		lineageTag: 8dfb222a-3a4a-4e1b-8897-e0ac0eeec220
+		sourceLineageTag: 6438c236-6e46-4cb1-a354-8c50d3e66e33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		isNullable: false
+		lineageTag: 4ff7be50-9900-4cae-b064-e6ab13f99d06
+		sourceLineageTag: eab5e7d0-0844-4f92-b14c-d30c264bbf04
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	partition Cluster = entity
+		mode: directQuery
+		source
+			entityName: Cluster
+			expressionSource: 'DirectQuery à AS – Modèle 3 kpis sales'
+
+	annotation PBI_ResultType = Table
+

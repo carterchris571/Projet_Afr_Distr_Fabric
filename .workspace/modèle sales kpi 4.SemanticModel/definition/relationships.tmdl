@@ -1,0 +1,51 @@
+relationship cefba0aa-7269-4bd7-ac1b-763303273b64
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Listing_hierachique3.'Date modified'
+	toColumn: LocalDateTable_c8b6c9bd-b694-4258-a96d-d779857e5a11.Date
+
+relationship 16a76e92-748f-315a-a7c3-ce2d714142f9
+	fromColumn: DTR_DTC_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship 77735bcd-5fb1-e43f-d1ed-34f9934ac52d
+	fromColumn: Net_adds_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship c354a299-5ab3-2093-ade7-8a49fdb6a580
+	fromColumn: Out_stock_cluster.Cluster
+	toColumn: Cluster.Cluster
+
+relationship f61c7fe5-0cdb-c322-a1e0-783e71f8cd7b
+	fromColumn: Segmentation.Cluster
+	toColumn: Cluster.Cluster
+
+relationship e5cf7a54-508c-6f1d-8f92-2b71700731fd
+	fromColumn: Listing_hierachique3.To_num
+	toColumn: Segmentation.Num_POS
+
+relationship 1fc22a18-301a-4f30-a725-b8aa41de1cbc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date_table_nettoye.Date
+	toColumn: LocalDateTable_3093da48-5312-4708-9fea-5ba3d2862a62.Date
+
+relationship a484d479-341d-444b-aeaf-04e3c5764b43
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date_table_nettoye.FinSemaine
+	toColumn: LocalDateTable_73a50e77-7b51-43fd-b07c-0bbe22f2d52a.Date
+
+relationship b8ee695d-a0c1-cec8-b747-e2ea0c328732
+	fromColumn: DTR_DTC_cluster.Date
+	toColumn: Date_table_nettoye.Date
+
+relationship 711a3c55-63a8-d40a-5b52-84db8f0c81e8
+	fromColumn: Listing_hierachique3.Date
+	toColumn: Date_table_nettoye.Date
+
+relationship 25cb5ada-2212-23e5-fba6-730ad0380c97
+	fromColumn: Net_adds_cluster.Date
+	toColumn: Date_table_nettoye.Date
+
+relationship bb7392fc-2ec7-9405-5ed4-bcc9a0d518f0
+	fromColumn: Out_stock_cluster.Date
+	toColumn: Date_table_nettoye.Date
+

@@ -2,27 +2,6 @@ table Listing_hierachique3
 	lineageTag: 86b31681-2ab9-4de6-8bd4-0e0578ee8816
 	sourceLineageTag: [dbo].[Listing_hierachique3]
 
-	column Date_modifie
-		dataType: dateTime
-		formatString: General Date
-		sourceProviderType: datetime2
-		lineageTag: ef629f7d-8a00-4a1e-a40e-7c2a13536215
-		sourceLineageTag: Date_modifie
-		summarizeBy: none
-		sourceColumn: Date_modifie
-
-		annotation SummarizationSetBy = Automatic
-
-	column Id
-		dataType: string
-		sourceProviderType: varchar(8000)
-		lineageTag: 9bbdba1e-b5ea-46de-ae3d-2d6fa1c8ab3f
-		sourceLineageTag: Id
-		summarizeBy: none
-		sourceColumn: Id
-
-		annotation SummarizationSetBy = Automatic
-
 	column Date
 		dataType: dateTime
 		formatString: General Date
@@ -113,6 +92,17 @@ table Listing_hierachique3
 		sourceLineageTag: Balance
 		summarizeBy: sum
 		sourceColumn: Balance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date modified'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1d1ee3da-ba45-40be-b01b-4c1f0b557acf
+		sourceLineageTag: Date modified
+		summarizeBy: none
+		sourceColumn: Date modified
 
 		annotation SummarizationSetBy = Automatic
 

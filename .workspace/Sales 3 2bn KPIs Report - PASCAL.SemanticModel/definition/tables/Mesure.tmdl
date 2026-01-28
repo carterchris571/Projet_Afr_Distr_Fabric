@@ -1,0 +1,66 @@
+table Mesure
+	lineageTag: 79e01671-1bd8-45fe-8b10-f2ae73213c89
+	sourceLineageTag: 44cae34e-8304-4eb7-ab44-4c7d411144fa
+
+	measure '#Day HVC T' = EXTERNALMEASURE("#Day HVC T", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		lineageTag: 87f3a7a6-f616-4621-92af-148a74f521b3
+		sourceLineageTag: 9efebebc-5a19-43a3-aa0e-a7dbeb55abd7
+		dataCategory: Uncategorized
+
+	measure %OOS = EXTERNALMEASURE("%OOS", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		lineageTag: ec5b863f-4072-447e-a4a0-c4355b326b37
+		sourceLineageTag: ea141c45-317b-471c-81d9-361f302a1127
+		dataCategory: Uncategorized
+
+	measure 'DTC perf MTD' = EXTERNALMEASURE("DTC perf MTD", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		lineageTag: 9019efac-aaf2-4f5b-90ca-67c9674e967e
+		sourceLineageTag: fa1c4524-e7e3-4a14-91a9-94a37eaaf9c3
+		dataCategory: Uncategorized
+
+	measure 'DTR perf MTD' = EXTERNALMEASURE("DTR perf MTD", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		lineageTag: 824952b7-e648-4a5f-9834-43b145117d72
+		sourceLineageTag: 356e495a-a14a-4116-8a1c-248c11a86338
+		dataCategory: Uncategorized
+
+	measure 'GA Perf MTD' = EXTERNALMEASURE("GA Perf MTD", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		lineageTag: a2ff07d1-b6bd-4373-98c2-1d6fd64a0bbe
+		sourceLineageTag: e92a3709-47b9-404c-ae7e-45e769e3e932
+		dataCategory: Uncategorized
+
+	measure 'Nbre HVC' = EXTERNALMEASURE("Nbre HVC", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
+		formatString: 0
+		lineageTag: 28ccfd53-2fef-4ad2-b079-db69ecb927a5
+		sourceLineageTag: 3767d97c-6797-455e-88ae-77fd4b56dc1f
+		dataCategory: Uncategorized
+
+	measure 'Nett adds' = EXTERNALMEASURE("Nett adds", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
+		formatString: 0
+		lineageTag: ef2b4df9-fe1c-4c60-8a04-457ba9283d25
+		sourceLineageTag: 223799dd-0c33-4d7a-a183-3da440f45f6f
+		dataCategory: Uncategorized
+
+	measure Taux_couv = EXTERNALMEASURE("Taux_couv", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
+		lineageTag: dda569ec-84b8-4e49-a180-0100d91805d0
+		sourceLineageTag: a671d00e-9a31-426b-9755-96fab8ba295c
+		dataCategory: Uncategorized
+
+	measure Test_Count = EXTERNALMEASURE("Test_Count", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
+		formatString: 0
+		lineageTag: cdd31776-7cf3-4d38-9bba-ff9381f4ce66
+		sourceLineageTag: bbae37d6-d6e3-4ebd-9828-ffa279e4fc85
+		dataCategory: Uncategorized
+
+	measure Test_Date = EXTERNALMEASURE("Test_Date", DATETIME, "DirectQuery à AS – Modèle 3 kpis sales")
+		formatString: General Number
+		lineageTag: c3b8f463-41f1-4189-bb31-a0cd3a7cab5b
+		sourceLineageTag: a984f420-57f7-4282-891a-a995deb73a38
+		dataCategory: Uncategorized
+
+	partition Mesure = entity
+		mode: directQuery
+		source
+			entityName: Mesure
+			expressionSource: 'DirectQuery à AS – Modèle 3 kpis sales'
+
+	annotation PBI_ResultType = Table
+

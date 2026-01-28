@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "modèle sales kpi 4"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1c957cd0-b90f-9ad4-46e6-8ea8c3ff4add"
+  }
+}

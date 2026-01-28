@@ -1,0 +1,23 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectQuery à AS – Modèle 3 kpis sales","Date_table"]
+
+ref table Mesure
+ref table Net_adds_cluster
+ref table Listing_hierachique3
+ref table DTR_DTC_cluster
+ref table Out_stock_cluster
+ref table Segmentation
+ref table Cluster
+ref table Date_table
+
+ref cultureInfo fr-FR
+

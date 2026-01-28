@@ -1,0 +1,116 @@
+table Net_adds_cluster
+	lineageTag: e44199a4-a137-4619-8eaf-27c9eda45365
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 92dda567-d47b-4925-b6f9-8a426b78dd47
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Zone
+		dataType: string
+		lineageTag: 5b1197f4-e076-41b7-985c-17bf079c2655
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		lineageTag: fb1e9407-c579-4481-a09e-cf4ef4ad59a8
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: 69609323-094c-437c-aa21-ead7a520f137
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column GA_day
+		dataType: int64
+		formatString: 0
+		lineageTag: c13b2418-1184-41de-bfb5-7e414817dec7
+		summarizeBy: sum
+		sourceColumn: GA_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column GA_day_perf
+		dataType: double
+		lineageTag: 46e58940-3df0-4adb-8758-a85a86f310c0
+		summarizeBy: sum
+		sourceColumn: GA_day_perf
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GA_MTD
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d157999-9450-4a03-b471-adfefdec254c
+		summarizeBy: sum
+		sourceColumn: GA_MTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column GA_MTD_gap
+		dataType: double
+		lineageTag: 0abb33fc-28f3-47c9-8a88-1aa41e921240
+		summarizeBy: sum
+		sourceColumn: GA_MTD_gap
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GA_MTD_perf
+		dataType: double
+		lineageTag: 0e6c649a-b5e1-4054-a9d1-112b6cff014d
+		summarizeBy: sum
+		sourceColumn: GA_MTD_perf
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Net_adds
+		dataType: int64
+		formatString: 0
+		lineageTag: ff2f9fb7-0cbc-4cba-83ed-0fc3d0cbfef0
+		summarizeBy: sum
+		sourceColumn: Net_adds
+
+		annotation SummarizationSetBy = Automatic
+
+	column Target_GA_day
+		dataType: double
+		lineageTag: c8f75065-dab3-40a3-a384-529eb525c17b
+		summarizeBy: sum
+		sourceColumn: Target_GA_day
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Net_adds_cluster = m
+		mode: import
+		source =
+				let
+				  Source = Fabric.Warehouse(null),
+				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Net_adds_cluster"]}[Data]
+				in
+				  #"Navigation 2"
+

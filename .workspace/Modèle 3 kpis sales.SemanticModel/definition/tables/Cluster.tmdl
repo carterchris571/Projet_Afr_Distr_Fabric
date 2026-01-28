@@ -1,9 +1,11 @@
 table Cluster
-	lineageTag: 562c3749-74c0-4bd9-845f-673e27bac0fb
+	lineageTag: 2919d6c9-3b70-482e-814b-65213ca3d31f
+	sourceLineageTag: [dbo].[Cluster]
 
 	column Centre_
 		dataType: string
-		lineageTag: 79a7993d-9cee-4b41-ae72-b759cc9c538e
+		lineageTag: d8bc42d8-79a6-4825-802a-04267baee1f5
+		sourceLineageTag: Centre_
 		summarizeBy: none
 		sourceColumn: Centre_
 
@@ -11,7 +13,8 @@ table Cluster
 
 	column SA_incharge
 		dataType: string
-		lineageTag: 1695c950-f262-441b-b115-5951d76664af
+		lineageTag: 6438c236-6e46-4cb1-a354-8c50d3e66e33
+		sourceLineageTag: SA_incharge
 		summarizeBy: none
 		sourceColumn: SA_incharge
 
@@ -19,37 +22,17 @@ table Cluster
 
 	column Cluster
 		dataType: string
-		lineageTag: 27b49052-e87b-400f-bdd6-895e8d5023cb
+		lineageTag: eab5e7d0-0844-4f92-b14c-d30c264bbf04
+		sourceLineageTag: Cluster
 		summarizeBy: none
 		sourceColumn: Cluster
 
 		annotation SummarizationSetBy = Automatic
 
-	hierarchy 'Centre_ Hiérarchie'
-		lineageTag: 95fd5c2b-94d6-4717-bc19-6002c875b4a1
-
-		level Centre_
-			lineageTag: a0745b87-4c58-422e-aa7d-f96c18b5bc51
-			column: Centre_
-
-		level SA_incharge
-			lineageTag: bf7d4049-f2c4-4dd0-97e1-962f63cd6a3a
-			column: SA_incharge
-
-		level Cluster
-			lineageTag: c1c52a35-c41e-4c1c-85d6-279a5496aaa9
-			column: Cluster
-
-	partition Cluster = m
-		mode: import
-		source =
-				let
-				  Source = Fabric.Warehouse(null),
-				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
-				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
-				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Cluster"]}[Data]
-				in
-				  #"Navigation 2"
-
-	annotation PBI_ResultType = Table
+	partition Cluster = entity
+		mode: directLake
+		source
+			entityName: Cluster
+			schemaName: dbo
+			expressionSource: 'DirectLake - Warehouse_DEV_Sales_data'
 

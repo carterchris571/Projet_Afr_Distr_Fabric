@@ -1,0 +1,191 @@
+table DTR_DTC_cluster
+	lineageTag: 0555d75c-e1bc-4231-a6bd-874a5f405397
+	sourceLineageTag: 66d8dc58-0467-40e3-b51f-cfef9419caef
+
+	column 'DTC MTD'
+		dataType: double
+		lineageTag: 4a99416a-2ad3-4a56-8454-0214b784c1c6
+		sourceLineageTag: 7591b5ab-cb66-41b1-8506-31e115e89c72
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTC MTD
+
+		annotation SummarizationSetBy = User
+
+	column 'DTC MTD Perf'
+		dataType: double
+		lineageTag: 5d6a717a-6016-42ea-b869-88df0e5d4fd6
+		sourceLineageTag: 59c27c8e-2142-4d3b-9f39-645456961b88
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTC MTD Perf
+
+		annotation SummarizationSetBy = User
+
+	column 'DTC MoM'
+		dataType: double
+		lineageTag: 9392ca50-ac91-46c2-9b17-18d08f306931
+		sourceLineageTag: 133fc528-0a2e-41ef-911e-44405aee7cbe
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTC MoM
+
+		annotation SummarizationSetBy = User
+
+	column 'DTC Gap vs LM'
+		dataType: double
+		lineageTag: 2e687736-d1ae-4c50-8d11-44c228614a15
+		sourceLineageTag: 8d2719da-890a-44e0-871a-41f77d7d97f2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTC Gap vs LM
+
+		annotation SummarizationSetBy = User
+
+	column 'Target DTR day'
+		dataType: double
+		lineageTag: d714640b-c2fc-4961-8ae2-f90586e6da31
+		sourceLineageTag: 516a1444-a5ff-4c41-bd4a-bb1547b35ed6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Target DTR day
+
+		annotation SummarizationSetBy = User
+
+	column 'Target DTC day'
+		dataType: double
+		lineageTag: e813788c-fb3f-46dd-bb28-fae0d592b193
+		sourceLineageTag: c11e4a65-9532-44f7-9047-628b102803a8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Target DTC day
+
+		annotation SummarizationSetBy = User
+
+	column 'DTC Day'
+		dataType: double
+		lineageTag: b139c514-0570-4a68-bd77-d913005a8fae
+		sourceLineageTag: a61b7f1e-e274-4ce2-b2ba-1327e53a9769
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTC Day
+
+		annotation SummarizationSetBy = User
+
+	column 'DTC Day Perf'
+		dataType: double
+		lineageTag: ece5a2f6-920b-4d5c-acee-cdd3c9838395
+		sourceLineageTag: 276dfe32-f0be-4a94-82cc-fff1c49c265f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTC Day Perf
+
+		annotation SummarizationSetBy = User
+
+	column 'Lo MTD Perf'
+		dataType: double
+		lineageTag: d5ffc3bd-e220-4c49-989c-44ddb41ff1fa
+		sourceLineageTag: dcf9c569-35e2-4ad8-8311-96516e434043
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Lo MTD Perf
+
+		annotation SummarizationSetBy = User
+
+	column 'DTR MTD'
+		dataType: double
+		lineageTag: a5bd6c98-316a-48ec-8d8c-7451843952e3
+		sourceLineageTag: 5361ecf4-780b-4add-9647-673be2932b19
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTR MTD
+
+		annotation SummarizationSetBy = User
+
+	column 'DTR MoM'
+		dataType: double
+		lineageTag: f8ff8d86-58b4-4fdf-a9d8-14fc80fa9f91
+		sourceLineageTag: 83130476-294f-4245-acb5-1da682d44d1d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTR MoM
+
+		annotation SummarizationSetBy = User
+
+	column 'DTR Gap vs LM'
+		dataType: double
+		lineageTag: 7b3ad13f-8c60-4e72-bc83-91791460c947
+		sourceLineageTag: fd84390b-c921-48e6-8e3f-fc120c2f1118
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTR Gap vs LM
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 25ce1a1e-1e08-4b13-ac78-a6e32e823c50
+		sourceLineageTag: 71a5c7d7-121e-4840-9b2e-58677689da7f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Zone
+		dataType: string
+		lineageTag: 44469c18-290e-4e6a-be7f-7e2ef81471f5
+		sourceLineageTag: ee5cbc87-df82-48f0-baeb-721f1df113ff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = User
+
+	column Territory
+		dataType: string
+		lineageTag: 4cc08059-59dc-402b-8cb7-c2cb3542c037
+		sourceLineageTag: 5e4c08d2-1725-40ff-8bbb-b4a59e4da502
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		lineageTag: e5b7b7f2-ba7e-4fe2-b888-5a537cbcccb4
+		sourceLineageTag: b57ee60f-4de1-46ef-a905-ea778b51a801
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	column 'DTR Day Perf'
+		dataType: double
+		lineageTag: 166102e0-4d30-40df-9f1d-74bacb85a8a9
+		sourceLineageTag: 2f2c2e36-b53a-4175-a23e-c1a40860d2fd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTR Day Perf
+
+		annotation SummarizationSetBy = User
+
+	column 'DTR Day'
+		dataType: double
+		lineageTag: fdae8ff7-a016-4df7-a8d2-2b3ee34744c5
+		sourceLineageTag: 7367c9d9-af16-4b8c-92dc-ed154c2a0719
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DTR Day
+
+		annotation SummarizationSetBy = User
+
+	partition DTR_DTC_cluster = entity
+		mode: directQuery
+		source
+			entityName: DTR_DTC_cluster
+			expressionSource: 'DirectQuery à AS – Modèle 3 kpis sales'
+

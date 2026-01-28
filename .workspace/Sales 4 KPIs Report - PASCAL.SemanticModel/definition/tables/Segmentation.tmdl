@@ -1,0 +1,91 @@
+table Segmentation
+	lineageTag: bbbbc307-de7e-4e6b-ac53-b997a3bb0431
+	sourceLineageTag: f908e3a2-a135-4511-851e-02d8422f2341
+
+	column Num_POS
+		dataType: string
+		isNullable: false
+		lineageTag: 2b2a75a6-6f52-482c-814a-da129def7813
+		sourceLineageTag: 7ede7098-2037-46b8-9b6e-88bdf2a1fbc7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Num_POS
+
+		annotation SummarizationSetBy = User
+
+	column Locality
+		dataType: string
+		lineageTag: 68c53aef-4089-4178-bbcf-2dd6718b5c79
+		sourceLineageTag: db3b5f3f-f980-4bff-9dce-444bd714fe46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Locality
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		lineageTag: aad8c4c6-6c87-4cf1-8a24-955a346f2713
+		sourceLineageTag: 4818cd9e-0fa8-4b0e-b759-8c1a5aeec9fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	column Territory
+		dataType: string
+		lineageTag: 5feee7df-2315-422e-aa1d-c52a8d6f8c8c
+		sourceLineageTag: f61d97c9-028e-4e42-90ef-ed1aae271f16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = User
+
+	column Zone
+		dataType: string
+		lineageTag: e4529463-5e76-4e47-be3a-59ef4e2b05fc
+		sourceLineageTag: 5bb873ab-dc35-4f1c-a808-33b227424e44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = User
+
+	column 'Segment Group'
+		dataType: string
+		lineageTag: 767edfb0-56aa-4e4f-9cf6-076652cf8ab3
+		sourceLineageTag: 2e140fd9-7099-492c-946f-6dcac4d6043d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Segment Group
+
+		annotation SummarizationSetBy = User
+
+	column 'SA incharge'
+		dataType: string
+		lineageTag: 47878ccd-494c-4693-a69e-f2625acbc90d
+		sourceLineageTag: aaa0cdae-e7b5-4b7e-b0e0-99e8415efbe3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SA incharge
+
+		annotation SummarizationSetBy = User
+
+	column Seg_gpre
+		dataType: string
+		lineageTag: 9f1fb175-9faf-407a-a9b8-bef3b0fc5801
+		sourceLineageTag: 73a9a852-8795-4db8-939b-721b86634a8e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Seg_gpre
+
+		annotation SummarizationSetBy = User
+
+	partition Segmentation = entity
+		mode: directQuery
+		source
+			entityName: Segmentation
+			expressionSource: 'DirectQuery à AS – Modèle 3 kpis sales'
+

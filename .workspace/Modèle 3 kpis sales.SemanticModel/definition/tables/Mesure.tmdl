@@ -186,13 +186,13 @@ table Mesure
 			        FILTER(
 			             Segmentation,
 			            CALCULATE(
-			                COUNTROWS(Listing_hierachique2),
-			                Listing_hierachique2[Amount] < 0, 
-			                Listing_hierachique2[Type] = "Transfer",
-			                ABS(Listing_hierachique2[Amount]) >= 1000,
+			                COUNTROWS(Listing_hierachique3),
+			                Listing_hierachique3[Amount] < 0, 
+			                Listing_hierachique3[Type] = "Transfer",
+			                ABS(Listing_hierachique3[Amount]) >= 1000,
 			                FILTER(
-			                    Listing_hierachique2,
-			                    Listing_hierachique2[To_num] = Segmentation[Num_POS]
+			                    Listing_hierachique3,
+			                    Listing_hierachique3[To_num] = Segmentation[Num_POS]
 			                 )
 			            ) > 0
 			        )
@@ -202,10 +202,32 @@ table Mesure
 			
 			RETURN 
 			DIVIDE(Points_Touches,Total_POS,0)
+			
 			```
 		lineageTag: a671d00e-9a31-426b-9755-96fab8ba295c
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Test_Count = ```
+			
+			COUNTROWS(
+			    FILTER(
+			        Listing_hierachique3,
+			        Listing_hierachique3[Amount] < 0 &&
+			        Listing_hierachique3[Type] = "Transfer" &&
+			        ABS(Listing_hierachique3[Amount]) >= 1000
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: bbae37d6-d6e3-4ebd-9828-ffa279e4fc85
+
+	measure Test_Date =
+			
+			MIN(Listing_hierachique3[Date])
+		formatString: General Date
+		lineageTag: a984f420-57f7-4282-891a-a995deb73a38
 
 	partition Mesure = m
 		mode: import

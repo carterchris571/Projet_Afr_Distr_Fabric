@@ -1,0 +1,126 @@
+table Net_adds_cluster
+	lineageTag: 1f48921a-6b9e-461b-867d-465263352e17
+	sourceLineageTag: 6f77a149-fe92-4393-9191-041d95d0795f
+
+	column Date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 56ad9aae-c8da-426f-b3c9-b4dc81f0b3cd
+		sourceLineageTag: 93e5a6c4-2334-4d07-8964-b761c950b57f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Zone
+		dataType: string
+		lineageTag: 596f5586-c117-464a-b56b-ffa3417a6882
+		sourceLineageTag: 0675ef1a-7dec-4832-b1d6-2979bcfa1cfc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = User
+
+	column Territory
+		dataType: string
+		lineageTag: 398ea2b5-db84-44b6-8ca8-ecd913fafefc
+		sourceLineageTag: 98edd065-659e-440d-9c9b-bcde48535710
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		lineageTag: 8656ad18-c453-44a5-a8f4-1af5ce3f8163
+		sourceLineageTag: 9ba715e1-21b1-4cf0-bce9-1adad9d597a5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	column GA_day
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e06e83b-70cf-47b1-ad4d-a95f77085e24
+		sourceLineageTag: 6da377e5-21e7-4b73-80cf-4b56e712e0f0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: GA_day
+
+		annotation SummarizationSetBy = User
+
+	column GA_day_perf
+		dataType: double
+		lineageTag: 92fc4fa9-0046-4d7f-8bb8-f71c8d58830d
+		sourceLineageTag: 0860662c-3d5e-4d9b-a115-66ecf7319ce4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: GA_day_perf
+
+		annotation SummarizationSetBy = User
+
+	column GA_MTD
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f8e265c-c596-402f-bc91-69fff99a23c7
+		sourceLineageTag: 19a54605-e4aa-4275-b6ab-60c82d4eede0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: GA_MTD
+
+		annotation SummarizationSetBy = User
+
+	column GA_MTD_gap
+		dataType: double
+		lineageTag: faf6aed8-6364-4dc6-85fa-71265ebac642
+		sourceLineageTag: 3a20a9de-fdef-425a-824a-789fa80618f5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: GA_MTD_gap
+
+		annotation SummarizationSetBy = User
+
+	column GA_MTD_perf
+		dataType: double
+		lineageTag: 5ff78a92-20c7-4726-97c4-7e46e9354269
+		sourceLineageTag: 05b5b480-ec30-45e6-94f3-07f441368ca5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: GA_MTD_perf
+
+		annotation SummarizationSetBy = User
+
+	column Net_adds
+		dataType: int64
+		formatString: 0
+		lineageTag: 21083c7f-0af9-4c97-ac3b-b80cb19dacbb
+		sourceLineageTag: 5ea5c408-1cf6-40f5-8f89-0199a478d683
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Net_adds
+
+		annotation SummarizationSetBy = User
+
+	column Target_GA_day
+		dataType: double
+		lineageTag: 0ba324fd-872d-4af3-b9ce-1c35ac0cb8b1
+		sourceLineageTag: e137f1d9-5aab-4d6d-b2ba-4650f81d3df9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Target_GA_day
+
+		annotation SummarizationSetBy = User
+
+	partition Net_adds_cluster = entity
+		mode: directQuery
+		source
+			entityName: Net_adds_cluster
+			expressionSource: 'DirectQuery à AS – Modèle 3 kpis sales'
+
+	annotation PBI_ResultType = Table
+

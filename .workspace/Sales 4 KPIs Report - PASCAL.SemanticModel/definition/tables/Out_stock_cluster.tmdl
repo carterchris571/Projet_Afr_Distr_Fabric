@@ -1,0 +1,141 @@
+table Out_stock_cluster
+	lineageTag: ee620824-7239-4b6b-a604-49ea2b697e92
+	sourceLineageTag: 8f032a39-3150-463e-bd3e-af01bd53b830
+
+	column Date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 18f427e8-dbb5-441e-a281-7c458fec855d
+		sourceLineageTag: 28c5addb-1e80-4b4e-97fb-3f332707f0be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Zone
+		dataType: string
+		lineageTag: 57c64ba6-f6fb-42df-b7a1-d7c474ca16b4
+		sourceLineageTag: b6474260-599e-420d-bb3d-bfe4cf2682db
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = User
+
+	column SA_name
+		dataType: string
+		lineageTag: 6b2ad7fb-6e47-46c7-8708-a4721cdbd157
+		sourceLineageTag: 3f702173-443e-482d-8642-e12158717e6f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SA_name
+
+		annotation SummarizationSetBy = User
+
+	column Territory
+		dataType: string
+		lineageTag: 174e8610-cd92-434c-8e6d-50239b081d5f
+		sourceLineageTag: 1a163cab-d08c-4ada-b1d5-bd79e18211e4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		lineageTag: c359af83-7115-4485-a623-f7d2c74848ef
+		sourceLineageTag: 439d8a86-7736-4f69-ad71-0be97b23b8fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	column #Distinct_HVC
+		dataType: double
+		lineageTag: 2ecbde12-d886-4863-9ca7-75fc100c1f54
+		sourceLineageTag: c6d4b00b-480f-4ceb-a752-63e1a249de41
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: #Distinct_HVC
+
+		annotation SummarizationSetBy = User
+
+	column 'Avg Float HV POS'
+		dataType: double
+		lineageTag: 5f9bcb3b-b616-4a9b-ad8b-b7d2ae6b8195
+		sourceLineageTag: 4a0a88af-827a-4674-b66e-2e32b83a56f3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Avg Float HV POS
+
+		annotation SummarizationSetBy = User
+
+	column #Avg_HVC_OOS
+		dataType: double
+		lineageTag: 50a1f6c9-5230-401c-8e44-dfd11a54cdf9
+		sourceLineageTag: 2c727859-7e4d-49c3-83bd-1aab8ac10b9b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: #Avg_HVC_OOS
+
+		annotation SummarizationSetBy = User
+
+	column %OOS_HVC
+		dataType: double
+		lineageTag: f29fbe9b-3759-4fa8-bd91-9022cb2be399
+		sourceLineageTag: 3a8fd486-3bd9-4a42-ae4c-5fde92fa1d26
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: %OOS_HVC
+
+		annotation SummarizationSetBy = User
+
+	column 'Avg OOS HV POS rate MoM'
+		dataType: double
+		lineageTag: da5a2c6f-e42a-4585-ad38-bd1308f6c011
+		sourceLineageTag: 5c7f11a1-a756-427d-90f5-084675fa9907
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Avg OOS HV POS rate MoM
+
+		annotation SummarizationSetBy = User
+
+	column #day_HVC
+		dataType: double
+		lineageTag: f13ceec6-c094-4228-aaca-4e7e3f819ef6
+		sourceLineageTag: 01abbad6-fbd9-4219-9215-2d18cb7ae064
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: #day_HVC
+
+		annotation SummarizationSetBy = User
+
+	column 'Avg Active POS'
+		dataType: double
+		lineageTag: 4e30de80-64ec-4a8d-91fc-80fd2cbbdcfd
+		sourceLineageTag: 08e798b0-4bed-4687-9e93-a9b9dd0d7ac0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Avg Active POS
+
+		annotation SummarizationSetBy = User
+
+	column P_OOS
+		dataType: double
+		lineageTag: b1dc39fe-87bd-49bf-a24c-3c75426a10a9
+		sourceLineageTag: 54096ee3-fe7f-4c35-bc4a-c46f5bc55a8d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: P_OOS
+
+		annotation SummarizationSetBy = User
+
+	partition Out_stock_cluster = entity
+		mode: directQuery
+		source
+			entityName: Out_stock_cluster
+			expressionSource: 'DirectQuery à AS – Modèle 3 kpis sales'
+

@@ -27,7 +27,7 @@
             "datasetSettings": {
               "type": "LakehouseTable",
               "typeProperties": {
-                "table": "Listing_hierachique_nettoye2"
+                "table": "Listing_h1"
               },
               "schema": [],
               "connectionSettings": {
@@ -57,7 +57,7 @@
               "type": "DataWarehouseTable",
               "typeProperties": {
                 "schema": "dbo",
-                "table": "Listing_hierachique2"
+                "table": "Listing_hierachique3"
               },
               "schema": [],
               "connectionSettings": {
@@ -95,53 +95,7 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "Copy data listing hierachique2",
-        "dependsOn": [
-          {
-            "activity": "Script1",
-            "dependencyConditions": [
-              "Succeeded"
-            ]
-          }
-        ]
-      },
-      {
-        "type": "Script",
-        "typeProperties": {
-          "scripts": [
-            {
-              "text": {
-                "value": "TRUNCATE TABLE Listing_hierachique2;",
-                "type": "Expression"
-              },
-              "type": "Query"
-            }
-          ],
-          "scriptBlockExecutionTimeout": "02:00:00"
-        },
-        "connectionSettings": {
-          "name": "Warehouse_DEV_Sales_data",
-          "properties": {
-            "type": "DataWarehouse",
-            "typeProperties": {
-              "artifactId": "ff7ea52e-621f-460f-b613-8bf99c5d04a2",
-              "endpoint": "4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com",
-              "workspaceId": "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"
-            },
-            "externalReferences": {
-              "connection": "4748d170-aefc-4384-a126-def32992e530"
-            },
-            "annotations": []
-          }
-        },
-        "policy": {
-          "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
-          "secureInput": false,
-          "secureOutput": false
-        },
-        "name": "Script1",
+        "name": "Copy data1",
         "dependsOn": [
           {
             "activity": "Dataflow_listing_hierachique2",

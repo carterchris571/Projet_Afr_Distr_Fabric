@@ -1,0 +1,56 @@
+table Cluster
+	lineageTag: a110200a-c6ec-4045-93f3-917798c9bcd1
+	sourceLineageTag: 2919d6c9-3b70-482e-814b-65213ca3d31f
+
+	column Centre_
+		dataType: string
+		lineageTag: 5c8bb82d-b3f0-4d24-81a7-dc06550eae9a
+		sourceLineageTag: d8bc42d8-79a6-4825-802a-04267baee1f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Centre_
+
+		annotation SummarizationSetBy = User
+
+	column SA_incharge
+		dataType: string
+		lineageTag: 2fe41f69-4d48-49e6-9cc2-20e733291337
+		sourceLineageTag: 6438c236-6e46-4cb1-a354-8c50d3e66e33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = User
+
+	column Cluster
+		dataType: string
+		isNullable: false
+		lineageTag: 2cf7dd2f-5a36-4d46-b45a-e0e45ae63a42
+		sourceLineageTag: eab5e7d0-0844-4f92-b14c-d30c264bbf04
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = User
+
+	hierarchy 'Centre_ Hiérarchie'
+		lineageTag: 6e074ea4-e26b-465b-89cb-1c25e3f7b268
+
+		level Centre_
+			lineageTag: 0af03821-701e-4052-8621-cf6edb70d128
+			column: Centre_
+
+		level Cluster
+			lineageTag: 680a6576-46c2-4efc-ab78-b08400366c1b
+			column: Cluster
+
+		level SA_incharge
+			lineageTag: cda0bd20-b42b-435d-895c-df1ec5201a4e
+			column: SA_incharge
+
+	partition Cluster = entity
+		mode: directQuery
+		source
+			entityName: Cluster
+			expressionSource: 'DirectQuery à AS – Modèle 3 kpis sales'
+

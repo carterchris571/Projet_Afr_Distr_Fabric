@@ -1,20 +1,21 @@
 table Net_adds_cluster
-	lineageTag: 1063ed8f-c462-4210-89a1-d1d2cdfd173e
+	lineageTag: 6f77a149-fe92-4393-9191-041d95d0795f
+	sourceLineageTag: [dbo].[Net_adds_cluster]
 
 	column Date
 		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 2139081b-6bd7-4035-a43f-a46151a1c3a2
+		formatString: General Date
+		lineageTag: 93e5a6c4-2334-4d07-8964-b761c950b57f
+		sourceLineageTag: Date
 		summarizeBy: none
 		sourceColumn: Date
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column Zone
 		dataType: string
-		lineageTag: 794ff7da-0fbc-4836-824b-8dc7584048c8
+		lineageTag: 0675ef1a-7dec-4832-b1d6-2979bcfa1cfc
+		sourceLineageTag: Zone
 		summarizeBy: none
 		sourceColumn: Zone
 
@@ -22,7 +23,8 @@ table Net_adds_cluster
 
 	column Territory
 		dataType: string
-		lineageTag: b4ae5337-05d9-4d40-894d-24c4f0a1b439
+		lineageTag: 98edd065-659e-440d-9c9b-bcde48535710
+		sourceLineageTag: Territory
 		summarizeBy: none
 		sourceColumn: Territory
 
@@ -30,7 +32,8 @@ table Net_adds_cluster
 
 	column Cluster
 		dataType: string
-		lineageTag: b1134f13-26bc-4ccf-9bdb-66ec4efd736f
+		lineageTag: 9ba715e1-21b1-4cf0-bce9-1adad9d597a5
+		sourceLineageTag: Cluster
 		summarizeBy: none
 		sourceColumn: Cluster
 
@@ -39,7 +42,8 @@ table Net_adds_cluster
 	column GA_day
 		dataType: int64
 		formatString: 0
-		lineageTag: 69ad2589-64e6-4be5-aac9-e586d0a6ef0c
+		lineageTag: 6da377e5-21e7-4b73-80cf-4b56e712e0f0
+		sourceLineageTag: GA_day
 		summarizeBy: sum
 		sourceColumn: GA_day
 
@@ -47,7 +51,8 @@ table Net_adds_cluster
 
 	column GA_day_perf
 		dataType: double
-		lineageTag: 639c8c4f-f02c-4701-8756-07c0efba42bb
+		lineageTag: 0860662c-3d5e-4d9b-a115-66ecf7319ce4
+		sourceLineageTag: GA_day_perf
 		summarizeBy: sum
 		sourceColumn: GA_day_perf
 
@@ -58,7 +63,8 @@ table Net_adds_cluster
 	column GA_MTD
 		dataType: int64
 		formatString: 0
-		lineageTag: 21cb0963-6ac8-419c-818f-cd1f6316a629
+		lineageTag: 19a54605-e4aa-4275-b6ab-60c82d4eede0
+		sourceLineageTag: GA_MTD
 		summarizeBy: sum
 		sourceColumn: GA_MTD
 
@@ -66,7 +72,8 @@ table Net_adds_cluster
 
 	column GA_MTD_gap
 		dataType: double
-		lineageTag: d0d03598-d43a-480e-a618-491f0a7ae484
+		lineageTag: 3a20a9de-fdef-425a-824a-789fa80618f5
+		sourceLineageTag: GA_MTD_gap
 		summarizeBy: sum
 		sourceColumn: GA_MTD_gap
 
@@ -76,7 +83,8 @@ table Net_adds_cluster
 
 	column GA_MTD_perf
 		dataType: double
-		lineageTag: bbeaa775-48fe-408c-bd99-a71e5bd770ad
+		lineageTag: 05b5b480-ec30-45e6-94f3-07f441368ca5
+		sourceLineageTag: GA_MTD_perf
 		summarizeBy: sum
 		sourceColumn: GA_MTD_perf
 
@@ -87,7 +95,8 @@ table Net_adds_cluster
 	column Net_adds
 		dataType: int64
 		formatString: 0
-		lineageTag: c7cfd597-e0de-4843-abd9-86e2e6746c5e
+		lineageTag: 5ea5c408-1cf6-40f5-8f89-0199a478d683
+		sourceLineageTag: Net_adds
 		summarizeBy: sum
 		sourceColumn: Net_adds
 
@@ -95,7 +104,8 @@ table Net_adds_cluster
 
 	column Target_GA_day
 		dataType: double
-		lineageTag: dcef5ff5-3698-4e7f-befc-c31d9139e97b
+		lineageTag: e137f1d9-5aab-4d6d-b2ba-4650f81d3df9
+		sourceLineageTag: Target_GA_day
 		summarizeBy: sum
 		sourceColumn: Target_GA_day
 
@@ -103,16 +113,10 @@ table Net_adds_cluster
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition Net_adds_cluster = m
-		mode: import
-		source =
-				let
-				  Source = Fabric.Warehouse(null),
-				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
-				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
-				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Net_adds_cluster"]}[Data]
-				in
-				  #"Navigation 2"
-
-	annotation PBI_ResultType = Table
+	partition Net_adds_cluster = entity
+		mode: directLake
+		source
+			entityName: Net_adds_cluster
+			schemaName: dbo
+			expressionSource: 'DirectLake - Warehouse_DEV_Sales_data'
 

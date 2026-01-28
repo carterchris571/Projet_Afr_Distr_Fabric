@@ -1,0 +1,79 @@
+table Segmentation
+	lineageTag: ec19071e-161b-4822-83ea-207d85fc2f14
+
+	column Num_POS
+		dataType: string
+		lineageTag: aac6d21f-3363-4d91-8265-347a855fe778
+		summarizeBy: none
+		sourceColumn: Num_POS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Locality
+		dataType: string
+		lineageTag: 1b5b4b6a-7aea-437a-bec5-49f9cfb765a5
+		summarizeBy: none
+		sourceColumn: Locality
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: 20c1d4e5-312a-42e3-b8d0-cbb5715ea3bc
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Territory
+		dataType: string
+		lineageTag: 6a33e453-98e1-4fde-86ae-41f28dbe1dac
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Zone
+		dataType: string
+		lineageTag: 36714cb4-e6a1-4964-bea7-bc91d0a974b1
+		summarizeBy: none
+		sourceColumn: Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segment Group'
+		dataType: string
+		lineageTag: 3b3a77d1-71b5-45a3-9f29-6015b19c70a4
+		summarizeBy: none
+		sourceColumn: Segment Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SA incharge'
+		dataType: string
+		lineageTag: 626fc492-0b9b-4ae0-9a13-2ffeb3f0c1ee
+		summarizeBy: none
+		sourceColumn: SA incharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seg_gpre
+		dataType: string
+		lineageTag: c3374ff6-f9a4-41e7-a2ab-3e7d1c1c6ecc
+		summarizeBy: none
+		sourceColumn: Seg_gpre
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Segmentation = m
+		mode: import
+		source =
+				let
+				  Source = Fabric.Warehouse(null),
+				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Segmentation"]}[Data],
+				  #"Renamed Columns" = Table.RenameColumns(#"Navigation 2", {{"MSISDN", "Num_POS"}})
+				in
+				  #"Renamed Columns"
+

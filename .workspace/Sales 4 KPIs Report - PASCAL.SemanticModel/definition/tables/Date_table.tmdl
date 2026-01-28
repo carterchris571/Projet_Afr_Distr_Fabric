@@ -1,25 +1,22 @@
 table Date_table
-	lineageTag: 3bcf0382-d9e6-40e8-990e-f61230b70d2c
+	lineageTag: 4e01f42f-d243-4aac-85ad-ec6282c50c05
+	dataCategory: Time
 
 	column Date
 		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 8387f404-03c0-46d1-9ff8-1a9f0e61f6de
+		isKey
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: f8eda888-a9a4-451f-98b3-4cf788fc4653
 		summarizeBy: none
 		sourceColumn: Date
 
-		variation Variation
-			isDefault
-			relationship: 6a3bbd5e-cbf5-46ba-91ea-f75db700f550
-			defaultHierarchy: LocalDateTable_5e514c32-2cac-467d-a7f8-7db308792590.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column Année
 		dataType: string
-		lineageTag: e066fdca-4eee-43af-aac2-45bc298b7420
+		sourceProviderType: varchar(8000)
+		lineageTag: 75facc55-bec3-494d-87bc-a742a21c9bee
 		summarizeBy: none
 		sourceColumn: Année
 
@@ -28,7 +25,8 @@ table Date_table
 	column Trimestre
 		dataType: int64
 		formatString: 0
-		lineageTag: dd3dcd7b-0db1-4319-8b42-e73c04a57452
+		sourceProviderType: bigint
+		lineageTag: 8f9a0162-73a1-4b96-9f0e-ac1e4070035e
 		summarizeBy: sum
 		sourceColumn: Trimestre
 
@@ -37,7 +35,8 @@ table Date_table
 	column MoisNombre
 		dataType: int64
 		formatString: 0
-		lineageTag: 2b060e0a-3e5f-4984-b567-8e8208e0873a
+		sourceProviderType: bigint
+		lineageTag: 80a570f4-4613-4ad5-8281-f9d9b9a9564c
 		summarizeBy: sum
 		sourceColumn: MoisNombre
 
@@ -46,7 +45,8 @@ table Date_table
 	column Jour
 		dataType: int64
 		formatString: 0
-		lineageTag: 815116c2-bbc9-4500-9d42-7965c5d1b9ac
+		sourceProviderType: bigint
+		lineageTag: 32b76215-d09a-43a9-984c-0d7de214c51c
 		summarizeBy: sum
 		sourceColumn: Jour
 
@@ -54,7 +54,8 @@ table Date_table
 
 	column DateNombre
 		dataType: string
-		lineageTag: 472fdc61-5c20-40bf-9d41-d43e932471c5
+		sourceProviderType: varchar(8000)
+		lineageTag: 680c9f50-e9a5-4e38-bc46-3a379af1c9a2
 		summarizeBy: none
 		sourceColumn: DateNombre
 
@@ -62,7 +63,8 @@ table Date_table
 
 	column MoisNom
 		dataType: string
-		lineageTag: 2aa3788d-eef9-44c6-b917-5291eaf7259b
+		sourceProviderType: varchar(8000)
+		lineageTag: 4adb9534-8b2c-48a6-8c5e-ff44d547b68e
 		summarizeBy: none
 		sourceColumn: MoisNom
 		sortByColumn: MoisNombre
@@ -73,7 +75,8 @@ table Date_table
 
 	column MoisCalendrier
 		dataType: string
-		lineageTag: c56fde0a-39a6-41e5-beca-90f5559fab04
+		sourceProviderType: varchar(8000)
+		lineageTag: 04554f37-164a-4d60-b4fe-d7dae3283016
 		summarizeBy: none
 		sourceColumn: MoisCalendrier
 
@@ -81,7 +84,8 @@ table Date_table
 
 	column TrimestreCalendrier
 		dataType: string
-		lineageTag: 1d7c1be5-5d5e-437c-bd3c-e5be00460d59
+		sourceProviderType: varchar(8000)
+		lineageTag: 3efa7991-6272-4101-b964-864340a11b7f
 		summarizeBy: none
 		sourceColumn: TrimestreCalendrier
 
@@ -90,7 +94,8 @@ table Date_table
 	column JourSemaine
 		dataType: int64
 		formatString: 0
-		lineageTag: cb2323a0-33bf-4c1b-a55d-d577a5fccbe5
+		sourceProviderType: bigint
+		lineageTag: 042cab37-b124-46c9-a4ce-4b5d69a8730e
 		summarizeBy: sum
 		sourceColumn: JourSemaine
 
@@ -98,61 +103,59 @@ table Date_table
 
 	column NomJourSemaine
 		dataType: string
-		lineageTag: 280a0d93-2639-48fd-9252-c2bae3d5bea2
+		sourceProviderType: varchar(8000)
+		lineageTag: 702f5976-6b77-4e53-9d01-b019fc966388
 		summarizeBy: none
 		sourceColumn: NomJourSemaine
+		sortByColumn: JourSemaine
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
 	column FinSemaine
 		dataType: dateTime
 		formatString: Long Date
-		lineageTag: 9193557a-e5aa-4a44-8d6c-cfebb1fdb1ec
+		sourceProviderType: date
+		lineageTag: 2ed2763f-c734-4799-ad6f-55009bec298f
 		summarizeBy: none
 		sourceColumn: FinSemaine
-
-		variation Variation
-			isDefault
-			relationship: 303cd6f4-e868-43b2-b849-10abf95cc98f
-			defaultHierarchy: LocalDateTable_a2d5916a-f9bf-44ab-b057-1acf991d6ab2.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
 
 	hierarchy 'Date Hiérarchie'
-		lineageTag: fd5be947-6506-433e-9b74-c71a87fb6897
+		lineageTag: 0ad87d50-c53d-49fe-b2c4-1c8138c2a38c
 
 		level Année
-			lineageTag: eca31242-97eb-4186-ae6c-3118a503e547
+			lineageTag: e811988f-9f42-4e75-abb6-268a5a5fa7fd
 			column: Année
 
 		level TrimestreCalendrier
-			lineageTag: 04692441-cc36-4ce3-80b6-1be18c3aca0d
+			lineageTag: 6b78e3c9-c26d-481f-8296-ecccb68ae7cb
 			column: TrimestreCalendrier
 
-		level Jour
-			lineageTag: 016c7fa1-dbf2-49f7-bf89-758af76c253b
-			column: Jour
-
 		level MoisNom
-			lineageTag: 30dd0fa8-8f86-433c-905b-a9a97a9dad00
+			lineageTag: c112fe00-87d3-4e74-8465-1bcc9271fc00
 			column: MoisNom
 
+		level Jour
+			lineageTag: 65ea8edd-9cd1-43a7-9591-c5b133e6347c
+			column: Jour
+
 		level Date
-			lineageTag: 7eabb843-1228-42a6-ad0c-72b88c519197
+			lineageTag: 9969286e-edd7-46e9-9f3d-feafd129380a
 			column: Date
 
 	partition Date_table = m
-		mode: import
+		mode: directQuery
 		source =
 				let
-				  Source = Lakehouse.Contents([]),
-				  #"Navigation 1" = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
-				  #"Navigation 2" = #"Navigation 1"{[lakehouseId = "0229fa72-7799-4106-ab94-61fd29fedf56"]}[Data],
-				  #"Navigation 3" = #"Navigation 2"{[Id = "Date_table_nettoye", ItemKind = "Table"]}[Data]
+				    Source = Sql.Database("4bholkfcwebudm6f67jvb5udky-lkgfvvvzrkuepfhwdcutxylnny.datawarehouse.fabric.microsoft.com", "LakeH_AfriDistr_DEV"),
+				    dbo_Date_table_nettoye = Source{[Schema="dbo",Item="Date_table_nettoye"]}[Data]
 				in
-				  #"Navigation 3"
+				    dbo_Date_table_nettoye
 
 	annotation PBI_ResultType = Table
 

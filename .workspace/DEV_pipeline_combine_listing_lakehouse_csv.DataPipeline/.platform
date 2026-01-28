@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "DEV_pipeline_combine_listing_lakehouse_csv"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "06edd5c9-cc07-8e9a-4315-70a59fc13ef7"
+  }
+}

@@ -1,0 +1,38 @@
+table Cluster
+	lineageTag: 60cf05e3-d9da-4c9a-99ae-989855805fd6
+
+	column Centre_
+		dataType: string
+		lineageTag: 254c6570-f756-4233-8e92-d68039b1d38b
+		summarizeBy: none
+		sourceColumn: Centre_
+
+		annotation SummarizationSetBy = Automatic
+
+	column SA_incharge
+		dataType: string
+		lineageTag: f3474f34-7c9e-4ad1-a936-915a5a3ca354
+		summarizeBy: none
+		sourceColumn: SA_incharge
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: bda9c60a-0726-48cf-8f6b-3fc00273d0c4
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cluster = m
+		mode: import
+		source =
+				let
+				  Source = Fabric.Warehouse(null),
+				  Navigation = Source{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
+				  #"Navigation 1" = Navigation{[warehouseId = "ff7ea52e-621f-460f-b613-8bf99c5d04a2"]}[Data],
+				  #"Navigation 2" = #"Navigation 1"{[Schema = "dbo", Item = "Cluster"]}[Data]
+				in
+				  #"Navigation 2"
+

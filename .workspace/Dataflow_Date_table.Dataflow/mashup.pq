@@ -29,9 +29,10 @@ CreateDateTable;
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Date_table_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared Date_table = let
   Source = Requête(#date(2025, 1, 1), #date(2026, 12, 31), ""),
-  #"Type de colonne changé" = Table.TransformColumnTypes(Source, {{"Année", type text}, {"DateNombre", type text}, {"MoisCalendrier", type text}, {"MoisNombre", Int64.Type}, {"Trimestre", Int64.Type}, {"Jour", Int64.Type}, {"TrimestreCalendrier", type text}, {"JourSemaine", Int64.Type}})
+  #"Type de colonne changé" = Table.TransformColumnTypes(Source, {{"Année", type text}, {"DateNombre", type text}, {"MoisCalendrier", type text}, {"MoisNombre", Int64.Type}, {"Trimestre", Int64.Type}, {"Jour", Int64.Type}, {"TrimestreCalendrier", type text}, {"JourSemaine", Int64.Type}}),
+  #"Type de colonne changé avec les paramètres régionaux" = Table.TransformColumnTypes(#"Type de colonne changé", {{"Date", type datetime}}, "fr-FR")
 in
-  #"Type de colonne changé";
+  #"Type de colonne changé avec les paramètres régionaux";
 shared Date_table_DataDestination = let
   Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],
@@ -39,7 +40,3 @@ shared Date_table_DataDestination = let
   TableNavigation = Navigation_2{[Id = "Date_table_nettoye", ItemKind = "Table"]}?[Data]?
 in
   TableNavigation;
-shared #"Fonction appelée" = let
-  Source = Requête(#date(2025, 1, 1), #date(2026, 12, 31), "")
-in
-  Source;

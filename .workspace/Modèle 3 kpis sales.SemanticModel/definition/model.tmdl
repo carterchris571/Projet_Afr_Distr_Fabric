@@ -6,22 +6,17 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["Date_table","Cluster","DTR_DTC_cluster","Net_adds_cluster","Out_stock_cluster","Segmentation","Mesure","Listing_hierachique2"]
+annotation PBI_QueryOrder = ["Mesure","DirectLake - Warehouse_DEV_Sales_data","Requête","Requête (2)"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_ProTooling = ["WebModelingEdit"]
+annotation PBI_ProTooling = ["WebModelingEdit","DirectLakeOnOneLakeInWeb"]
 
-ref table Date_table
-ref table DateTableTemplate_99b5c2fb-2abb-4756-acbf-e1dea846c16b
-ref table LocalDateTable_5e514c32-2cac-467d-a7f8-7db308792590
-ref table LocalDateTable_a2d5916a-f9bf-44ab-b057-1acf991d6ab2
-ref table Cluster
-ref table DTR_DTC_cluster
+ref table Mesure
 ref table Net_adds_cluster
+ref table Listing_hierachique3
+ref table DTR_DTC_cluster
 ref table Out_stock_cluster
 ref table Segmentation
-ref table Mesure
-ref table Listing_hierachique2
-ref table LocalDateTable_634325c4-1d83-4bcf-a83a-d35d2c324e39
+ref table Cluster
 

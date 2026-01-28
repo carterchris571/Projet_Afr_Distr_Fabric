@@ -1,0 +1,11 @@
+expression 'DirectQuery à AS – Modèle 3 kpis sales' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Afri-Distribution-DEV", "Modèle 3 kpis sales"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 513a765d-f340-4d69-93e8-bcce2575322e
+
+	annotation PBI_IncludeFutureArtifacts = True
+
