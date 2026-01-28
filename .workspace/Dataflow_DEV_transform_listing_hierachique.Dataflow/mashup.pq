@@ -11,9 +11,10 @@ shared Combine_listing = let
   #"Texte extrait entre les délimiteurs 1" = Table.TransformColumns(#"Texte extrait entre les délimiteurs", {{"To", each Text.BetweenDelimiters(_, ":", "/", 0, 0), type text}}),
   #"Texte extrait avant le délimiteur" = Table.TransformColumns(#"Texte extrait entre les délimiteurs 1", {{"Date_modified", each Text.BeforeDelimiter(_, "T", 0), type text}}),
   #"Type de colonne changé" = Table.TransformColumnTypes(#"Texte extrait avant le délimiteur", {{"Date_modified", type date}, {"Date", type datetime}}),
-  #"Colonnes renommées" = Table.RenameColumns(#"Type de colonne changé", {{"From Name", "From_name"}, {"To", "To_num"}, {"From", "From_num"}, {"To Name", "To_name"}})
+  #"Colonnes renommées" = Table.RenameColumns(#"Type de colonne changé", {{"From Name", "From_name"}, {"To", "To_num"}, {"From", "From_num"}, {"To Name", "To_name"}}),
+  #"Type de colonne changé 1" = Table.TransformColumnTypes(#"Colonnes renommées", {{"Amount", Int64.Type}, {"Balance", Int64.Type}})
 in
-  #"Colonnes renommées";
+  #"Type de colonne changé 1";
 shared Combine_listing_DataDestination = let
   Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
   Navigation_1 = Pattern{[workspaceId = "d65a8c5a-8ab9-47a8-94f6-18a93be16d6e"]}[Data],

@@ -229,6 +229,28 @@ table Mesure
 		formatString: General Date
 		lineageTag: a984f420-57f7-4282-891a-a995deb73a38
 
+	measure Points_Touches = ```
+			
+			    CALCULATE(
+			        DISTINCTCOUNT(Segmentation[Num_POS]),
+			        FILTER(
+			             Segmentation,
+			            CALCULATE(
+			                COUNTROWS(Listing_hierachique3),
+			                Listing_hierachique3[Amount] < 0, 
+			                Listing_hierachique3[Type] = "Transfer",
+			                ABS(Listing_hierachique3[Amount]) >= 1000,
+			                FILTER(
+			                    Listing_hierachique3,
+			                    Listing_hierachique3[To_num] = Segmentation[Num_POS]
+			                 )
+			            ) > 0
+			        )
+			    )
+			```
+		formatString: 0
+		lineageTag: 0862b0fc-d479-4bdf-b9c9-f6e5a30fe018
+
 	partition Mesure = m
 		mode: import
 		source =
