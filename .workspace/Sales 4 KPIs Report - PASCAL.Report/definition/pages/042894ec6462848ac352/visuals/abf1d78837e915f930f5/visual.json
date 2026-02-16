@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "abf1d78837e915f930f5",
   "position": {
-    "x": 288.59416445623344,
-    "y": 10.185676392572944,
-    "z": 3004,
+    "x": 1091.7906453975229,
+    "y": 70.817255339941369,
+    "z": 3000,
     "height": 63.377541998231656,
     "width": 176.55172413793105,
-    "tabOrder": 2002
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -22,7 +22,7 @@
                     "Hierarchy": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Date_table"
+                          "Entity": "Date-table"
                         }
                       },
                       "Hierarchy": "Date Hiérarchie"
@@ -31,7 +31,7 @@
                   "Level": "Année"
                 }
               },
-              "queryRef": "Date_table.Date Hiérarchie.Année",
+              "queryRef": "Date-table.Date Hiérarchie.Année",
               "nativeQueryRef": "Date Hiérarchie Année",
               "active": true
             },
@@ -42,7 +42,7 @@
                     "Hierarchy": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Date_table"
+                          "Entity": "Date-table"
                         }
                       },
                       "Hierarchy": "Date Hiérarchie"
@@ -51,7 +51,7 @@
                   "Level": "MoisNom"
                 }
               },
-              "queryRef": "Date_table.Date Hiérarchie.MoisNom",
+              "queryRef": "Date-table.Date Hiérarchie.MoisNom",
               "nativeQueryRef": "Date Hiérarchie MoisNom",
               "active": true
             }
@@ -67,7 +67,7 @@
         "levels": [
           {
             "queryRefs": [
-              "Date_table.Date Hiérarchie.Année"
+              "Date-table.Date Hiérarchie.Année"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -75,7 +75,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Date_table"
+                      "Entity": "Date-table"
                     }
                   },
                   "Property": "Année"
@@ -86,7 +86,7 @@
           },
           {
             "queryRefs": [
-              "Date_table.Date Hiérarchie.MoisNom"
+              "Date-table.Date Hiérarchie.MoisNom"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -182,7 +182,156 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "Date-table",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Année"
+                            }
+                          },
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "MoisNom"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026'"
+                              }
+                            },
+                            {
+                              "Literal": {
+                                "Value": "'février'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "Annotations": {
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "HierarchyLevel": {
+                              "Expression": {
+                                "Hierarchy": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Date-table"
+                                    }
+                                  },
+                                  "Hierarchy": "Date Hiérarchie"
+                                }
+                              },
+                              "Level": "Année"
+                            }
+                          },
+                          {
+                            "HierarchyLevel": {
+                              "Expression": {
+                                "Hierarchy": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Date-table"
+                                    }
+                                  },
+                                  "Hierarchy": "Date Hiérarchie"
+                                }
+                              },
+                              "Level": "MoisNom"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'2026'"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "1": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'février'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Date-table"
+                                    }
+                                  },
+                                  "Property": "Année"
+                                }
+                              }
+                            },
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Date-table"
+                                    }
+                                  },
+                                  "Property": "MoisNom"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "2026",
+                            "1": "février"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ]
     },
@@ -282,143 +431,45 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "d5799929ee8b6c752209",
   "filterConfig": {
     "filters": [
       {
-        "name": "cb7d7fa3217b0be89aed",
+        "name": "1d1d9a18188ed2c50afa",
         "field": {
           "HierarchyLevel": {
             "Expression": {
               "Hierarchy": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Cluster"
+                    "Entity": "Date-table"
                   }
                 },
-                "Hierarchy": "Centre_ Hiérarchie"
+                "Hierarchy": "Date Hiérarchie"
               }
             },
-            "Level": "Centre_"
+            "Level": "Année"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "c",
-              "Entity": "Cluster",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "c"
-                          }
-                        },
-                        "Property": "Centre_"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Centre II'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'Centre III'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              },
-              "Annotations": {
-                "filterExpressionMetadata": {
-                  "expressions": [
-                    {
-                      "HierarchyLevel": {
-                        "Expression": {
-                          "Hierarchy": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Entity": "Cluster"
-                              }
-                            },
-                            "Hierarchy": "Centre_ Hiérarchie"
-                          }
-                        },
-                        "Level": "Centre_"
-                      }
-                    }
-                  ],
-                  "decomposedIdentities": {
-                    "values": [
-                      [
-                        {
-                          "0": [
-                            {
-                              "Literal": {
-                                "Value": "'Centre II'"
-                              }
-                            }
-                          ]
-                        }
-                      ],
-                      [
-                        {
-                          "0": [
-                            {
-                              "Literal": {
-                                "Value": "'Centre III'"
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    ],
-                    "columns": [
-                      {
-                        "value": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Entity": "Cluster"
-                              }
-                            },
-                            "Property": "Centre_"
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  "valueMap": [
-                    {
-                      "0": "Centre II"
-                    },
-                    {
-                      "0": "Centre III"
-                    }
-                  ]
-                }
+        "type": "Categorical"
+      },
+      {
+        "name": "6d5d91ae21d398a6252d",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date-table"
+                  }
+                },
+                "Hierarchy": "Date Hiérarchie"
               }
-            }
-          ]
+            },
+            "Level": "MoisNom"
+          }
         },
-        "howCreated": "User"
+        "type": "Categorical"
       }
     ]
   }

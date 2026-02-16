@@ -22,6 +22,7 @@ table Mesure
 			)
 			
 			```
+		displayFolder: Sales KPI
 		lineageTag: 9efebebc-5a19-43a3-aa0e-a7dbeb55abd7
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -53,6 +54,7 @@ table Mesure
 			DIVIDE(avg_hvc_value, distinct_hvc, 0)
 			
 			```
+		displayFolder: Sales KPI
 		lineageTag: ea141c45-317b-471c-81d9-361f302a1127
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -86,6 +88,7 @@ table Mesure
 			DIVIDE(DTC_MTD_Value, Target_MTD, 0)
 			
 			```
+		displayFolder: Sales KPI
 		lineageTag: fa1c4524-e7e3-4a14-91a9-94a37eaaf9c3
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -119,6 +122,7 @@ table Mesure
 			DIVIDE(DTR_MTD_Value, Target_MTD, 0)
 			
 			```
+		displayFolder: Sales KPI
 		lineageTag: 356e495a-a14a-4116-8a1c-248c11a86338
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -152,12 +156,14 @@ table Mesure
 			DIVIDE(GA_MTD_Value, Target_MTD, 0)
 			
 			```
+		displayFolder: Sales KPI
 		lineageTag: e92a3709-47b9-404c-ae7e-45e769e3e932
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Nbre HVC' = CALCULATE(COUNT('Segmentation'[Num_POS]),Segmentation[Seg_gpre] = "HVC")
 		formatString: 0
+		displayFolder: Sales KPI
 		lineageTag: 3767d97c-6797-455e-88ae-77fd4b56dc1f
 
 	measure 'Nett adds' =
@@ -176,6 +182,7 @@ table Mesure
 			    )
 			)
 		formatString: 0
+		displayFolder: Sales KPI
 		lineageTag: 223799dd-0c33-4d7a-a183-3da440f45f6f
 
 	measure Taux_couv = ```
@@ -204,6 +211,7 @@ table Mesure
 			DIVIDE(Points_Touches,Total_POS,0)
 			
 			```
+		displayFolder: Sales KPI
 		lineageTag: a671d00e-9a31-426b-9755-96fab8ba295c
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -221,12 +229,14 @@ table Mesure
 			
 			```
 		formatString: 0
+		displayFolder: Sales KPI
 		lineageTag: bbae37d6-d6e3-4ebd-9828-ffa279e4fc85
 
 	measure Test_Date =
 			
 			MIN(Listing_hierachique3[Date])
 		formatString: General Date
+		displayFolder: Sales KPI
 		lineageTag: a984f420-57f7-4282-891a-a995deb73a38
 
 	measure Points_Touches = ```
@@ -249,7 +259,58 @@ table Mesure
 			    )
 			```
 		formatString: 0
+		displayFolder: Sales KPI
 		lineageTag: 0862b0fc-d479-4bdf-b9c9-f6e5a30fe018
+
+	measure 'Nom Agent SIM' =
+			
+			VAR NumPOS = SELECTEDVALUE(Segmentation[Num_POS])
+			RETURN
+			LOOKUPVALUE(
+			    Listing_hierachique3[From_name],
+			    Listing_hierachique3[From_num], NumPOS
+			)
+		lineageTag: 82b892af-782e-422f-aefe-ce5d17c1bb77
+
+	measure '#day selectionne' =
+			
+			SELECTEDVALUE(Slicers_Days[NbJours], 1)
+		formatString: 0
+		lineageTag: 30403fc4-ab2c-4ee7-be66-9777763d5190
+
+	measure Start_day_selectionne =
+			
+			TODAY() - [#day selectionne]
+		formatString: General Date
+		lineageTag: 51c1ad9f-faf3-4f53-a263-7f072139ed99
+
+	measure #Transac_periode =
+			
+			VAR SelectedPOS =
+			SELECTEDVALUE ( Segmentation[Num_POS] )
+			RETURN
+			CALCULATE(
+			    COUNTROWS(Listing_hierachique3),
+			    Listing_hierachique3[From_num] = SelectedPOS,
+			    Date_table[Date] > [Start_day_selectionne],
+			    Date_table[Date] <= TODAY()
+			)
+		lineageTag: a4f61e27-5410-4731-bb6c-b1c02c5c5573
+
+	measure Montant_periode = ```
+			
+			VAR SelectedPOS =
+			    SELECTEDVALUE(Segmentation[Num_POS])
+			RETURN    
+			CALCULATE(
+			    SUMX(Listing_hierachique3,
+			    ABS(Listing_hierachique3[Amount])),
+			    Listing_hierachique3[From_num] = SelectedPOS,
+			    Date_table[Date] > [Start_day_selectionne],
+			    Date_table[Date] <= TODAY()
+			)
+			```
+		lineageTag: 4a3bc0a1-e1e0-4d88-a098-81ee200d0e19
 
 	partition Mesure = m
 		mode: import

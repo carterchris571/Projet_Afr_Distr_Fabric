@@ -19,4 +19,5 @@ ref table DTR_DTC_cluster
 ref table Out_stock_cluster
 ref table Segmentation
 ref table Cluster
+ref table Slicers_Days
 

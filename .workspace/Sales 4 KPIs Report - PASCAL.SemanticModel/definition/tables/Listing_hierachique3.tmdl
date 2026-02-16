@@ -77,12 +77,14 @@ table Listing_hierachique3
 
 	column Amount
 		dataType: int64
-		formatString: 0
+		formatString: #,0
 		lineageTag: 1818a591-9500-42e6-a8b9-ff00ff6c3713
 		sourceLineageTag: f62fa906-e7d4-4b3d-b87f-6aa82d1f1579
 		dataCategory: Uncategorized
 		summarizeBy: sum
 		sourceColumn: Amount
+
+		changedProperty = FormatString
 
 		annotation SummarizationSetBy = User
 
@@ -117,6 +119,21 @@ table Listing_hierachique3
 		sourceColumn: Date_modified
 
 		annotation SummarizationSetBy = User
+
+	column 'Test From_num est POS' =
+			
+			IF (
+			    Listing_hierachique3[From_num]
+			        IN VALUES ( Segmentation[Num_POS] ),
+			    "POS",
+			    "AUTRE"
+			)
+		lineageTag: 60f3f975-2422-48fb-a1aa-f72cf2ff19bb
+		summarizeBy: none
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
 
 	partition Listing_hierachique3 = entity
 		mode: directQuery

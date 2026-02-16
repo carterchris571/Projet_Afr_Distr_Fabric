@@ -1,0 +1,113 @@
+table Sodi_feuil
+	lineageTag: 7673bc76-4dce-4468-b063-2f3f46e4ff9a
+
+	column CDS
+		dataType: string
+		lineageTag: 45e1c2c2-20c6-41e2-87df-a415f93a7389
+		summarizeBy: none
+		sourceColumn: CDS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nom_cciaux
+		dataType: string
+		lineageTag: d57733ab-5a7b-4073-9f95-9486e8a9a42d
+		summarizeBy: none
+		sourceColumn: Nom_cciaux
+
+		annotation SummarizationSetBy = Automatic
+
+	column Num_cciaux
+		dataType: string
+		lineageTag: 4fa49a78-3983-48e6-8041-8a1b7d08b253
+		summarizeBy: none
+		sourceColumn: Num_cciaux
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: a71e2393-61c6-4b90-a56f-3e7b0854e19f
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mois
+		dataType: string
+		lineageTag: aa1fc1de-4a6f-4059-bc53-559f3f1d793f
+		summarizeBy: none
+		sourceColumn: Mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column Montant
+		dataType: int64
+		formatString: 0
+		lineageTag: 3208114c-a7d6-46ee-98c8-9740b59e9773
+		summarizeBy: sum
+		sourceColumn: Montant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_destocker
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ad941696-9158-4a4f-9146-77ae7b7ec031
+		summarizeBy: none
+		sourceColumn: Date_destocker
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Day_target
+		dataType: double
+		formatString: 0
+		lineageTag: e15a8d5c-0bf4-4273-bcd4-68a43ae95bd6
+		summarizeBy: sum
+		sourceColumn: Day_target
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sodi_feuil = m
+		mode: import
+		source = ```
+				let
+				    Source = Excel.Workbook(File.Contents("D:\sharedata\PARTAGE COMPTABILITE PLATEFORME\Suivi Destockage cciaux\Fichier Transformé\Cciaux destockage transforme.xlsx"), null, true),
+				    Sodi_feuil_Sheet = Source{[Item="Sodi_feuil",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(Sodi_feuil_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"CDS", type text}, {"Nom_cciaux", type text}, {"Num_cciaux", type text}, {"Target_févr 2026", Int64.Type}, {"Real_févr 2026", Int64.Type}}),
+				    #"Supprimer le tableau croisé dynamique des autres colonnes" = Table.UnpivotOtherColumns(#"Type modifié", {"CDS", "Nom_cciaux", "Num_cciaux"}, "Attribut", "Valeur"),
+				    #"Fractionner la colonne par délimiteur" = Table.SplitColumn(#"Supprimer le tableau croisé dynamique des autres colonnes", "Attribut", Splitter.SplitTextByDelimiter("_", QuoteStyle.None), {"Attribut.1", "Attribut.2"}),
+				    #"Colonnes renommées" = Table.RenameColumns(#"Fractionner la colonne par délimiteur",{{"Attribut.1", "Type"}, {"Attribut.2", "Mois"}, {"Valeur", "Montant"}}),
+				    #"Personnalisée ajoutée" = Table.AddColumn(#"Colonnes renommées", "Date_destocker", each let
+				    MoisTexte = Text.Lower([Mois]),  // mettre en minuscule pour fiabilité
+				    MoisNum = 
+				        if Text.StartsWith(MoisTexte,"janv") then 1 else
+				        if Text.StartsWith(MoisTexte,"févr") then 2 else
+				        if Text.StartsWith(MoisTexte,"mars") then 3 else
+				        if Text.StartsWith(MoisTexte,"avr") then 4 else
+				        if Text.StartsWith(MoisTexte,"mai") then 5 else
+				        if Text.StartsWith(MoisTexte,"juin") then 6 else
+				        if Text.StartsWith(MoisTexte,"juil") then 7 else
+				        if Text.StartsWith(MoisTexte,"août") then 8 else
+				        if Text.StartsWith(MoisTexte,"sept") then 9 else
+				        if Text.StartsWith(MoisTexte,"oct") then 10 else
+				        if Text.StartsWith(MoisTexte,"nov") then 11 else
+				        if Text.StartsWith(MoisTexte,"déc") then 12 else null,
+				    Annee = Number.FromText(Text.End([Mois],4)),
+				    DateResult = #date(Annee, MoisNum, 1)
+				in
+				    DateResult),
+				    #"Type modifié1" = Table.TransformColumnTypes(#"Personnalisée ajoutée",{{"Date_destocker", type date}}),
+				    #"Personnalisée ajoutée1" = Table.AddColumn(#"Type modifié1", "Day_target", each [Montant] / Date.DaysInMonth([Date_destocker])),
+				    #"Type modifié2" = Table.TransformColumnTypes(#"Personnalisée ajoutée1",{{"Day_target", type number}})
+				in
+				    #"Type modifié2"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

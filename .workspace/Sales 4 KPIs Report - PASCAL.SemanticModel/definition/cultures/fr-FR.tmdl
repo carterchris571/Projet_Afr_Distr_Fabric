@@ -12,19 +12,7 @@ cultureInfo fr-FR
 			          "ConceptualProperty": "Nbre HVC"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "#HVC": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "mesure.taux_couv": {
 			      "Definition": {
@@ -33,10 +21,28 @@ cultureInfo fr-FR
 			          "ConceptualProperty": "Taux_couv"
 			        }
 			      },
+			      "State": "Generated"
+			    },
+			    "mesure.day_hvc_t": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesure",
+			          "ConceptualProperty": "#Day HVC T"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "mesure.trat3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesure",
+			          "ConceptualProperty": "#Trat3"
+			        }
+			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "TC": {
+			          "#Nbre_type": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -47,17 +53,101 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "mesure.day_hvc_t": {
+			    "mesure.montant_periode_2": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Mesure",
-			          "ConceptualProperty": "#Day HVC T"
+			          "ConceptualProperty": "Montant_periode 2"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "#Day HVC": {
+			          "Montant_généré": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sodi_feuil.num_cciaux": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sodi_feuil",
+			          "ConceptualProperty": "Num_cciaux"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Num Cciaux": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sodi_feuil.nom_cciaux": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sodi_feuil",
+			          "ConceptualProperty": "Nom_cciaux"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Nom Cciaux": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.mtd_target": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesure",
+			          "ConceptualProperty": "MTD_Target"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "MTD Target": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.gap_mtd": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesure",
+			          "ConceptualProperty": "GAP_MTD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GAP MTD": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

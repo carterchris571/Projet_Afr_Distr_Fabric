@@ -3,6 +3,9 @@ section Section1;
 shared Requête = let CreateDateTable = (StartDate as date, EndDate as date, optional Culture as nullable text) as table =>
 
   let
+    // Si Culture n'est pas fournie, utiliser "fr-FR"
+    CultureLocale = if Culture = null then "fr-FR" else Culture,
+
     DayCount = Duration.Days(Duration.From(EndDate - StartDate)),
     Source = List.Dates(StartDate,DayCount,#duration(1,0,0,0)),
     TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),
@@ -28,7 +31,7 @@ in
 CreateDateTable;
 [DataDestinations = {[Definition = [Kind = "Reference", QueryName = "Date_table_DataDestination", IsNewTarget = true], Settings = [Kind = "Automatic", TypeSettings = [Kind = "Table"]]]}]
 shared Date_table = let
-  Source = Requête(#date(2025, 1, 1), #date(2026, 12, 31), ""),
+  Source = Requête(#date(2025, 1, 1), #date(2026, 12, 31), "fr-FR"),
   #"Type de colonne changé" = Table.TransformColumnTypes(Source, {{"Année", type text}, {"DateNombre", type text}, {"MoisCalendrier", type text}, {"MoisNombre", Int64.Type}, {"Trimestre", Int64.Type}, {"Jour", Int64.Type}, {"TrimestreCalendrier", type text}, {"JourSemaine", Int64.Type}}),
   #"Type de colonne changé avec les paramètres régionaux" = Table.TransformColumnTypes(#"Type de colonne changé", {{"Date", type datetime}}, "fr-FR")
 in

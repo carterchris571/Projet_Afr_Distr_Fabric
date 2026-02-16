@@ -46,6 +46,13 @@
       }
     ]
   },
+  "publicCustomVisuals": [
+    "advanceCardE03760C5AB684758B56AA29F9E6C257B",
+    "textFilter25A4896A83E0487089E2B90C9AE57C8A",
+    "PBI_CV_7B952816_A48F_49B4_9E13_15E3BB2C0337",
+    "kpifree51D0292A0438427096AC459B59FEF2DE",
+    "multiLineChartA7F3AE9EF91E48C78A2807BCA25C2765"
+  ],
   "resourcePackages": [
     {
       "name": "SharedResources",

@@ -3,58 +3,214 @@ table Mesure
 	sourceLineageTag: 44cae34e-8304-4eb7-ab44-4c7d411144fa
 
 	measure '#Day HVC T' = EXTERNALMEASURE("#Day HVC T", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: Sales KPI
 		lineageTag: a9d6ddb4-483f-4632-b855-866a7824d08f
 		sourceLineageTag: 9efebebc-5a19-43a3-aa0e-a7dbeb55abd7
 		dataCategory: Uncategorized
 
 	measure %OOS = EXTERNALMEASURE("%OOS", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: Sales KPI
 		lineageTag: e3ce8072-9858-451a-94eb-90555a45569b
 		sourceLineageTag: ea141c45-317b-471c-81d9-361f302a1127
 		dataCategory: Uncategorized
 
 	measure 'DTC perf MTD' = EXTERNALMEASURE("DTC perf MTD", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: Sales KPI
 		lineageTag: 108a535f-c637-49bf-a208-f78f656d8928
 		sourceLineageTag: fa1c4524-e7e3-4a14-91a9-94a37eaaf9c3
 		dataCategory: Uncategorized
 
 	measure 'DTR perf MTD' = EXTERNALMEASURE("DTR perf MTD", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: Sales KPI
 		lineageTag: 6d0e74e2-6eb9-4e11-a9a2-85ed83b03ed2
 		sourceLineageTag: 356e495a-a14a-4116-8a1c-248c11a86338
 		dataCategory: Uncategorized
 
 	measure 'GA Perf MTD' = EXTERNALMEASURE("GA Perf MTD", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: Sales KPI
 		lineageTag: bebf6344-3a98-449b-b3f2-cf0fa968578d
 		sourceLineageTag: e92a3709-47b9-404c-ae7e-45e769e3e932
 		dataCategory: Uncategorized
 
 	measure 'Nbre HVC' = EXTERNALMEASURE("Nbre HVC", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
 		formatString: 0
+		displayFolder: Sales KPI
 		lineageTag: fee0b39f-6ac3-4b03-bb33-c9904b091a47
 		sourceLineageTag: 3767d97c-6797-455e-88ae-77fd4b56dc1f
 		dataCategory: Uncategorized
 
 	measure 'Nett adds' = EXTERNALMEASURE("Nett adds", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
 		formatString: 0
+		displayFolder: Sales KPI
 		lineageTag: 2feb5057-f892-4058-8fd3-76b93612ab08
 		sourceLineageTag: 223799dd-0c33-4d7a-a183-3da440f45f6f
 		dataCategory: Uncategorized
 
 	measure Taux_couv = EXTERNALMEASURE("Taux_couv", DOUBLE, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: Sales KPI
 		lineageTag: 3ef0f804-b2cb-4c97-b4a8-051ea47e3481
 		sourceLineageTag: a671d00e-9a31-426b-9755-96fab8ba295c
 		dataCategory: Uncategorized
 
 	measure Test_Count = EXTERNALMEASURE("Test_Count", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
 		formatString: 0
+		displayFolder: Sales KPI
 		lineageTag: 44563f36-6b66-40f0-8ebd-3edea68f5242
 		sourceLineageTag: bbae37d6-d6e3-4ebd-9828-ffa279e4fc85
 		dataCategory: Uncategorized
 
 	measure Test_Date = EXTERNALMEASURE("Test_Date", DATETIME, "DirectQuery à AS – Modèle 3 kpis sales")
 		formatString: General Number
+		displayFolder: Sales KPI
 		lineageTag: d8b3ff27-d935-4e63-a279-23db5937ce8f
 		sourceLineageTag: a984f420-57f7-4282-891a-a995deb73a38
 		dataCategory: Uncategorized
+
+	measure Points_Touches = EXTERNALMEASURE("Points_Touches", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
+		formatString: 0
+		displayFolder: Sales KPI
+		lineageTag: bec23e77-9031-41b7-8aff-676f17ba4a5d
+		sourceLineageTag: 0862b0fc-d479-4bdf-b9c9-f6e5a30fe018
+		dataCategory: Uncategorized
+
+	measure 'Nom Agent SIM' = EXTERNALMEASURE("Nom Agent SIM", STRING, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: TMAS sys
+		lineageTag: 37e54f1d-d308-47a9-ba09-e9e3872b6317
+		sourceLineageTag: 82b892af-782e-422f-aefe-ce5d17c1bb77
+		dataCategory: Uncategorized
+
+		changedProperty = DisplayFolder
+
+	measure '#day selectionne' = EXTERNALMEASURE("#day selectionne", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
+		formatString: 0
+		displayFolder: TMAS sys
+		lineageTag: c1b6a313-25f0-409a-b095-1a1142cfbc0d
+		sourceLineageTag: 30403fc4-ab2c-4ee7-be66-9777763d5190
+		dataCategory: Uncategorized
+
+		changedProperty = DisplayFolder
+
+	measure Start_day_selectionne = EXTERNALMEASURE("Start_day_selectionne", DATETIME, "DirectQuery à AS – Modèle 3 kpis sales")
+		formatString: General Number
+		displayFolder: TMAS sys
+		lineageTag: 15e2f0a3-ca9b-4ef9-a278-689b4926c433
+		sourceLineageTag: 51c1ad9f-faf3-4f53-a263-7f072139ed99
+		dataCategory: Uncategorized
+
+		changedProperty = DisplayFolder
+
+	measure #Transac_periode = EXTERNALMEASURE("#Transac_periode", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: TMAS sys
+		lineageTag: dfcc70d7-6fb3-4256-8edb-1c7546cf6819
+		sourceLineageTag: a4f61e27-5410-4731-bb6c-b1c02c5c5573
+		dataCategory: Uncategorized
+
+		changedProperty = DisplayFolder
+
+	measure Montant_periode = EXTERNALMEASURE("Montant_periode", INTEGER, "DirectQuery à AS – Modèle 3 kpis sales")
+		displayFolder: TMAS sys
+		lineageTag: c3c2102d-2095-46b4-b9c6-4ee365e7ce2c
+		sourceLineageTag: 4a3bc0a1-e1e0-4d88-a098-81ee200d0e19
+		dataCategory: Uncategorized
+
+		changedProperty = DisplayFolder
+
+	measure '#Transac_periode 2' =
+			
+			VAR SelectedPOS = SELECTEDVALUE(Segmentation[Num_POS])
+			VAR StartDate = [Start_day_selectionne]
+			RETURN
+			CALCULATE(
+			    COUNTROWS(Listing_hierachique3),
+			    Listing_hierachique3[From_num] = SelectedPOS,
+			    Listing_hierachique3[Date] > StartDate,
+			    Listing_hierachique3[Date] <= TODAY()
+			)
+		formatString: 0
+		displayFolder: TMAS sys
+		lineageTag: 0757468c-746a-4bf8-874b-8d37274ad870
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure 'Montant_periode 2' =
+			
+			CALCULATE(
+			    SUMX(
+			        Listing_hierachique3,
+			        ABS(Listing_hierachique3[Amount])
+			    )
+			)
+		formatString: #,0
+		displayFolder: TMAS sys
+		lineageTag: 4ccf03ce-f62e-4747-8c01-68a5664f5ad8
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
+
+	measure #Trat3 =
+			
+			CALCULATE(
+			    COUNTROWS(Listing_hierachique3)
+			)
+		formatString: 0
+		displayFolder: TMAS sys
+		lineageTag: da27d967-21cc-4c15-b75a-5004717835ba
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+	measure MTD_Target =
+			
+			SUMX(
+			    FILTER(Sodi_feuil, Sodi_feuil[Type] = "Target"),
+			    Sodi_feuil[Day_Target] * (DAY(TODAY()) - 1)
+			)
+		formatString: #,0
+		lineageTag: f69be1da-ebec-4286-8fa0-7056e1194222
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure GAP_MTD = ```
+			
+			    CALCULATE(
+			        SUM(Sodi_feuil[Montant]),
+			        Sodi_feuil[Type] = "Real"
+			    )
+			-
+			[MTD_Target]
+			
+			```
+		formatString: #,0
+		lineageTag: eb74da00-c2e3-495e-8ee0-ee03b9fb7192
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure Perf = ```
+			DIVIDE( 
+			                CALCULATE(
+			                    SUM(Sodi_feuil[Montant]),
+			                    Sodi_feuil[Type] = "Real"
+			                ),
+			                [MTD_Target],
+			                0
+			    )   
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 5a9c3f94-c5f0-4e81-bada-193ae07881aa
+
+		changedProperty = Name
+
+		changedProperty = FormatString
 
 	partition Mesure = entity
 		mode: directQuery

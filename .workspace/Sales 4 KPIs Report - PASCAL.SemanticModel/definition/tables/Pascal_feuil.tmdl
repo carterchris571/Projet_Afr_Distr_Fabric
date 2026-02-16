@@ -1,0 +1,60 @@
+table Pascal_feuil
+	lineageTag: d99c5062-d4b3-4140-9913-c78c1b077193
+
+	column CDS
+		dataType: string
+		lineageTag: 603c123e-8bb5-4797-b056-00aed04cf45c
+		summarizeBy: none
+		sourceColumn: CDS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Num_cciaux
+		dataType: string
+		lineageTag: 0dcc3d7e-2189-4f7a-ba1e-31a0f0689a22
+		summarizeBy: none
+		sourceColumn: Num_cciaux
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nom_cciaux
+		dataType: string
+		lineageTag: cc460c06-1879-432b-9a5f-33c8c29e2f40
+		summarizeBy: none
+		sourceColumn: Nom_cciaux
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target_févr 2026'
+		dataType: int64
+		formatString: 0
+		lineageTag: 900f15f6-0b29-40f1-8b46-689c01154a70
+		summarizeBy: sum
+		sourceColumn: Target_févr 2026
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Real_févr 2026'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b59dad1-ece9-48bd-9b18-54e2168cecdb
+		summarizeBy: sum
+		sourceColumn: Real_févr 2026
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Pascal_feuil = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\sharedata\PARTAGE COMPTABILITE PLATEFORME\Suivi Destockage cciaux\Fichier Transformé\Cciaux destockage transforme.xlsx"), null, true),
+				    Pascal_feuil_Sheet = Source{[Item="Pascal_feuil",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(Pascal_feuil_Sheet, [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"CDS", type text}, {"Num_cciaux", type text}, {"Nom_cciaux", type text}, {"Target_févr 2026", Int64.Type}, {"Real_févr 2026", Int64.Type}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

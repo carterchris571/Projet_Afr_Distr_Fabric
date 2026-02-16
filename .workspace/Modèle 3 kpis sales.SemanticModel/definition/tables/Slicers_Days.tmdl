@@ -1,0 +1,40 @@
+table Slicers_Days
+	lineageTag: 2f99860e-1c4e-4e57-8347-b443d99af014
+
+	column Label
+		lineageTag: f0ce1dc0-69ae-41d7-805d-41ff7f7597e5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Label]
+		sortByColumn: NbJours
+
+		annotation SummarizationSetBy = Automatic
+
+	column NbJours
+		formatString: 0
+		lineageTag: b591aa3b-4284-41b3-8b8e-f9aebe23472d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [NbJours]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Slicers_Days = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Label", STRING,
+				    "NbJours", INTEGER,
+				    {
+				        {"-1 d", 1},
+				        {"-3 d", 3},
+				        {"-7 d", 7},
+				        {"-14 d", 14},
+				        {"-30 d", 30},
+				        {"-60 d", 60}
+				    }
+				)
+
+	annotation PBI_Id = aba30d9f01c24effbb57d646574ab7f6
+

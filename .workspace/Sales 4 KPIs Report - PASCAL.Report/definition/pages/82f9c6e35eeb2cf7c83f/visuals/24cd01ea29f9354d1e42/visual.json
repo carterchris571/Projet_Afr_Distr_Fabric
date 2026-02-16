@@ -1,0 +1,136 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "24cd01ea29f9354d1e42",
+  "position": {
+    "x": 0,
+    "y": 187.869142351901,
+    "z": 2,
+    "height": 440.24756852343063,
+    "width": 1130.610079575597,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cluster"
+                    }
+                  },
+                  "Property": "Cluster"
+                }
+              },
+              "queryRef": "Cluster.Cluster",
+              "nativeQueryRef": "Cluster"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Cluster"
+                    }
+                  },
+                  "Property": "SA_incharge"
+                }
+              },
+              "queryRef": "Cluster.SA_incharge",
+              "nativeQueryRef": "SA_incharge"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "Nbre HVC"
+                }
+              },
+              "queryRef": "Mesure.Nbre HVC",
+              "nativeQueryRef": "Nbre HVC"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "#Day HVC T"
+                }
+              },
+              "queryRef": "Mesure.#Day HVC T",
+              "nativeQueryRef": "#Day HVC T"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "GA Perf MTD"
+                }
+              },
+              "queryRef": "Mesure.GA Perf MTD",
+              "nativeQueryRef": "GA Perf MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "DTR perf MTD"
+                }
+              },
+              "queryRef": "Mesure.DTR perf MTD",
+              "nativeQueryRef": "DTR perf MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "DTC perf MTD"
+                }
+              },
+              "queryRef": "Mesure.DTC perf MTD",
+              "nativeQueryRef": "DTC perf MTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesure"
+                    }
+                  },
+                  "Property": "%OOS"
+                }
+              },
+              "queryRef": "Mesure.%OOS",
+              "nativeQueryRef": "%OOS"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

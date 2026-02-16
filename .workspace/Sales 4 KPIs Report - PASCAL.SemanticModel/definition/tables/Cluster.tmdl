@@ -33,21 +33,6 @@ table Cluster
 
 		annotation SummarizationSetBy = User
 
-	hierarchy 'Centre_ Hiérarchie'
-		lineageTag: 6e074ea4-e26b-465b-89cb-1c25e3f7b268
-
-		level Centre_
-			lineageTag: 0af03821-701e-4052-8621-cf6edb70d128
-			column: Centre_
-
-		level Cluster
-			lineageTag: 680a6576-46c2-4efc-ab78-b08400366c1b
-			column: Cluster
-
-		level SA_incharge
-			lineageTag: cda0bd20-b42b-435d-895c-df1ec5201a4e
-			column: SA_incharge
-
 	partition Cluster = entity
 		mode: directQuery
 		source

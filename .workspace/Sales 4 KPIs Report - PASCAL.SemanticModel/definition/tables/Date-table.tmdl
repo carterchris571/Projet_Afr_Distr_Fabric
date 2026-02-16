@@ -1,0 +1,161 @@
+table Date-table
+	lineageTag: 6494bac0-79b0-4537-ac21-e426d5c72194
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dc25881a-1ad7-496c-b80a-2566bb9d74c2
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: c49748b2-0591-41f0-8bb2-012050a60a01
+			defaultHierarchy: LocalDateTable_b737cf94-5b1e-45c5-bc14-c7284fc06709.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Année
+		dataType: string
+		lineageTag: d5f209f6-9505-4630-95ca-3c2cca5cb4f2
+		summarizeBy: none
+		sourceColumn: Année
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: b90a6dc4-1390-47e8-a629-a85b3126ea1e
+		summarizeBy: sum
+		sourceColumn: Trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisNombre
+		dataType: int64
+		formatString: 0
+		lineageTag: 4223c604-94f0-4ab6-9ff4-ddc0841610b7
+		summarizeBy: sum
+		sourceColumn: MoisNombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Jour
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a4574d5-55c4-40fe-befc-85c481f6453b
+		summarizeBy: sum
+		sourceColumn: Jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateNombre
+		dataType: string
+		lineageTag: 16f6b8d2-aacb-4db9-b5b6-d2aa682c1c5e
+		summarizeBy: none
+		sourceColumn: DateNombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisNom
+		dataType: string
+		lineageTag: c7810478-82a7-4a62-96a0-cb61921c31af
+		summarizeBy: none
+		sourceColumn: MoisNom
+		sortByColumn: MoisNombre
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MoisCalendrier
+		dataType: string
+		lineageTag: 9c06a6bb-cf54-4ff9-97f8-1ad3aaa96b97
+		summarizeBy: none
+		sourceColumn: MoisCalendrier
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrimestreCalendrier
+		dataType: string
+		lineageTag: 84f97caf-c04d-4a58-911a-4dbfe0e105ee
+		summarizeBy: none
+		sourceColumn: TrimestreCalendrier
+
+		annotation SummarizationSetBy = Automatic
+
+	column JourSemaine
+		dataType: int64
+		formatString: 0
+		lineageTag: 774d2106-0691-49e6-bedc-df569c4b578f
+		summarizeBy: sum
+		sourceColumn: JourSemaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column NomJourSemaine
+		dataType: string
+		lineageTag: c44e888b-9d94-47cb-a946-8ac0b9b35999
+		summarizeBy: none
+		sourceColumn: NomJourSemaine
+		sortByColumn: JourSemaine
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinSemaine
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 973dfcc4-2ee1-44a2-9a15-f9efab231523
+		summarizeBy: none
+		sourceColumn: FinSemaine
+
+		variation Variation
+			isDefault
+			relationship: 58d715f2-acf8-4e82-83a5-25fcc6c11eea
+			defaultHierarchy: LocalDateTable_7a6a74f7-05b5-40a8-8725-06784622f260.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	hierarchy 'Date Hiérarchie'
+		lineageTag: 3a8dea12-807c-4d43-abd0-4d9c5d2c6658
+
+		level Date
+			lineageTag: 25047df7-0d46-4341-bc91-9fd9f497bb8f
+			column: Date
+
+		level Année
+			lineageTag: 91208c28-3b7e-4164-8ebb-4e6cf34987c7
+			column: Année
+
+		level TrimestreCalendrier
+			lineageTag: 6607d004-8634-428d-9082-32f9a5325c61
+			column: TrimestreCalendrier
+
+		level MoisNom
+			lineageTag: fd703d29-7b25-42f0-8323-9e8d3b893a8a
+			column: MoisNom
+
+		level Jour
+			lineageTag: 57161073-a6cb-4f24-babf-24ca75e99fa9
+			column: Jour
+
+	partition Date-table = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\PASCALTELECOM\Videos\BI\Files\Data_table.xlsx"), null, true),
+				    #"Date-table-feuil_Sheet" = Source{[Item="Date-table-feuil",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(#"Date-table-feuil_Sheet", [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"Date", type datetime}, {"Année", type text}, {"Trimestre", Int64.Type}, {"MoisNombre", Int64.Type}, {"Jour", Int64.Type}, {"DateNombre", type text}, {"MoisNom", type text}, {"MoisCalendrier", type text}, {"TrimestreCalendrier", type text}, {"JourSemaine", Int64.Type}, {"NomJourSemaine", type text}, {"FinSemaine", type date}})
+				in
+				    #"Type modifié"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

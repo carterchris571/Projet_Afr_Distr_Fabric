@@ -7,5 +7,41 @@ expression 'DirectQuery à AS – Modèle 3 kpis sales' =
 		    Cube
 	lineageTag: 513a765d-f340-4d69-93e8-bcce2575322e
 
-	annotation PBI_IncludeFutureArtifacts = True
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"2f99860e-1c4e-4e57-8347-b443d99af014"}},"objectType":"Table"}]
+
+expression Requête1 = ```
+		let CreateDateTable = (StartDate as date, EndDate as date, optional Culture as nullable text) as table =>
+		
+		  let
+		    DayCount = Duration.Days(Duration.From(EndDate - StartDate)),
+		    Source = List.Dates(StartDate,DayCount,#duration(1,0,0,0)),
+		    TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),
+		    ChangedType = Table.TransformColumnTypes(TableFromList,{{"Column1", type date}}),
+		    RenamedColumns = Table.RenameColumns(ChangedType,{{"Column1", "Date"}}),
+			InsertYear = Table.AddColumn(RenamedColumns,"Année", each Date.Year([Date])),
+			InsertQuarter = Table.AddColumn(InsertYear, "Trimestre", each Date.QuarterOfYear([Date])),   
+			InsertMonth = Table.AddColumn(InsertQuarter, "MoisNombre", each Date.Month([Date])),
+			InsertDay = Table.AddColumn(InsertMonth, "Jour", each Date.Day([Date])),
+		    InsertDayInt = Table.AddColumn(InsertDay, "DateNombre", each [Année] * 10000 + [MoisNombre] * 100 + [Jour]),
+		    InsertMonthName = Table.AddColumn(InsertDayInt, "MoisNom", each Date.ToText([Date], "MMMM", Culture), type text),
+			InsertCalendarMonth = Table.AddColumn(InsertMonthName, "MoisCalendrier", each (try(Text.Range([MoisNom],0,4)) otherwise [MoisNom]) & " " & Number.ToText([Année])),
+			InsertCalendarQtr = Table.AddColumn(InsertCalendarMonth, "TrimestreCalendrier", each "T" & Number.ToText([Trimestre]) & " " & Number.ToText([Année])),
+			InsertDayWeek = Table.AddColumn(InsertCalendarQtr, "JourSemaine", each Date.DayOfWeek([Date])),
+		    InsertDayName = Table.AddColumn(InsertDayWeek, "NomJourSemaine", each Date.ToText([Date], "dddd", Culture), type text),
+		    InsertWeekEnding = Table.AddColumn(InsertDayName, "FinSemaine", each Date.EndOfWeek([Date]), type date)
+		
+		  in
+		
+		    InsertWeekEnding
+		
+		in
+		CreateDateTable
+		```
+	lineageTag: 484d5248-e737-43a2-ad42-40a5e72f9dd6
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
 

@@ -1,0 +1,32 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "Dataflow_Target_comm",
+  "queryGroups": [],
+  "documentLocale": "fr-FR",
+  "queriesMetadata": {
+    "Destockage_sodi": {
+      "queryId": "0601819b-5043-4b13-8db0-b159db8626d3",
+      "queryName": "Destockage_sodi",
+      "loadEnabled": false
+    },
+    "Destockage_sodi_DataDestination": {
+      "queryId": "2f8e834e-5beb-44c8-8941-3d40cfc1a822",
+      "queryName": "Destockage_sodi_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"cc5be692-afd3-4cf0-a0e1-848892f62ca1\"}"
+    },
+    {
+      "path": "https://docs.google.com/spreadsheets/d/16exQOjuWqS0FzV0bgmzIEALbjBBaZD9UwO553tyUu40/edit?pli=1&gid=1299121404#gid=1299121404",
+      "kind": "GoogleSheets",
+      "connectionId": "{\"ClusterId\":\"f9b95c99-5311-41c3-8902-b7b65602835d\",\"DatasourceId\":\"01c27dc3-9e7d-4875-ac4d-b08aef6d9625\"}"
+    }
+  ]
+}

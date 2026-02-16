@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["DirectQuery à AS – Modèle 3 kpis sales","Date_table"]
+annotation PBI_QueryOrder = ["DirectQuery à AS – Modèle 3 kpis sales","Pascal_feuil","Sodi_feuil","Requête1","Date-table"]
 
 ref table Mesure
 ref table Net_adds_cluster
@@ -17,7 +17,12 @@ ref table DTR_DTC_cluster
 ref table Out_stock_cluster
 ref table Segmentation
 ref table Cluster
-ref table Date_table
+ref table Pascal_feuil
+ref table Sodi_feuil
+ref table DateTableTemplate_08d39226-2d15-4609-9602-5c0d9ad1888e
+ref table Date-table
+ref table LocalDateTable_b737cf94-5b1e-45c5-bc14-c7284fc06709
+ref table LocalDateTable_7a6a74f7-05b5-40a8-8725-06784622f260
 
 ref cultureInfo fr-FR
 

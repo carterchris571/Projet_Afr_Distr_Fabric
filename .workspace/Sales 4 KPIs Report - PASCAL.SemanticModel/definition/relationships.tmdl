@@ -18,23 +18,37 @@ relationship 34a66904-5ff9-4195-a9be-4527f6c50e67
 	fromColumn: Segmentation.Cluster
 	toColumn: Cluster.Cluster
 
-relationship fdc522ff-81be-3761-9a56-3e060118fa6e
-	securityFilteringBehavior: none
-	fromColumn: Listing_hierachique3.Date
-	toColumn: Date_table.Date
+relationship c49748b2-0591-41f0-8bb2-012050a60a01
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date-table.Date
+	toColumn: LocalDateTable_b737cf94-5b1e-45c5-bc14-c7284fc06709.Date
 
-relationship 3161f9b8-9d0b-ab2e-e9bd-d6d18b348cae
+relationship 58d715f2-acf8-4e82-83a5-25fcc6c11eea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date-table.FinSemaine
+	toColumn: LocalDateTable_7a6a74f7-05b5-40a8-8725-06784622f260.Date
+
+relationship 7301ff44-c560-83f0-0e5e-7fd814f12154
 	securityFilteringBehavior: none
 	fromColumn: DTR_DTC_cluster.Date
-	toColumn: Date_table.Date
+	toColumn: Date-table.Date
 
-relationship f44f7deb-1423-1557-d7bf-6c4fb8a52d20
+relationship 613a2937-d79a-b63c-4b73-7ec60472a467
+	securityFilteringBehavior: none
+	fromColumn: Listing_hierachique3.Date
+	toColumn: Date-table.Date
+
+relationship 816dde48-5063-1c02-7a49-f24a0b263360
 	securityFilteringBehavior: none
 	fromColumn: Net_adds_cluster.Date
-	toColumn: Date_table.Date
+	toColumn: Date-table.Date
 
-relationship 4b7a2616-f4e0-359e-1ef7-79695867345c
+relationship b5c9ccca-bec3-44cc-ed63-c025bb05e9f2
 	securityFilteringBehavior: none
 	fromColumn: Out_stock_cluster.Date
-	toColumn: Date_table.Date
+	toColumn: Date-table.Date
+
+relationship ed53840e-9c5f-652c-45bb-ae472dc5a6b9
+	fromColumn: Sodi_feuil.Date_destocker
+	toColumn: Date-table.Date
 
